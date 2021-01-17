@@ -1,13 +1,14 @@
 {
-  "name": "world-covid",
+  "name": "world-covid-19-data",
   "version": "0.1.0",
   "private": true,
-  "description": "The client application's role is to contain the UI and display it to the user. World-covid is an application to display data of cases, deaths, and recovers for each country and are known in the world, from the 8 different APIs.",
+  "description": "The client application's role is to contain the UI and display it to the user. World-covid-19-data is an application to display data of cases, deaths, and recovers for each country and are known in the world, from the 8 different APIs.",
   "keywords": [
     "covid",
     "covid19",
     "covid-19",
     "covid-world",
+    "world-covid-19-data",
     "covid statistics",
     "data",
     "statistics",

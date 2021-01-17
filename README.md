@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Start to be built in May 2020.
 The client application's role is to contain the UI and display it to the user.
-World-covid is an application to display data of cases, deaths, and recovers for each country and are known in the world, from the 8 different APIs.
+World-covid-19-data is an application to display data of cases, deaths, and recovers for each country and are known in the world, from the 8 different APIs.
 The client built in React, and always updated with the latest version of create-react-up
 (https://github.com/facebook/create-react-app).
 
