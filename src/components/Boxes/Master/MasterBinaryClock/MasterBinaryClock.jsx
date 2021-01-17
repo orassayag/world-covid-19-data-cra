@@ -43,17 +43,16 @@ const BinaryDigitGroup = ({ group }) =>
 
 const MasterBinaryClock = (props) => {
     const { currentTime } = props;
-    if (!currentTime) {
-        return null;
-    }
     const [digits, setDigits] = useState([[], [], []]);
     useEffect(() => {
-        const newDigits = [
-            numberAsBinaryArrayPair(currentTime.getHours()),
-            numberAsBinaryArrayPair(currentTime.getMinutes()),
-            numberAsBinaryArrayPair(currentTime.getSeconds())
-        ];
-        setDigits(newDigits);
+        if (currentTime) {
+            const newDigits = [
+                numberAsBinaryArrayPair(currentTime.getHours()),
+                numberAsBinaryArrayPair(currentTime.getMinutes()),
+                numberAsBinaryArrayPair(currentTime.getSeconds())
+            ];
+            setDigits(newDigits);
+        }
     }, [currentTime]);
     return (
         <div className="clock">
