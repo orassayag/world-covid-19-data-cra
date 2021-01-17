@@ -1,0 +1,49 @@
+.main {
+    .modal {
+        .modal-content {
+            .content {
+                .credits {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: left;
+                    align-items: flex-start;
+                    width: 95%;
+
+                    .title {
+                        text-align: left;
+                        font-size: 15px;
+                        border-bottom: 1px #000000 solid;
+                        margin-bottom: 4px;
+                        padding-bottom: 3px;
+                        margin-top: 5px;
+                        color: #00b9ff;
+                        width: 90%;
+                    }
+
+                    .data {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        font-size: 11px;
+                        width: 90%;
+                    }
+
+                    .note {
+                        display: inline-block;
+                        margin-top: 2em;
+                        font-size: 11px;
+                        width: 90%;
+
+                        span {
+                            font-weight: bold;
+                        }
+
+                        a {
+                            color: #00b9ff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

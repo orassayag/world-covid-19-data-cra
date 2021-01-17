@@ -1,0 +1,28 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-data {
+                        .live-data {
+                            .data-list {
+                                .data-item {
+                                    .items {
+                                        &.no-data {
+                                            display: flex;
+                                            flex-direction: row;
+                                            width: 100%;
+                                            justify-content: center;
+                                            align-items: center;
+                                            letter-spacing: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

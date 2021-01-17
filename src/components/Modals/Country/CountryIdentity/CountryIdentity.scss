@@ -1,0 +1,18 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-identity {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

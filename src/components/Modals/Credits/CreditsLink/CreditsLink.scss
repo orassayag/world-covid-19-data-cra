@@ -1,0 +1,25 @@
+.main {
+    .modal {
+        .modal-content {
+            .content {
+                .credits {
+                    .data {
+                        .link {
+                            margin-right: 4px;
+
+                            a {
+                                text-decoration: none;
+                                color: #ffffff;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                    color: #00b9ff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

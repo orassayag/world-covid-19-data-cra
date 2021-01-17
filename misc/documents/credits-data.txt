@@ -1,0 +1,102 @@
+name					| title									 | tooltip								  | iconName        | iconTooltip   | order  | isMaster  | link
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OrEmail 				| Creator - Or Assayag ® 				 | Creator - Or Assayag ® 				  | envelope       | Contact	   | 1      | true  	| mailto:orassayag@gmail.com
+Source					| Source Code							 | GitHub Source Code					  | github	       | Source		   | 2		| true		| https://github.com
+StackOverFlow           | StackOverFlow                          | Contact StackOverFlow                  | stack-overflow | StackOverFlow | 3      | true      | https://stackoverflow.com/users/4442606/or-assayag?tab=profile
+LinkedIn				| LinkedIn								 | Contact LinkedIn						  | linkedin	   | Social		   | 4		| true		| https://il.linkedin.com/in/orassayag
+VSCode 					| Visual Studio Code					 | Visual Studio Code					  | - 		       | -		       | 5		| false 	| https://code.visualstudio.com
+Notepad++ 				| Notepad++								 | Notepad++ 							  | -		       | -		       | 6		| false     | https://notepad-plus-plus.org
+Heroku 					| Heroku								 | Heroku								  | -		       | -		       | 7		| false		| https://www.heroku.com
+POP1Official 			| POP1 Official: World Population Review | POP1 Official: World Population Review | -		       | -		       | 8		| false		| https://worldpopulationreview.com
+POP1API					| POP1 API: World Population Review		 | POP1 API: World Population Review	  | -		       | -		       | 9		| false		| https://worldpopulationreview.com
+POP2Official			| POP2 Official: Wikipedia Population	 | POP2 Official: Wikipedia Population	  | -		       | -		       | 10		| false		| https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
+POP2API					| POP2 API: Wikipedia Population		 | POP2 API: Wikipedia Population		  | -		       | -		       | 11	    | false		| https://en.wikipedia.org/w/api.php?origin=*&format=json&action=parse&page=List_of_countries_and_dependencies_by_population&prop=text&formatversion=2
+CACOfficial				| CAC Official: AboutCorona.net			 | CAC Official: AboutCorona.net		  | -		       | -		       | 12	    | false		| https://about-corona.net/
+CACAPI					| CAC API: AboutCorona.net				 | CAC API: AboutCorona.net				  | -		       | -		       | 13	    | false		| https://corona-api.com/countries
+CLNOfficial				| CLN Official: CoronaLmaoNinja			 | CLN Official: CoronaLmaoNinja		  | -		       | -		       | 14	    | false		| https://corona.lmao.ninja
+CLNAPI					| CLN API: CoronaLmaoNinja				 | CLN API: CoronaLmaoNinja				  | -		       | -		       | 15	    | false		| https://corona.lmao.ninja/v2/countries?sort=country
+COAOfficial				| COA Official: Covid19api.com			 | COA Official: Covid19api.com			  | -		       | -		       | 16	    | false		| https://covid19api.com
+COAAPI					| COA API: Covid19api.com				 | COA API: Covid19api.com				  | -		       | -		       | 17	    | false		| https://api.covid19api.com/summary
+CVAOfficial				| CVA Official: CovidAPI				 | CVA Official: CovidAPI				  | -		       | -		       | 18	    | false		| https://github.com/javieraviles/covidAPI
+CVAAPI					| CVA API: CovidAPI						 | CVA API: CovidAPI					  | -		       | -		       | 19     | false		| https://coronavirus-19-api.herokuapp.com/countries
+CVSOfficial				| CVS Official: Corona Virus Stats		 | CVS Official: Corona Virus Stats		  | -		       | -		       | 20	    | false		| https://documenter.getpostman.com/view/4074074/SzS7Pkup?version=latest
+CVSAPI					| CVS API: Corona Virus Stats			 | CVS API: Corona Virus Stats			  | -		       | -		       | 21	    | false		| https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?limit=220
+GOOOfficial				| GOO Official: Roylab Stats			 | GOO Official: Roylab Stats			  | -		       | -		       | 22	    | false		| https://www.youtube.com/channel/UCDGiCfCZIV5phsoGiPwIcyQ
+GOOAPI					| GOO API: Roylab Stats					 | GOO API: Roylab Stats				  | -		       | -		       | 23	    | false		| https://docs.google.com/spreadsheets/d/e/2PACX-1vQuDj0R6K85sdtI8I-Tc7RCx8CnIxKUQue0TCUdrFOKDw9G3JRtGhl64laDd3apApEvIJTdPFJ9fEUL/pubhtml?gid=0&single=true
+WIKOfficial				| WIK Official: Wikipedia				 | WIK Official: Wikipedia				  | -		       | -		       | 24	    | false		| https://en.wikipedia.org/w/COVID-19_pandemic
+WIKAPI					| WIK API: Wikipedia					 | WIK API: Wikipedia					  | -		       | -		       | 25	    | false		| https://en.wikipedia.org/w/api.php?origin=*&format=json&action=parse&page=COVID-19_pandemic&prop=text&formatversion=2
+WODOfficial				| WOD Official: Kfir Ram				 | WOD Official: Kfir Ram				  | -		       | -		       | 26	    | false		| https://www.facebook.com/kfiram
+WODAPI					| WOD API: Kfir Ram						 | WOD API: Kfir Ram					  | -		       | -		       | 27	    | false		| https://docs.google.com/spreadsheets/d/1VqOo7mE8O9HTPAgzUOCoevgmAtQZuS_458GEhWX5UwA/edit#gid=449840684
+GitHub					| GitHub								 | GitHub								  | -		       | -		       | 28	    | false		| https://github.com
+CodePen					| CodePen								 | CodePen								  | -		       | -		       | 29	    | false		| https://codepen.io
+StackOverFlow			| StackOverFlow							 | StackOverFlow						  | -		       | -		       | 30	    | false		| https://stackoverflow.com
+WikipediaSite			| Wikipedia								 | Wikipedia							  | -		       | -		       | 31	    | false		| https://en.wikipedia.org/wiki/Main_Page
+Google					| Google								 | Google								  | -		       | -		       | 32	    | false		| https://www.google.com
+GoogleMaps				| Google Maps							 | Google Maps							  | -		       | -		       | 33	    | false		| https://www.google.com/maps
+GoogleFonts				| Google Fonts							 | Google Fonts							  | -		       | -		       | 34	    | false		| https://fonts.google.com
+WorldFlagsSprite		| World Flags Sprite					 | World Flags Sprite					  | -		       | -		       | 35	    | false		| https://github.com/lafeber/world-flags-sprite
+Mapsicon				| Maps Icon 							 | Maps Icon							  | - 		       | -		       | 36	    | false		| https://github.com/djaiss/mapsicon
+FontAwesome 			| Font Awesome							 | Font Awesome							  | - 		       | - 			   | 37	    | false		| https://fontawesome.com
+BulkResizePhotos    	| Bulk Resize Photos 					 | BulkResizePhotos						  | -		       | -		       | 38	    | false		| https://bulkresizephotos.com
+Manytools				| Many Tools							 | Many Tools							  | -		       | -		       | 39	    | false		| http://manytools.org/image/colorize-filter
+ResizeImage				| Resize Image							 | Resize Image							  | -		       | -		       | 40	    | false		| https://resizeimage.net
+Toptal					| Toptal								 | Toptal								  | -		       | -		       | 41	    | false 	| https://www.toptal.com/developers/css/sprite-generator
+CSSSpritesTool			| CSS Sprites Tool						 | CSS Sprites Tool						  | -		       | -		       | 42	    | false		| https://cssspritestool.com
+Spritegen				| Spritegen								 | Spritegen							  | -		       | -		       | 43	    | false		| https://spritegen.website-performance.org
+CSSGenerator			| CSS Generator							 | CSS Generator						  | -		       | -		       | 44	    | false		| https://cssgenerator.org/rgba-and-hex-color-generator.html
+ReactJS					| React.js								 | React.js								  | -		       | -		       | 45	    | false		| https://reactjs.org
+NodeJS					| Node.js 								 | Node.js								  | -		       | -		       | 46	    | false 	| https://nodejs.org/en
+CreateReactApp			| create-react-app						 | create-react-app						  | -		       | -		       | 47	    | false		| https://github.com/facebook/create-react-app
+NPM						| npm									 | npm									  | -		       | -		       | 48	    | false		| https://www.npmjs.com
+Axios 					| axios									 | axios								  | -		       | - 			   | 49	    | false		| https://www.npmjs.com/package/axios
+NodeSass 				| node-sass								 | node-sass							  | -		       | - 			   | 50	    | false		| https://www.npmjs.com/package/node-sass
+ReactRouterDom 			| react-router-dom						 | react-router-dom						  | -		       | -		       | 51	    | false		| https://www.npmjs.com/package/react-router-dom
+JSdom					| jsdom									 | jsdom								  | -		       | -		       | 52	    | false		| https://www.npmjs.com/package/jsdom
+ReactRedux				| react-redux 							 | react-redux							  | - 		       | - 			   | 53	    | false		| https://www.npmjs.com/package/react-redux
+Redux 					| redux									 | redux								  | - 		       | -		       | 54     | false		| https://www.npmjs.com/package/redux
+ReduxThunk				| redux-thunk							 | redux-thunk							  | -		       | -		       | 55	    | false		| https://www.npmjs.com/package/redux-thunk
+SharpQuotes				| Sharp Quotes							 | Motivational Quotes Database			  | -		       | -		       | 56	    | false	    | https://www.sharpquotes.com
+MaterialUI				| @material-ui							 | Material UI							  | -		       | -		       | 57	    | false		| https://www.npmjs.com/package/@material-ui/core
+xlsx					| xlsx									 | XLSX									  | -		       | -		       | 58	    | false		| https://www.npmjs.com/package/xlsx
+textfixer				| textfixer								 | textfixer							  | -		       | -		       | 59	    | false		| https://www.textfixer.com/tools/remove-line-breaks.php
+countrycode				| countrycode							 | countrycode							  | -		       | - 			   | 60	    | false		| https://countrycode.org
+iloveimg 				| iloveimg								 | iloveimg								  | -		       | - 			   | 61	    | false		| https://www.iloveimg.com
+webp-to-png				| webp-to-png							 | webp-to-png							  | -		       | -		       | 62	    | false     | https://ezgif.com/webp-to-png
+gif-to-apng				| gif-to-apng							 | gif-to-apng							  | -		       | - 			   | 63	    | false  	| https://ezgif.com/gif-to-apng
+onlinepngtools 			| onlinepngtools						 | onlinepngtools						  | -		       | -		       | 64	    | false		| https://onlinepngtools.com/create-transparent-png
+svgtopng				| svgtopng								 | svgtopng								  | -		       | -		       | 65	    | false		| https://svgtopng.com
+jpg2png					| jpg2png								 | jpg2png								  | -		       | -		       | 66	    | false		| https://jpg2png.com
+iconfinder              | iconfinder                             | iconfinder                             | -              | -             | 67     | false     | https://www.iconfinder.com
+favicon.io              | favicon.io                             | favicon.io                             | -              | -             | 68     | false     | https://favicon.io/favicon-converter
+pngtosvg                | pngtosvg                               | pngtosvg                               | -              | -             | 69     | false     | https://www.pngtosvg.com
+Java Guides             | Java Guides                            | Java Guides                            | -              | -             | 70     | false     | https://www.youtube.com/watch?v=tA4Fl1dZgjc
+Reverso                 | Reverso                                | Reverso                                | -              | -             | 71     | false     | https://www.reverso.net/spell-checker/english-spelling-grammar
+cross-env               | cross-env                              | cross-env                              | -              | -             | 72     | false     | https://www.npmjs.com/package/cross-env
+react-helmet            | react-helmet                           | react-helmet                           | -              | -             | 73     | false     | https://www.npmjs.com/package/react-helmet
+CreateReactAppBuildPack	| create-react-app-buildpack			 | create-react-app-buildpack			  | -		       | -		       | 74	    | false		| https://github.com/mars/create-react-app-buildpack
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+API Sources:
+POP1: https://worldpopulationreview.com
+POP2: https://en.wikipedia.org/w/api.php?origin=*&format=json&action=parse&page=List_of_countries_and_dependencies_by_population&prop=text&formatversion=2
+CAC: https://corona-api.com/countries
+CLN: https://corona.lmao.ninja/v2/countries?sort=country
+COA: https://api.covid19api.com/summary
+CVA: https://coronavirus-19-api.herokuapp.com/countries
+CVS: https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search?limit=220
+GOO: https://docs.google.com/spreadsheets/d/e/2PACX-1vQuDj0R6K85sdtI8I-Tc7RCx8CnIxKUQue0TCUdrFOKDw9G3JRtGhl64laDd3apApEvIJTdPFJ9fEUL/pubhtml?gid=0&single=true
+WIK: https://en.wikipedia.org/w/api.php?origin=*&format=json&action=parse&page=COVID-19_pandemic&prop=text&formatversion=2
+WOD: https://docs.google.com/spreadsheets/d/1VqOo7mE8O9HTPAgzUOCoevgmAtQZuS_458GEhWX5UwA/edit#gid=449840684
+
+Official Sources:
+POP1: https://worldpopulationreview.com
+POP2: https://en.wikipedia.org/w/
+CAC: https://about-corona.net/
+CLN: https://corona.lmao.ninja/
+COA: https://covid19api.com/
+CVA: https://github.com/javieraviles/covidAPI
+CVS: https://documenter.getpostman.com/view/4074074/SzS7Pkup?version=latest
+GOO: https://www.youtube.com/channel/UCDGiCfCZIV5phsoGiPwIcyQ
+WIK: https://en.wikipedia.org/w/
+WOD: https://www.facebook.com/kfiram

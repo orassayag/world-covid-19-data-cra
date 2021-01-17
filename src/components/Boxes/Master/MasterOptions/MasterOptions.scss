@@ -1,0 +1,21 @@
+.main {
+    .main-container {
+        .container {
+            .box {
+                &.master {
+                    .settings {
+                        .options {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            text-align: center;
+                            margin-top: 10px;
+                            margin-bottom: 5px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

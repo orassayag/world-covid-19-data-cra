@@ -1,0 +1,83 @@
+.main {
+    .page {
+        .main-container {
+            .container {
+                .box {
+                    width: 254px;
+                    height: 180px;
+                    margin: 6px;
+                    box-sizing: border-box;
+                    line-height: 1;
+                    text-align: left;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    box-shadow: 1px 7px 22px -6px rgba(0, 0, 0, 0.53);
+                    outline: 1px solid rgba(255, 255, 255, 0.4);
+                    -webkit-transition: -webkit-transform 100ms ease-out;
+                    transition: -webkit-transform 100ms ease-out;
+                    transition: transform 100ms ease-out;
+                    transition: transform 100ms ease-out, -webkit-transform 100ms ease-out;
+                    -webkit-transform: translateZ(0);
+                    transform: translateZ(0);
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    z-index: 1;
+                    cursor: pointer;
+
+                    &:hover,
+                    &:focus {
+                        -webkit-transform: scale(1.03);
+                        transform: scale(1.03);
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
+
+                    &.alert {
+                        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+
+                        &.all {
+                            border-color: #ffef00;
+                            -webkit-animation: alertall 2s ease-in-out infinite;
+                            animation: alertall 2s ease-in-out infinite;
+                        }
+
+                        &.death {
+                            border-color: #d22c32;
+                            -webkit-animation: alertdeath 2s ease-in-out infinite;
+                            animation: alertdeath 2s ease-in-out infinite;
+                        }
+
+                        &.recover {
+                            border-color: #4ed237;
+                            -webkit-animation: alertrecover 2s ease-in-out infinite;
+                            animation: alertrecover 2s ease-in-out infinite;
+                        }
+
+                        &.case {
+                            border-color: #00b9ff;
+                            -webkit-animation: alertcase 2s ease-in-out infinite;
+                            animation: alertcase 2s ease-in-out infinite;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 319px) and (max-width: 499px) {
+            .main {
+                .page {
+                    .main-container {
+                        .container {
+                            .box {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-identity {
+                        .coat-container {
+                            min-width: 85px;
+                            width: 20%;
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

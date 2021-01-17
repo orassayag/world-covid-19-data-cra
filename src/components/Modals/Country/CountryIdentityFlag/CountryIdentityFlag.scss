@@ -1,0 +1,17 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-identity {
+                        .flag-container {
+                            width: 23%;
+                            min-width: 125px;
+                            margin-left: 1.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

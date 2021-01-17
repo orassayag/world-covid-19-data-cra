@@ -1,0 +1,37 @@
+.main {
+    .page {
+        .main-container {
+            .container {
+                .box {
+                    .identity {
+                        .info {
+                            display: flex;
+                            flex-direction: column;
+                            margin-top: 5px;
+                            margin-left: 5px;
+                            width: 74%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 319px) and (max-width: 499px) {
+    .main {
+        .page {
+            .main-container {
+                .container {
+                    .box {
+                        .identity {
+                            .info {
+                                width: 86%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

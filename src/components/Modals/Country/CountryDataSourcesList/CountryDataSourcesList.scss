@@ -1,0 +1,18 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-data {
+                        .live-data {
+                            .data-list {
+                                margin-top: 5px;
+                                font-size: 0.65em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-summary {
+                        .statistics-sources {
+                            .source-item {
+                                margin-top: 2px;
+                                display: flex;
+                                flex-direction: row;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

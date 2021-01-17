@@ -1,0 +1,25 @@
+.main {
+    .page {
+        .main-container {
+            .container {
+                .box {
+                    .data {
+                        .sources {
+                            .source {
+                                .name {
+                                    width: 23px;
+                                    margin-right: 5px;
+                                    margin-left: 0px;
+
+                                    &.active {
+                                        color: #f3df00;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

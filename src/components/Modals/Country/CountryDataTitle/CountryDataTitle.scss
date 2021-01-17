@@ -1,0 +1,20 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-data {
+                        .live-data {
+                            .title {
+                                text-align: left;
+                                font-size: 15px;
+                                color: #00b9ff;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

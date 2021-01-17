@@ -1,0 +1,785 @@
+import settings from '../../settings/settings';
+import { CountriesActionType, DataMode, SortDirection, UpdateCountryType } from '../../core/enums';
+import countryService from './country.service';
+import settingService from './setting.service';
+import sortService from './sort.service';
+import sourceService from './source.service';
+import statisticService from './statistic.service';
+import statisticUpdateService from './statisticUpdate.service';
+import { textUtils, timeUtils } from '../../utils';
+
+class EngineService {
+
+    constructor() {
+        const { TRY_RECOVER_SOURCES_UPDATES_COUNT } = settings;
+        // Sources.
+        this.settingsList = null;
+        this.loadingList = null;
+        this.statisticsList = null;
+        this.statisticsUpdatesList = null;
+        this.statisticsUpdatesSettingsList = null;
+        this.sourcesList = null;
+        this.countriesList = null;
+        this.countriesNameIdList = null;
+        // Additional settings.
+        this.singlesList = null;
+        // Keys.
+        this.sourcesKeysList = null;
+        this.countriesKeysList = null;
+        // State functions.
+        this.onSetStateCurrentTime = null;
+        this.onSetStateSettingsList = null;
+        this.onSetStateStatisticsField = null;
+        this.onSetStateStatisticsList = null;
+        this.onSetStateStatisticsUpdatesSettingsList = null;
+        this.onSetStateInitiateSettings = null;
+        this.onSetStateInitiateSources = null;
+        this.onSetStateUpdateRound = null;
+        this.onSetStateDataCollection = null;
+        this.onSetStateActionUpdate = null;
+        this.onSetStateActionRefresh = null;
+        this.onSetStateUpdateCountryVisibility = null;
+        // SetTimeOut interval.
+        this.sourcesIndex = 0;
+        this.sourcesRefreshIndex = 0;
+        this.liveStandardDelayTime = 0;
+        this.localStandardDelayTime = 0;
+        this.refreshDelayTime = 0;
+        this.timer = null;
+        // Clock interval.
+        this.clock = null;
+        // Loader interval.
+        this.loader = null;
+        // Local flags.
+        this.mode = null;
+        this.isInitiateComplete = false;
+        // Sources list recover.
+        this.recoverUpdatesCount = TRY_RECOVER_SOURCES_UPDATES_COUNT;
+        this.tryRecoverRounds = 0;
+        this.tryRecoverLeft = this.recoverUpdatesCount;
+        // Previous object.
+        this.previousObject = null; // In order to save previous collection as state was before changes.
+    }
+
+    initiateMode(mode) {
+        this.mode = DataMode.LIVE;
+        if (mode === DataMode.LOCAL) {
+            this.mode = DataMode.LOCAL;
+        }
+        this.settingsList.isLiveMode = this.mode === DataMode.LIVE;
+    }
+
+    initiateSources(data) {
+        const { mode, onSetStateCurrentTime, onSetStateSettingsList, onSetStateStatisticsField, onSetStateStatisticsList,
+            onSetStateStatisticsUpdatesSettingsList, onSetStateInitiateSettings, onSetStateInitiateSources,
+            onSetStateUpdateRound, onSetStateDataCollection, onSetStateActionUpdate, onSetStateActionRefresh,
+            onSetStateUpdateCountryVisibility } = data;
+        this.settingsList = settingService.initiateSettingsList();
+        this.initiateMode(mode);
+        this.loadingList = settingService.initiateStateLoadingList();
+        this.singlesList = statisticService.initiateSinglesList();
+        this.statisticsList = statisticService.initiateStatisticsList();
+        this.statisticsUpdatesList = statisticUpdateService.initiateStatisticsUpdatesList();
+        this.statisticsUpdatesSettingsList = statisticUpdateService.initateStatisticsUpdatesSettingsList();
+        this.sourcesList = sourceService.initiateSourcesList();
+        const { countriesList, countriesNameIdList } = countryService.initiateCountriesList();
+        this.countriesList = countriesList;
+        this.countriesNameIdList = countriesNameIdList;
+        this.sourcesKeysList = sourceService.sourcesKeysList;
+        this.countriesKeysList = countryService.countriesKeysList;
+        this.onSetStateCurrentTime = onSetStateCurrentTime;
+        this.onSetStateSettingsList = onSetStateSettingsList;
+        this.onSetStateStatisticsField = onSetStateStatisticsField;
+        this.onSetStateStatisticsList = onSetStateStatisticsList;
+        this.onSetStateStatisticsUpdatesSettingsList = onSetStateStatisticsUpdatesSettingsList;
+        this.onSetStateInitiateSettings = onSetStateInitiateSettings;
+        this.onSetStateInitiateSources = onSetStateInitiateSources;
+        this.onSetStateUpdateRound = onSetStateUpdateRound;
+        this.onSetStateDataCollection = onSetStateDataCollection;
+        this.onSetStateActionUpdate = onSetStateActionUpdate;
+        this.onSetStateActionRefresh = onSetStateActionRefresh;
+        this.onSetStateUpdateCountryVisibility = onSetStateUpdateCountryVisibility;
+        // Set first time settings state.
+        this.onSetStateInitiateSettings({
+            settingsList: this.settingsList,
+            loadingList: this.loadingList
+        });
+    }
+
+    updateLocalSettingsList(settingsList) {
+        this.settingsList = {
+            ...this.settingsList,
+            ...settingsList
+        };
+    }
+
+    updateLocalStatisticsList(statisticsList) {
+        this.statisticsList = {
+            ...this.statisticsList,
+            ...statisticsList
+        };
+    }
+
+    updateLocalStatisticsUpdatesList(updateStatisticsUpdatesListResults) {
+        const { statisticsUpdatesList, statisticsUpdatesSettingsList } = updateStatisticsUpdatesListResults;
+        if (statisticsUpdatesList && statisticsUpdatesList.length > 0) {
+            this.statisticsUpdatesList = [...statisticsUpdatesList];
+        }
+        this.statisticsUpdatesSettingsList = {
+            ...this.statisticsUpdatesSettingsList,
+            ...statisticsUpdatesSettingsList
+        };
+    }
+
+    updateSettingsListField(listName, listValues) {
+        this[listName] = {
+            ...this[listName],
+            ...listValues
+        };
+        this.onSetStateSettingsList(listName, this[listName]);
+    }
+
+    updateSinglesListField(fieldName, fieldValue) {
+        this.singlesList[fieldName] = fieldValue;
+        this.onSetStateStatisticsField(fieldName, fieldValue);
+    }
+
+    updateStatisticsListField(fieldName, fieldValue) {
+        this.statisticsList[fieldName] = fieldValue;
+        this.onSetStateStatisticsList({ [fieldName]: fieldValue });
+    }
+
+    updateDataCollection(collectionName, collectionValue) {
+        this[collectionName] = collectionValue;
+        this.onSetStateDataCollection(collectionName, collectionValue);
+    }
+
+    runClock() {
+        this.clock = setInterval(() => {
+            this.updateClock();
+        }, 1000);
+    }
+
+    runEngine(data) {
+        this.initiateSources(data);
+        this.runClock();
+        this.runDataInterval();
+    }
+
+    updateClock() {
+        const dateNow = timeUtils.getCurrentTime();
+        this.singlesList.currentTime = dateNow;
+        const lastUpdateResult = timeUtils.getDifferenceTimesDisplay({
+            startDateTime: this.statisticsList.lastUpdateDate,
+            endDateTime: dateNow,
+            maximumElementsCount: 2
+        });
+        this.singlesList.lastUpdateDateDisplay = lastUpdateResult ? lastUpdateResult.differenceTimeDisplay : null;
+        this.onSetStateCurrentTime({
+            currentTime: this.singlesList.currentTime,
+            lastUpdateDateDisplay: this.singlesList.lastUpdateDateDisplay
+        });
+    }
+
+    setUpdatesLoader(isUpdateLoaderDisplay) {
+        if (!this.isInitiateComplete || this.settingsList.isRefreshMode) {
+            return;
+        }
+        this.updateSinglesListField('isUpdateLoaderDisplay', isUpdateLoaderDisplay);
+    }
+
+    setSourceError(sourceName, isError) {
+        const sourcesList = this.sourcesList;
+        sourcesList[sourceName].isError = isError;
+        this.updateDataCollection('sourcesList', sourcesList);
+    }
+
+    validateFetchDataResults(fetchDataResults) {
+        const { source, error, resultData } = fetchDataResults;
+        const { lowerName, isError } = source;
+        if (error || !resultData || resultData.length <= 0) {
+            this.setSourceError(lowerName, true);
+            return false;
+        }
+        else if (isError) {
+            this.setSourceError(lowerName, false);
+        }
+        return true;
+    }
+
+    updateCountries(countriesActionType, fetchDataResults) {
+        return countryService.updateCountries({
+            countriesActionType: countriesActionType,
+            countriesList: this.countriesList,
+            fetchDataResults: fetchDataResults,
+            settingsList: this.settingsList,
+            countriesKeysList: this.countriesKeysList,
+            sourcesList: this.sourcesList,
+            sourcesKeysList: this.sourcesKeysList
+        });
+    }
+
+    updateInactiveData() {
+        const indexResult = this.getSourceAndIndex(false);
+        this.countriesList = this.updateCountries(CountriesActionType.INACTIVE, null);
+        const updatedStatisticsList = {
+            nextUpdateSourceName: indexResult.source.upperName
+        };
+        // Update statistics updates times.
+        this.statisticsUpdatesList = statisticUpdateService.updateStatisticsUpdatesListTimes(this.statisticsUpdatesList);
+        this.onSetStateUpdateRound({
+            countriesList: this.countriesList,
+            statisticsList: updatedStatisticsList,
+            updateStatisticsUpdatesListResults: {
+                statisticsUpdatesList: this.statisticsUpdatesList
+            }
+        });
+        this.updateLocalStatisticsList(updatedStatisticsList);
+    }
+
+    runDataInterval() {
+        const transition = async () => {
+            const { isActive } = this.settingsList;
+            if (!isActive && !this.settingsList.isRefreshMode) {
+                if (this.isInitiateComplete) {
+                    this.updateInactiveData();
+                }
+                this.nextInterval(transition);
+                return;
+            }
+            // Current source.
+            const source = this.getSource(this.sourcesIndex);
+            if (this.isInitiateComplete && !this.settingsList.isRefreshMode) {
+                // Cleanup previous countries updates.
+                this.countriesList = this.updateCountries(CountriesActionType.CLEANUP, null);
+                // Cleanup previous statistics updates.
+                this.statisticsUpdatesList = statisticUpdateService.cleanStatisticsUpdatesList(this.statisticsUpdatesList);
+            }
+            // Fetch data.
+            this.setUpdatesLoader(true);
+            const fetchDataResults = await countryService.getCountryData({
+                source: source,
+                settingsList: this.settingsList,
+                countriesList: this.countriesList,
+                countriesKeysList: this.countriesKeysList,
+                isInitiateComplete: this.isInitiateComplete
+            });
+            // Validate results.
+            if (!this.validateFetchDataResults(fetchDataResults)) {
+                this.nextInterval(transition);
+                return;
+            }
+            this.setUpdatesLoader(false);
+            if (this.isInitiateComplete && !this.settingsList.isRefreshMode) {
+                // Update new countries data.
+                this.countriesList = this.updateCountries(CountriesActionType.UPDATE, fetchDataResults);
+                // Update new statistics updates data.
+                const updateStatisticsUpdatesListResults = statisticUpdateService.updateStatisticsUpdatesList({
+                    statisticsUpdatesList: this.statisticsUpdatesList,
+                    statisticsUpdatesSettingsList: this.statisticsUpdatesSettingsList,
+                    countriesList: this.countriesList,
+                    countriesKeysList: this.countriesKeysList
+                });
+                // Update round data state.
+                const indexResult = this.getSourceAndIndex(false);
+                const updatedStatisticsList = {
+                    lastUpdateDate: timeUtils.getCurrentTime(),
+                    lastUpdateSourceName: source.upperName,
+                    nextUpdateSourceName: indexResult.source.upperName,
+                    isLastUpdateChanges: fetchDataResults.updateCountryType === UpdateCountryType.DATA,
+                    totalUpdatesCount: this.statisticsList.totalUpdatesCount + 1,
+                    totalUpdateCyclesCount: this.sourcesIndex === 0 && this.statisticsList.totalUpdatesCount > 1 ?
+                        this.statisticsList.totalUpdateCyclesCount + 1 : this.statisticsList.totalUpdateCyclesCount
+                };
+                this.onSetStateUpdateRound({
+                    countriesList: this.countriesList,
+                    statisticsList: updatedStatisticsList,
+                    updateStatisticsUpdatesListResults: updateStatisticsUpdatesListResults
+                });
+                this.updateLocalStatisticsList(updatedStatisticsList);
+                this.updateLocalStatisticsUpdatesList(updateStatisticsUpdatesListResults);
+            }
+            if (this.isContinueToNextRound()) {
+                // Continue to next round.
+                this.nextInterval(transition);
+            }
+        };
+        setTimeout(transition, this.getDelayTime());
+    }
+
+    isContinueToNextRound() {
+        if (!this.settingsList.isRefreshMode) {
+            return true;
+        }
+        const refreshSource = this.getSource(this.sourcesRefreshIndex);
+        if (refreshSource) {
+            this.updateSettingsListField('loadingList', {
+                refreshSourceName: refreshSource.upperName
+            });
+        }
+        if (refreshSource && !this.sourcesRefreshIndex < this.sourcesKeysList.length) {
+            this.sourcesRefreshIndex++;
+        }
+        else {
+            this.finalizeRefreshData();
+        }
+        return true;
+    }
+
+    nextInterval(transition) {
+        this.clearTimer();
+        this.checkPoint();
+        this.timer = setTimeout(transition, this.getDelayTime());
+    }
+
+    removeLoader(currentPrecentage) {
+        // Remove loader from the DOM.
+        if (currentPrecentage === 100) {
+            setTimeout(() => {
+                this.updateSettingsListField('loadingList', {
+                    isScreenLoaderComplete: true
+                });
+            }, 5000);
+        }
+    }
+
+    checkPoint() {
+        // Set loader percentage for the first load.
+        if (!this.isInitiateComplete && !this.settingsList.isRefreshMode) {
+            const currentPrecentage = textUtils.getAbsolutePercentage(this.sourcesIndex + 1, this.sourcesKeysList.length);
+            this.updateSettingsListField('loadingList', {
+                loadingPrecentage: currentPrecentage,
+                loadingSourceName: this.getSource(this.sourcesIndex).upperName
+            });
+            this.removeLoader(currentPrecentage);
+        }
+        const indexResult = this.getSourceAndIndex(true);
+        this.sourcesIndex = indexResult.updatedIndex;
+    }
+
+    getSource(index) {
+        return this.sourcesList[this.sourcesKeysList[index]];
+    }
+
+    getDelayTime() {
+        return this.settingsList.isRefreshMode ? this.refreshDelayTime :
+            this.settingsList.isLiveMode ? this.liveStandardDelayTime : this.localStandardDelayTime;
+    }
+
+    checkRecoverMode() {
+        const { totalUpdatesCount } = this.statisticsList;
+        if (!this.isInitiateComplete || this.settingsList.isRefreshMode || totalUpdatesCount === 0) {
+            return;
+        }
+        if (this.tryRecoverRounds === 0) {
+            if (this.tryRecoverLeft > 0) {
+                this.tryRecoverLeft--;
+            }
+            else {
+                this.updateSettingsListField('settingsList', { isRecoverMode: true });
+                this.tryRecoverRounds = this.sourcesKeysList.length;
+            }
+        }
+        else {
+            this.tryRecoverRounds--;
+            if (this.tryRecoverRounds === 0) {
+                this.updateSettingsListField('settingsList', { isRecoverMode: false });
+                this.tryRecoverLeft = this.recoverUpdatesCount;
+            }
+        }
+    }
+
+    updateIndex(index) {
+        index++;
+        if (index >= this.sourcesKeysList.length) {
+            index = 0;
+        }
+        return index;
+    }
+
+    getSourceAndIndex(isRoundProcess) {
+        let updatedIndex = this.sourcesIndex;
+        updatedIndex = this.updateIndex(updatedIndex);
+        if (!this.isInitiateComplete && !this.settingsList.isRefreshMode && updatedIndex === 0) {
+            this.finalizeStandardData();
+        }
+        if (isRoundProcess) {
+            this.checkRecoverMode();
+        }
+        let source = this.getSource(updatedIndex);
+        while (!this.isValidFetchDataSource(source)) {
+            updatedIndex = this.updateIndex(updatedIndex);
+            source = this.getSource(updatedIndex);
+        }
+        return {
+            updatedIndex: updatedIndex,
+            source: source
+        };
+    }
+
+    isValidFetchDataSource(source) {
+        if (!source || !source.isActive) {
+            return false;
+        }
+        if (source.isError && (this.isInitiateComplete && !this.settingsList.isRefreshMode && this.tryRecoverRounds === 0)) {
+            return false;
+        }
+        return true;
+    }
+
+    finalizeStandardData() {
+        this.isInitiateComplete = true;
+        this.liveStandardDelayTime = settings.LIVE_DELAY_BETWEEN_SOURCES_FETCH;
+        this.localStandardDelayTime = settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH;
+        // Random leading source if not exists.
+        if (!this.settingsList.leadingSource) {
+            this.settingsList.leadingSource = sourceService.getRandomSource(this.sourcesList);
+        }
+        // Set sort fields list.
+        const { updatedSortType } = this.setSortValues(this.settingsList.sortType.sortTypeName, null);
+        this.settingsList.sortType = updatedSortType;
+        // Last round in first time fetch data.
+        this.countriesList = this.updateCountries(CountriesActionType.FINALIZE, null);
+        // Update the countries count displayed in the master box.
+        const updatedStatisticsList = {
+            totalVisibleCountriesCount: this.countriesNameIdList.length
+        };
+        this.updateLocalStatisticsList(updatedStatisticsList);
+        // Set sources and countries for the first time.
+        this.onSetStateInitiateSources({
+            sourcesList: this.sourcesList,
+            countriesList: this.countriesList,
+            countriesNameIdList: this.countriesNameIdList,
+            statisticsList: this.statisticsList,
+            settingsList: this.settingsList
+        });
+    }
+
+    finalizeRefreshData() {
+        // Clear refresh source name.
+        this.updateSettingsListField('loadingList', {
+            refreshSourceName: null
+        });
+        // Last round in refresh mode fetch data.
+        this.countriesList = this.updateCountries(CountriesActionType.UPDATE, null);
+        // Update new statistics updates data.
+        const updateStatisticsUpdatesListResults = statisticUpdateService.updateStatisticsUpdatesList({
+            statisticsUpdatesList: this.statisticsUpdatesList,
+            statisticsUpdatesSettingsList: this.statisticsUpdatesSettingsList,
+            countriesList: this.countriesList,
+            countriesKeysList: this.countriesKeysList
+        });
+        // Set countries, settings and statistics in refresh mode.
+        this.updateLocalSettingsList({
+            isActive: this.previousObject.isActive,
+            isRefreshMode: false
+        });
+        this.previousObject = null;
+        const refreshSource = this.getSource(this.sourcesRefreshIndex);
+        this.sourcesRefreshIndex = 0;
+        this.updateLocalStatisticsList({
+            lastUpdateDate: timeUtils.getCurrentTime(),
+            lastUpdateSourceName: refreshSource ? refreshSource.upperName : this.statisticsList.lastUpdateSourceName,
+            totalUpdatesCount: this.statisticsList.totalUpdatesCount + this.sourcesKeysList.length,
+            totalUpdateCyclesCount: this.statisticsList.totalUpdateCyclesCount + 1
+        });
+        this.onSetStateActionRefresh({
+            countriesList: this.countriesList,
+            settingsList: this.settingsList,
+            statisticsList: this.statisticsList,
+            updateStatisticsUpdatesListResults: updateStatisticsUpdatesListResults
+        });
+    }
+
+    clearClock() {
+        if (this.clock) {
+            clearInterval(this.clock);
+            this.clock = null;
+        }
+    }
+
+    clearTimer() {
+        if (this.timer) {
+            clearTimeout(this.timer);
+            this.timer = null;
+        }
+    }
+
+    clearSources() {
+        this.clearClock();
+        this.clearTimer();
+    }
+
+    updateActionLoader(value) {
+        const { isRefreshMode, isActionLoader } = this.settingsList;
+        if (!isRefreshMode && isActionLoader !== value) {
+            this.updateSettingsListField('settingsList', { isActionLoader: value });
+        }
+    }
+
+    setSortFieldsList(data) {
+        const { forceSortDirection } = data;
+        let { sortType } = data;
+        sortType = { ...sortType };
+        let symbol = null;
+        switch (forceSortDirection) {
+            case SortDirection.DESCENDING: { symbol = '-'; break; }
+            case SortDirection.ASCENDING: { symbol = ''; break; }
+            default: { symbol = sortType.directionSymbol; break; }
+        }
+        const fieldsList = [...sortType.fieldsList];
+        fieldsList[0] = textUtils.insertAtIndex(fieldsList[0], 0, symbol);
+        sortType.fieldsList = fieldsList;
+        return sortType;
+    }
+
+    setSortValues(sortTypeName, forceSortDirection) {
+        const updatedSortType = this.setSortFieldsList({
+            sortType: sortService.sortsList[sortTypeName],
+            forceSortDirection: forceSortDirection
+        });
+        return {
+            updatedSortType: updatedSortType,
+            updatedAdditionalSettings: { forceSortDirection: forceSortDirection }
+        };
+    }
+
+    updateCountryVisibility(countryId, isVisible) {
+        // Update the country in the countries list.
+        this.countriesList = countryService.updateCountryField({
+            countriesList: this.countriesList,
+            settingsList: this.settingsList,
+            countryId: countryId,
+            fieldName: 'isVisible',
+            fieldValue: isVisible,
+            isRefreshList: false
+        });
+        // Update the countries names (for statistics modal).
+        this.countriesNameIdList = countryService.updateCountriesNameIdList(this.countriesList);
+        // Update all update statistics items.
+        if (this.statisticsUpdatesList.length > 0) {
+            this.statisticsUpdatesList = statisticUpdateService.updateStatisticsVisibility({
+                statisticsUpdatesList: this.statisticsUpdatesList,
+                countryId: countryId,
+                isVisible: isVisible
+            });
+        }
+        // Update the number of the countries on the master box.
+        const updatedStatisticsList = {
+            totalVisibleCountriesCount: this.countriesNameIdList.length
+        };
+        this.updateLocalStatisticsList(updatedStatisticsList);
+        // Update the state.
+        this.onSetStateUpdateCountryVisibility({
+            countriesList: this.countriesList,
+            countriesNameIdList: this.countriesNameIdList,
+            statisticsList: updatedStatisticsList,
+            statisticsUpdatesList: this.statisticsUpdatesList
+        });
+    }
+
+    runMasterActionClick(data) {
+        const { action, value, id } = data;
+        if (!action || (!value && action !== 'modal')) {
+            return;
+        }
+        let fieldName = null;
+        let fieldValue = value;
+        let isChangeSettingsOnly = true;
+        let isActionLoader, isNoActionNeeded = false;
+        let additionalSettings = {};
+        switch (action) {
+            case 'modal': {
+                if (value === 'remove') {
+                    this.updateCountryVisibility(parseInt(id), false);
+                    isNoActionNeeded = true;
+                    break;
+                }
+                else {
+                    fieldName = 'activeModalName';
+                    if (this.settingsList.activeModalName) {
+                        fieldValue = null;
+                    }
+                    if (fieldValue === 'country') {
+                        additionalSettings = {
+                            activeModalValue: id,
+                            isReplaceModalMode: false
+                        };
+                    }
+                }
+                break;
+            }
+            case 'replace-modal': {
+                fieldName = 'activeModalName';
+                if (fieldValue === 'country') {
+                    additionalSettings = {
+                        activeModalValue: id,
+                        isReplaceModalMode: true
+                    };
+                }
+                break;
+            }
+            case 'active': { fieldName = 'isActive'; fieldValue = !this.settingsList.isActive; break; }
+            case 'refresh': {
+                if (this.settingsList.isRefreshMode) {
+                    return;
+                }
+                isActionLoader = true;
+                fieldName = 'isRefreshMode';
+                fieldValue = true;
+                additionalSettings = {
+                    isActive: false
+                };
+                this.previousObject = { ...this.settingsList };
+                break;
+            }
+            case 'local': { fieldName = 'isLiveMode'; fieldValue = false; break; }
+            case 'live': { fieldName = 'isLiveMode'; fieldValue = true; break; }
+            case 'view': { fieldName = 'viewType'; break; }
+            case 'color': { fieldName = 'colorType'; break; }
+            case 'sort': {
+                if (this.settingsList.sortType.sortTypeName === fieldValue) {
+                    return;
+                }
+                fieldName = 'sortType';
+                isChangeSettingsOnly = false;
+                isActionLoader = true;
+                const { updatedSortType, updatedAdditionalSettings } = this.setSortValues(fieldValue, null);
+                fieldValue = updatedSortType;
+                additionalSettings = updatedAdditionalSettings;
+                break;
+            }
+            case 'direction': {
+                const { forceSortDirection } = this.settingsList;
+                if (forceSortDirection === fieldValue) {
+                    return;
+                }
+                fieldName = 'sortType';
+                isChangeSettingsOnly = false;
+                isActionLoader = true;
+                const { updatedSortType, updatedAdditionalSettings } = this.setSortValues(this.settingsList.sortType.sortTypeName, fieldValue);
+                fieldValue = updatedSortType;
+                additionalSettings = updatedAdditionalSettings;
+                break;
+            }
+        }
+        const updatedSettingsList = {
+            [fieldName]: fieldValue,
+            ...additionalSettings
+        };
+        if (isActionLoader) {
+            this.updateActionLoader(true);
+        }
+        if (isNoActionNeeded) {
+            return;
+        }
+        setTimeout(() => { // For the master loader effect.
+            if (isChangeSettingsOnly) {
+                // Update settings only.
+                this.updateSettingsListField('settingsList', updatedSettingsList);
+                // Refresh or change mode only action.
+                if (action === 'refresh') {
+                    this.runDataInterval();
+                }
+            }
+            else {
+                this.updateLocalSettingsList(updatedSettingsList);
+                // Update the data according to the settings update.
+                this.countriesList = this.updateCountries(CountriesActionType.REFRESH, null);
+                this.onSetStateActionUpdate({
+                    countriesList: this.countriesList,
+                    settingsList: this.settingsList
+                });
+            }
+        }, 0);
+    }
+
+    runModalActionUpdate(data) {
+        this[`run${data.modalName}ActionUpdate`](data);
+    }
+
+    runCountryActionUpdate(data) {
+        const { action, value, countryId } = data;
+        if (!action || !value || !countryId) {
+            return;
+        }
+        switch (action) {
+            case 'select-time': {
+                this.updateCountrySpecificField({
+                    countryId: countryId,
+                    fieldName: 'updatesHoursCount',
+                    fieldValue: parseInt(value),
+                    isRefreshList: false
+                });
+                break;
+            }
+        }
+    }
+
+    updateCountrySpecificField(data) {
+        const { countryId, fieldName, fieldValue, isRefreshList } = data;
+        this.countriesList = countryService.updateCountryField({
+            countriesList: this.countriesList,
+            settingsList: this.settingsList,
+            countryId: countryId,
+            fieldName: fieldName,
+            fieldValue: fieldValue,
+            isRefreshList: isRefreshList
+        });
+        this.onSetStateActionUpdate({
+            countriesList: this.countriesList,
+            settingsList: this.settingsList
+        });
+    }
+
+    runGlobalStatisticsActionUpdate(data) {
+        const { action, value } = data;
+        if (!action || !value) {
+            return;
+        }
+        switch (action) {
+            case 'select-time': {
+                const updatedStatisticsUpdatesSettingsList = {
+                    statisticsUpdatesHoursCount: value
+                };
+                this.updateLocalStatisticsUpdatesList({
+                    statisticsUpdatesList: null,
+                    statisticsUpdatesSettingsList: updatedStatisticsUpdatesSettingsList
+                });
+                this.onSetStateStatisticsUpdatesSettingsList(updatedStatisticsUpdatesSettingsList);
+                break;
+            }
+            case 'select-country': {
+                const updatedStatisticsUpdatesSettingsList = {
+                    statisticsUpdatesCountryId: parseInt(value)
+                };
+                this.updateLocalStatisticsUpdatesList({
+                    statisticsUpdatesList: null,
+                    statisticsUpdatesSettingsList: updatedStatisticsUpdatesSettingsList
+                });
+                this.onSetStateStatisticsUpdatesSettingsList(updatedStatisticsUpdatesSettingsList);
+                break;
+            }
+        }
+    }
+
+    getCountryData(data) {
+        const { id, countriesList, statisticsUpdatesList } = data;
+        const country = countryService.getCountryById(id, countriesList);
+        const updatesList = statisticUpdateService.getCountryStatisticsUpdates({
+            countryId: country.id,
+            updatesHoursCount: country.updatesHoursCount,
+            statisticsUpdatesList: statisticsUpdatesList
+        });
+        return {
+            country: country,
+            updatesList: updatesList
+        };
+    }
+
+    getCountryIdentityDetailsList(data) {
+        return countryService.getCountryIdentityDetailsList(data);
+    }
+}
+
+export default new EngineService();

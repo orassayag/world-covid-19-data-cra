@@ -1,0 +1,24 @@
+.main {
+    .page {
+        .main-container {
+            .container {
+                .box {
+                    .data {
+                        .sources {
+                            .source {
+                                .no-items {
+                                    display: flex;
+                                    flex-direction: row;
+                                    width: 200px;
+                                    justify-content: center;
+                                    align-items: center;
+                                    letter-spacing: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

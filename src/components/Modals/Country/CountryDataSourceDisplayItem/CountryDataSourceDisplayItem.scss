@@ -1,0 +1,78 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-data {
+                        .live-data {
+                            .data-list {
+                                .data-item {
+                                    .items {
+                                        .item {
+                                            display: flex;
+                                            flex-direction: row;
+                                            margin-right: 5px;
+
+                                            .icon {
+                                                margin-right: 2px;
+                                            }
+
+                                            &.small {
+                                                width: 55px;
+                                            }
+
+                                            &.big {
+                                                width: 115px;
+                                            }
+                                        }
+                                    }
+
+                                    &.alert {
+                                        .items {
+                                            .item {
+                                                &.case {
+
+                                                    .icon,
+                                                    .number {
+                                                        color: #00b9ff;
+                                                    }
+                                                }
+
+                                                &.death {
+
+                                                    .icon,
+                                                    .number {
+                                                        color: #d22c32;
+                                                    }
+                                                }
+
+                                                &.recover {
+
+                                                    .icon,
+                                                    .number {
+                                                        color: #4ed237;
+                                                    }
+                                                }
+
+                                                &.case,
+                                                &.death,
+                                                &.recover {
+                                                    .icon {
+                                                        animation: shake 2s 0s infinite;
+                                                        -moz-animation: shake 2s 0s infinite;
+                                                        -webkit-animation: shake 2s 0s infinite;
+                                                        -o-animation: shake 2s 0s infinite;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

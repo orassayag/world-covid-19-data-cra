@@ -1,0 +1,33 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-data {
+                        &.no-data {
+                            .no-data-container {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+
+                                .icon {
+                                    margin-right: 5px;
+
+                                    i {
+                                        font-size: 15px;
+                                    }
+                                }
+
+                                .title {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

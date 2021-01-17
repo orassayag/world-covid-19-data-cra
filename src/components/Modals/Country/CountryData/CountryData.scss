@@ -1,0 +1,31 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-data {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: left;
+                        align-items: flex-start;
+                        width: 95%;
+                        -webkit-touch-callout: none;
+                        -webkit-user-select: none;
+                        user-select: none;
+                        margin-bottom: 1.4rem;
+
+                        &.no-data {
+                            width: 100%;
+                        }
+
+                        .live-data {
+                            position: relative;
+                            margin-bottom: 15px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

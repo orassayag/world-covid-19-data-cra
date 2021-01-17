@@ -1,0 +1,42 @@
+.main {
+    .main-container {
+        .container {
+            .box {
+                &.master {
+                    .settings {
+                        .logo-holder {
+                            .line1 {
+                                .clock {
+                                    height: 17px;
+                                    width: 20px;
+                                    display: flex;
+                                    margin-left: 3px;
+
+                                    .binary-digit-group {
+                                        display: flex;
+                                        margin: 0 0px;
+
+                                        .binary-digit {
+                                            .pip {
+                                                width: 3px;
+                                                height: 3px;
+                                                margin: 1px;
+                                                background-color: #525252;
+                                                border-radius: 100%;
+                                                transition: all .3s ease-in;
+                                            }
+
+                                            .pip--on {
+                                                background-color: #e74c3c;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

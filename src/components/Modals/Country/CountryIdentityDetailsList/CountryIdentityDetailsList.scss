@@ -1,0 +1,21 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-identity {
+                        .identity-details {
+                            .details-list {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                font-size: 0.65em;
+                                flex-wrap: wrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

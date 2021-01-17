@@ -1,0 +1,36 @@
+.main {
+    .modal {
+        .modal-content {
+            &.country {
+                .content {
+                    .country-data {
+                        .live-data {
+                            .data-item {
+                                display: flex;
+                                flex-direction: row;
+
+                                &.not-active {
+                                    opacity: 0.5;
+                                }
+
+                                .name {
+                                    width: 23px;
+                                    margin-right: 5px;
+
+                                    &.active {
+                                        color: #f3df00;
+                                    }
+                                }
+                            }
+
+                            .items {
+                                display: flex;
+                                flex-direction: row;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

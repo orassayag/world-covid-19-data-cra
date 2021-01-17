@@ -1,0 +1,18 @@
+.main {
+    .modal {
+        .modal-content {
+            .content {
+                .summary {
+                    .statistics-sources {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 11px;
+                        width: 95%;
+                        padding-left: 17px;
+                        margin-top: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

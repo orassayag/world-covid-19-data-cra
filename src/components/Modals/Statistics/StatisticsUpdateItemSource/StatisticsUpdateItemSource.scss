@@ -1,0 +1,65 @@
+.main {
+    .modal {
+        .modal-content {
+            .content {
+                .updates {
+                    .data {
+                        .update-item {
+                            &.alert {
+                                &.all {
+                                    -webkit-animation: alertall 2s ease-in-out infinite;
+                                    animation: alertall 2s ease-in-out infinite;
+                                }
+
+                                &.death {
+                                    -webkit-animation: alertdeath 2s ease-in-out infinite;
+                                    animation: alertdeath 2s ease-in-out infinite;
+                                }
+
+                                &.recover {
+                                    -webkit-animation: alertrecover 2s ease-in-out infinite;
+                                    animation: alertrecover 2s ease-in-out infinite;
+                                }
+
+                                &.case {
+                                    -webkit-animation: alertcase 2s ease-in-out infinite;
+                                    animation: alertcase 2s ease-in-out infinite;
+                                }
+
+                                .death,
+                                .case,
+                                .recover {
+                                    i {
+                                        animation: shake 2s 0s infinite;
+                                        -moz-animation: shake 2s 0s infinite;
+                                        -webkit-animation: shake 2s 0s infinite;
+                                        -o-animation: shake 2s 0s infinite;
+                                    }
+                                }
+                            }
+
+                            .case {
+                                width: 70px;
+                                color: #00b9ff;
+                                margin-left: 3px;
+                                margin-top: 2px;
+                            }
+
+                            .death {
+                                width: 70px;
+                                color: #d22c32;
+                                margin-top: 2px;
+                            }
+
+                            .recover {
+                                width: 70px;
+                                color: #4ed237;
+                                margin-top: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

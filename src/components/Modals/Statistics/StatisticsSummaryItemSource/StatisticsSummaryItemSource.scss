@@ -1,0 +1,52 @@
+.main {
+    .modal {
+        .modal-content {
+            .content {
+                .summary {
+                    .statistics-sources {
+                        .source-item {
+                            .source-case {
+                                width: 70px;
+                                color: #00b9ff;
+                            }
+
+                            .source-death {
+                                width: 70px;
+                                color: #d22c32;
+                            }
+
+                            .source-recover {
+                                width: 70px;
+                                color: #4ed237;
+                            }
+
+                            .source-update {
+                                width: 70px;
+                                color: #b97d00;
+                            }
+
+                            .source-cycle {
+                                width: 70px;
+                                color: #e000d0;
+                            }
+
+                            .source-try-recover {
+                                width: 70px;
+                                color: #ffef00;
+                            }
+
+                            .source-refresh {
+                                width: 70px;
+                                color: #59ddf1;
+                            }
+
+                            .source-last-update {
+                                width: 70px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
