@@ -1,9 +1,8 @@
 /* cSpell:disable */
-$flags-images-path: '../images' !default;
 
 .f32-extra {
     .flag-extra {
-        background: url('#{$flags-images-path}/flags32extra.png') no-repeat;
+        background: url('../images/flags32extra.png') no-repeat;
 
         &._Abkhazia {
             background-position: 0px 0px;

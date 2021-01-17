@@ -1,18 +1,17 @@
 /* cSpell:disable */
-$flags-images-path: '../images' !default;
 
 .locations {
     .location {
         &.day {
-            background: url('#{$flags-images-path}/locations-day.png') no-repeat;
+            background: url('../images/locations-day.png') no-repeat;
         }
 
         &.night {
-            background: url('#{$flags-images-path}/locations-night.png') no-repeat;
+            background: url('../images/locations-night.png') no-repeat;
         }
 
         &:hover {
-            background: url('#{$flags-images-path}/locations-hover.png') no-repeat;
+            background: url('../images/locations-hover.png') no-repeat;
         }
 
         &.ad {

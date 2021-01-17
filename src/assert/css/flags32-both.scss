@@ -1,9 +1,8 @@
 /* cSpell:disable */
-$flags-images-path: '../images' !default;
 
 .f32 {
     .flag {
-        background: url('#{$flags-images-path}/flags32.png') no-repeat;
+        background: url('../images/flags32.png') no-repeat;
 
         &._Other {
             background-position: 0px 0px;
