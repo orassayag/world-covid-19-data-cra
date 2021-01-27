@@ -9,7 +9,7 @@ class CountriesData {
 		this.worldCountryId = null;
 		this.otherCountryId = null;
 		this.countriesKeysList = null;
-
+		// Countries list.
 		this.countriesList = {
 			1: new CountryModel({
 				id: 1,
@@ -11442,7 +11442,7 @@ class CountriesData {
 				isActive: true
 			})
 		};
-
+		// Others list.
 		this.otherPlacesList = [
 			new OtherPlaceModel({
 				id: 1,
@@ -11494,7 +11494,7 @@ class CountriesData {
 				populationCountDisplay: '4,845'
 			})
 		];
-
+		// Sources countries list.
 		this.sourcesCountriesList = {
 			pop1: {
 				'World': 1,
@@ -13390,7 +13390,7 @@ class CountriesData {
 				'CAR': 69
 			}
 		};
-
+		// Set statistic ids.
 		this.setStaticIds();
 	}
 

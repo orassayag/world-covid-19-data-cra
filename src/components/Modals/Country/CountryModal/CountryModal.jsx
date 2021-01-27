@@ -11,7 +11,6 @@ const CountryModal = (props) => {
   const { id, displayName, bigFlagClassName, coatClassName, populationCount,
     isContainData, updatesHoursCount, updateSourceData, sourcesData, summaryData } = country;
   const countryDetailsList = engineService.getCountryIdentityDetailsList(country);
-
   // Update action on country modal click.
   const handleActionChange = useCallback((e) => {
     engineService.runModalActionUpdate({

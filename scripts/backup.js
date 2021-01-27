@@ -1,12 +1,7 @@
-require('./backup/initiate.service').initiate();
-const settings = require('./backup/settings');
-const fileUtils = require('./backup/file.utils');
-const globalUtils = require('./backup/global.utils');
-const logUtils = require('./backup/log.utils');
-const pathUtils = require('./backup/path.utils');
-const textUtils = require('./backup/text.utils');
-const timeUtils = require('./backup/time.utils');
-const BackupData = require('./backup/BackupData');
+require('./backup/services/files/initiate.service').initiate();
+const settings = require('./backup/settings/settings');
+const { fileUtils, globalUtils, logUtils, pathUtils, textUtils, timeUtils } = require('./backup/utils');
+const { BackupData } = require('./backup/models');
 
 class BackupScript {
 
@@ -18,8 +13,8 @@ class BackupScript {
     initiate() {
         // Get the backup title from the console.
         this.backupTitle = textUtils.removeAllCharacters(textUtils.toLowerCase(process.argv[2]), '.');
-        logUtils.log('INITIATE THE BASE PARAMETERS');
         this.backupData = new BackupData(settings);
+        logUtils.log('INITIATE THE BASE PARAMETERS');
     }
 
     async run() {
@@ -65,9 +60,6 @@ class BackupScript {
         if (!this.backupData.targetBackupName) {
             throw new Error('No backup name was provided (1000000)');
         }
-        if (this.backupData.targetBackupName.length <= 0) {
-            throw new Error('Invalid backup name length was provided (1000001)');
-        }
         // Reset the backup directory.
         await fileUtils.removeDirectoryIfExists(this.backupData.targetFullPath);
         await fileUtils.createDirectoryIfNotExists(this.backupData.targetFullPath);
@@ -108,4 +100,7 @@ class BackupScript {
 
 (async () => {
     await new BackupScript().run();
-})();
+})().catch(e => {
+    console.log(e);
+    process.exit(1);
+});

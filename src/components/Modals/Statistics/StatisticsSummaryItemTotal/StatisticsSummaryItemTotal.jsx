@@ -36,7 +36,6 @@ const StatisticsSummaryItemTotal = () => {
     iconName: 'sync',
     valueDisplay: '3'
   }];
-
   const summaryItemsTotalDOM = [];
   for (let i = 0; i < sourceItemsList.length; i++) {
     const sourceItem = sourceItemsList[i];

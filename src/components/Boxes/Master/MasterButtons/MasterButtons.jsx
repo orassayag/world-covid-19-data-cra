@@ -6,7 +6,6 @@ const MasterButtons = (props) => {
     const { onActionClick } = props;
     const buttonTexts = ['Manage Countries', 'Manage Sources'];
     const buttonNames = ['countries', 'sources'];
-
     const buttonsDOM = [];
     for (let i = 0; i < 2; i++) {
         buttonsDOM.push((

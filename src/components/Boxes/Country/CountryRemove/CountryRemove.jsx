@@ -3,6 +3,7 @@ import './CountryRemove.scss';
 import { Icon } from '../../../UI';
 
 const CountryRemove = () => {
+
     return (
         <div className="remove">
             <Icon

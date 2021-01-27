@@ -3,6 +3,7 @@ import Icon from '../Icon/Icon';
 
 const ButtonIcon = (props) => {
     const { name, value, action, type, tooltip, tooltipDirection, iconName, onClick } = props;
+
     return (
         <button onClick={onClick} data-action={action}>
             <Icon

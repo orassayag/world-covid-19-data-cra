@@ -12,6 +12,7 @@ import sourceService from './files/source.service';
 import statisticService from './files/statistic.service';
 import statisticUpdateService from './files/statisticUpdate.service';
 import testService from './files/test.service';
+
 export {
     apiService, countryService, countryCommonLogicService, creditService, engineService,
     enumService, localService, quoteService, settingService, sortService, sourceService,

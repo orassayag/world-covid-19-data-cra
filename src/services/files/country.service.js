@@ -552,7 +552,7 @@ class CountryService {
 		const { countriesActionType, fetchDataResults, settingsList, countriesKeysList, sourcesList, sourcesKeysList } = data;
 		let { countriesList } = data;
 		let worldPopulationCount = null;
-		let isRefreshList = countriesActionType === CountriesActionType.FINALIZE || CountriesActionType.UPDATE;
+		const isRefreshList = countriesActionType === CountriesActionType.FINALIZE || CountriesActionType.UPDATE;
 		if (countriesActionType === CountriesActionType.FINALIZE) {
 			worldPopulationCount = countriesList[countriesData.worldCountryId].dynamicPopulationCount;
 			countriesList[countriesData.worldCountryId].populationPercentageDisplay = '100';
@@ -689,8 +689,7 @@ class CountryService {
 	}
 
 	setOtherLeadingData(data) {
-		let { country } = data;
-		const { isTakeFirst, defaultSortValue, leadingValueFieldName, sortValueFieldName, leadingIconName, innerLeadingClassName } = data;
+		const { country, isTakeFirst, defaultSortValue, leadingValueFieldName, sortValueFieldName, leadingIconName, innerLeadingClassName } = data;
 		country.leadingValueDisplay = isTakeFirst ? country[leadingValueFieldName][0] : country[leadingValueFieldName];
 		country.leadingIconName = leadingIconName;
 		country.sortValue = country[sortValueFieldName] || defaultSortValue;

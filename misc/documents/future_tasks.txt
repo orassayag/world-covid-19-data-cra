@@ -1,0 +1,88 @@
+Future tasks:
+=============
+
+Close todo tasks:
+=================
+-Continue statistics modal.
+-Dropdown of country modal - need performance.
+-Dropdown of country - Way to improve - use the global update hours and not specific for each country.
+-Try to change the order when remove country without losing performance.
+
+-Do the countries modal.
+-On the modal of countries add option to filter by continent (europe, asia, africa, ect...).
+-Add search in the countries modal by independent year / capital name / phone code.
+-The full data alt title - "Display all locations".
+-Convert all the modal to components UI.
+-Implement all the logic.
+
+-Do the sources modal.
+
+-Back to Statistics modal:
+-Add clock icon to the time.
+-Finish the statistics modal - The bottom part of global statistics.
+-Add the logic of statisticCounter.service - To count for each source + total counter.
+-Do the same UI design (count of rows, ect..) like the country modal.
+
+-Add new 2 view modes:
+Mode 1:
+All countries, Only updates countries. All countries it's all countries, and only updates, the country appear only when it updates for the first time.
+Mode 2: Same, but the countries disappear after each update, only alerted updated will be displayed.
+
+-Add new view mode:
+-To fit all countries to a single screen without scroll.
+-The master will also shrink and will containe "back" button to return to the original view.
+
+-Mode file:
+-Convert the index.jsx and all the application to work with one file that will the determine the environment.
+-On config folder create file called mode, and determine the mode according to process.env.NODE_ENV and from the mode from the settings.
+-Replace in all files around the project.
+
+-Rearrange the following task, that is still relevent and what is not.
+-The colors should be the final task (before cleanup and so on).
+
+-Remove the "differenceTime" field in the calculation of times, if there is no use to it.
+-When updates the sources, add to countries new field to force update (add it to the compare function).
+-In the countries service - Add logic to fetch only active countries, only countries with data, and all countries without data, countries to update population.
+-On the sources modal - If one or both of the population sources are off, new to add logic to check if population value exists, if not, don't display any population information (on country identity component and on leading value percentage).
+-When click on active or change from local to live, take the loader from the begining and change the opacity of the background to 0.5.
+-Try to fix the following bug: Loading screen + Don't look at browser until finish load + try sort.
+-Change favicon and title of the application.
+-Do all the ToDo points.
+-Search in all project the 'i' tag and replace it with icon componenet (not include country flags).
+-Do all the "ToDo" points.
+-Check if all sources inactive - Only then display error on the screen.
+-Change favicon + page title.
+-Add title on all the icons.
+-Remove empty css classes.
+-All css colors to variables.
+-Add a logic that if after a period of time - Specific source won't update, update it to inactive.
+-Make sure to have tooltip on all icons in all places.
+-Add validation method to the country data - Check lower case and upper case, match of sources by id and name, and so on.
+-Check start active true and then active false, and then again true.
+-Remove all unused models.
+-Remove unused parameters from all methods.
+-Put the application for night run.
+-Handle errors - Display error screen, simulate non-source active and any error.
+-Shrink the height of the credits model to fit.
+-In the end, go through all the files and remove unused "import".
+-In the end, go through all the files and remove unused variables.
+-After finish all tasks with countries - Separate the UI fields data of the box from the real data.
+-In all places use models instead of objects on the fly (check where real needed).
+-Change the README.me file.
+-Copy the credits list to the project's README.me file.
+-Fill all the details on the package.json file.
+-Remove App.txt.
+-Make a text file in Misc with all the removed code.
+-Clear all comments of code.
+-Remove all Backups directory.
+-Correct all spell mistakes in this document.
+-Before upload the project source to github, create the link and replace it on "source" credit.
+-Fix all spell mistakes in all TXT files.
+
+Future tasks:
+=============
+-Add logic to validate all the countries + Also give id automatically to all the countries.
+-Before colors mode - Convert the vertical view to be responsive to 90% width.
+-Add Cultures support (+Add hebrew) + option to change language.
+-Add functionality to load all parameter of any options from the master box from query string, to begin with relevant parameters. Also, allow to load countries by country code / country name by delimiter.
+-Check all parameters and logic works when start with some parameters. For example, active=false.

@@ -1,5 +1,5 @@
-import { SourceName } from '../../core/enums';
 import { LocalCountryModel } from '../../core/models';
+import { SourceName } from '../../core/enums';
 
 class LocalData {
 

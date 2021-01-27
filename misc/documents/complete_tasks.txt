@@ -1,0 +1,732 @@
+Completed + canceled tasks:
+===========================
+-Add REMEMBER message to here. *
+-Move all tasks here to future_tasks.txt. *
+-Fix uneeded formats with: "formatFiles.excludePattern": "**/node_modules,**/.vscode,**/dist/**,**/.chrome,**/misc". *
+-Add 'Complete + canceled tasks: *
+==========================' to complete_tasks.txt. *
+-Add .catch(e => console.log(e)); to all (async () => { - Take the logic from 'crawler' project. *
+-Take the initiate service from 'crawler' project. *
+-Take updated 'Misc' section from 'crawler' project for npmignore and gitignore files. *
+-In .eslintrc file - set "no-unused-vars": 1. *
+-Check if comments of all backup parmeters in settings.js relevant to this project. *
+-Copy the backup structure directories from 'email-searcher'. *
+-In backup/global.utils change to 'const fs = require('fs-extra');'. *
+-In backup/settings.js change to 'const { pathUtils } = require('../utils');'. *
+-Change all places from 'exports = {' to 'module.exports = {'. *
+-Change all places from '../settings' to '../settings/settings'. *
+-Take backup.logic.js file from 'mbox-crawler' project. *
+-Seperate empty lines between sections in settings.js file. *
+-Check for empty lines inside functions / models with regular expression: ^\s*$. *
+-Replace all 'let' to 'const' and where no bugs - change it. *
+-Verify all still works as expected: live + local modes. *
+-Remove all comments. *
+-Format all files. *
+-Move all completee tasks to complete_tasks.txt. *
+-Upload to GitHub. *
+-Copy the .gitignore and .npmignore from one of the projects and delete the misc/backup directroy from git: *
+git rm -r one-of-the-directories // This deletes from filesystem. *
+-Make sure production also updated. Check it on Heroku. *
+-Change in all places from 'world-covid' to 'world-covid-19-data'. *
+-Deploy on Heroku. *
+-Write a guide how to deploy and store it on 'C:\Users\Or\Dropbox\OrLife\Programing'. *
+-Clear here the completed tasks. *
+-Check one last time all works (normal mode + normal => local mode. Start with live mode, start with local mode). *
+-Redeploy the website and make sure all availabe meta tags works + Upload it on GitHub - Canceled. No need for that. *
+-After successfully deploy, get the URL of the site and place it in the static meta tags - Canceled. *
+-Before upload the project source to GitHub, create the link and replace it on "source" credit + meta tags. *
+-Upload to GitHub. *
+-Add to StackOverFlow Developer Story. *
+-Convert parameters such as API and URL - if starts, to lower case. *
+-Add 'Misc.' section to gitignore and npmignore files (include tasks TXT files + backups directory). *
+-Make sure again that all meta tags, package.json, package.json-lock, and README.MD file are best updated (delete package.json-lock and re-create it). *
+-Remove all comments again. *
+-Fix TXT files spell mistakes.
+-Fix all spell mistakes in all TXT files.
+-Remove all unused files, functions, and variables. *
+-Rewrite error numbers. *
+-Add credits for the last 2 new packages added + buildpackage from the movie of upload. *
+-Remove all debugger. *
+-Make sure all comments ends with . *
+-Format all files. *
+-Fix local mode bugs: *
+1. Sometimes countries updates without the world. *
+2. Sometimes values update and not updated in the world. *
+-Clear all comments again. *
+-Format all files again. *
+-Add last error index + document. *
+-Add StackOverFlow icon on the master box with link to it. *
+-Add the credits from notepad on desktop. *
+-In the end, add paragraph in the credits of "Please note: The project is not yet finished, and not all functionality works. Feel free to contact me for any mistakes or bugs or have any comments or ideas to share." * + all the relevant icons - Canceled. *
+-Add dynamic date to tittle with helmet. *
+-Add catch to all return promises. *
+-Fix all href with rel. *
+-Check in all files for duplicate imports. *
+-Format all files again. *
+-Make sure spaces in all files between bottom, need to fix cases like this: *
+} *
+module.exports *
+} *
+export default *
+-Re-check all imports in the entire project (check for duplicate imports paths). *
+-Sort alphabetically all imports: external packages, settings, (containers, components, store, assert) data, models, enums, services, utils. *
+-Sort alphabetically by https://alphabetizer.flap.tv/. *
+-Remove unused variables and functions. *
+-Fix eslint configurations. *
+-Replace favicon + browser title + meta tags (add react-helmet). *
+-Add settings to 'manifest.json' file. *
+-Edit package.json like in 'crawler' project. *
+-Set up the README.MD file. *
+-Change the meta tags according to the description from the meta tags. *
+-Add LinkedIn, GitHub, StackOverFlow to all README.MD file. *
+-Fix bug of redux extention in Chrome. *
+-Fix bug of press 'manage countries' or 'manage sources' it's scroll to the bottom. *
+-Add logic to set the ENVIRONMENT_MODE in settings.js according to env parameters passed in the start script. *
+-Install cross-env. *
+-Add logic that in local mode the timeout between source will be 15 seconds instead of 30. *
+-Use the refresh logic to switch between isLiveMode=true/false - Canceled. *
+-Do a local / live environments. In local - fake numbers. Can be change by passing parameter in the URL query string. *
+-Enable to pass parameter on top of mode=local/live to start with. *
+-Make sure that if pass mode=local on query string, all sources will be calculated offline without any real requests to server. The default is live. *
+-Build in local service an initiate function:
+1. Initiate local data in data/local.js (move it to inner initiate function). *
+2. Loop on all countries (also from countries.js), take only isActive=true and isContainData=true, *
+and create a list of all ids available for each source. *
+-The final test will be to remove the links, pass parameters as local, end to see it's still works. *
+-Create new service for common country logic and move there all duplicated functions. *
+-Change the structure to core/modals + core/enums and change it in all places. *
+-Update packages npm outdated --depth 9999. *
+-Remove all comments. *
+-Update packages. *
+-Refactor all one instance class to module.export = new Class(); *
+-Refactor time.utils.js like in the 'crawler' project. *
+-Change all 'services' to 'service' files. *
+-Merge between pause and sleep function if exists. *
+-Copy the logic of backups from the 'crawler' project. *
+-Copy the logic of isDirectoryPath in backup from 'crawler' projects. *
+-Copy all the logic from 'udemy-courses' project of running the project after downloaded from GitHub (do validate only needed paths). *
+-Change all many to single, 'logs' => 'log', 'files' => 'file', and so on. *
+-Change all the backups to lower case. *
+-Take all the backup settings from the settings/settings.js file. *
+-Remove backup settings from main settings.js file. *
+-Fix the project to work again. *
+-Change the project from WorldCovid to world-covid in all places. *
+-LowerCase all directories of the project. *
+-Change the name of this document to todo_tasks.txt.
+-Move this document into the prodjct and edit this from inside the VSCode. *
+-Change the misc directory structure like the 'crawler' project (misc/documents + add complete_tasks.txt). *
+-Reformat this document for futrue tasks. *
+-Try to change scss path files: @import url('./pathtofile.scss'); instead of just using scss import @import './pathtofile.scss';? - Canceled. *
+-Answer the results to https://github.com/facebook/create-react-app/issues/10167 to 'marko-hologram' reply - Canceled. *
+-Convert the project to use DOM Parser instead of JSDom package. *
+-Check for all browser support. *
+-Solve bug with FireFox: *
+-Create simple new project with jsdom and see if there is still bug with FireFox. *
+-If so, try https://www.npmjs.com/package/parse5 and see if exception exists. *
+-If no, Check all other browsers. *
+-If all ok: *
+-Notify jsdom about the bug. *
+-Try to replace jsom with parse5. *
+-Fix upload bug in Firefox - Asked question in StackOverflow: *
+https://stackoverflow.com/questions/64650119/react-error-sharedarraybuffer-is-not-defined-in-firefox *
+-Statistics modal maintainance: *
+-Check ref country still works. *
+-Check normal behaviour still works. *
+-Clear comments. *
+-Take the backup script from Crawler and implement it on the project. *
+-From the dropdown, display only names of visible countries. *
+-Update the countries visible count on the master box. *
+-Display only updates of visible countries. *
+-Also build this logic on the statistics modal on flag click - Move to the country modal (no close - move fast). *
+-Fix upload bug in Edge. *
+-Do the remove country button. *
+-Handle the remove country by X. *
+-Major performance improvements: *
+-Speed up remove country. *
+-Speed up switch from modal to page and via versa. *
+-Move all the animations to animations.scss file. *
+-The selected one will be larger font + Persentage of population. *
+-The leading will have bigger font, and calculated prosantage by population. *
+-In the end - Remove all template examples in service directory - Canceled. *
+-After all work, remove the Test component - Canceled. *
+-Add scroll position when open and close modal: *
+1. Add new project: https://codesandbox.io/s/react-hooks-change-list-view-to-grid-with-saving-state-qdej4?from-embed *
+2. Implement the logic on covid. *
+-Clean code. *
+-Convert to new version of create-react-app - Canceled - Error in create-react-app. *
+-Fix bug - Title wasn't shown in loader. *
+-Convert all ".map" to for loop - performance (on JSX places). *
+-Rearrange index.jsx file. *
+-Fix sort by name - Not working good with no-data. *
+-Fix sort with no data countries - sort cases - the last 4 countries not sorted. *
+-Test it on images.jsx component. *
+-Statistics panel - Add drop down to select the country to display. Default is "All". *
+-Try to implement all apis details in single country box. *
+-Take some css effects from: file:///C:/Or/Web/StarerKits/Templates/Dashboards/Status%20Board.html *
+-Implement font awesome. *
+-Add logo. *
+-Add highlight effect on the leading number. *
+-Add N/A option to leading number. *
+-Add colors + Animation to icon for leading number. *
+-Implement loader precentage on load - https://codepen.io/nakome/pen/pvNzZm. *
+-Add blink "Loading..." to loader percentage. *
+-Search also countries / terretories in the united nations. *
+-By default display only countries that have data about. *
+-Do the list of countries. *
+-Do a list of countries - Add it to misc directory. *
+-Write to the flags package creators about all the missing flags and change country names. *
+-Add option to all countries. *
+-Add sorting by country name + Change the sorting icons. *
+-Add option to sort the list vertical / horizontal. *
+-Add option for the country population to be N/A (in case country don't have population data). *
+-Get longest name of country and check it. *
+-On mobile remove display option of view selection. *
+-Build a validation logic to verify each source if exists or not and if valid or not - Based on the first fetch. *
+-Add 'compareBy' for each source, if by normal name, uppercase name, lowercase name, upper code, lower code, ect. *
+-When fetching data by country name - Make sure to have array of 'also known as' with all the list of countries. *
+-Also add field isExtraFlag: true/false. *
+-Change the name of the project to world covid. *
+-Make a list of all countries that don't have population and go to wikipedia to get theire population. These countries will not included in the interval of the population. *
+-When loading - Get all population from wikipedia from countries don't have population. *
+-Design the dashboard to display flag + country name countries only. *
+-In the end - Fix the extra flags 32x32 to be without the earth image. *
+-In the end - FIX the extra flags 32x32 + 16X16 to be without somaliland. *
+-Request flags again in Github. *
+-List of All new places + Add new places + flags (new images + css sprite + class name): *
+https://en.wikipedia.org/wiki/Proto-state#List_of_modern_proto-states *
+-Check the hindi source. *
+-Remove COT Source - Replace it by CAC. *
+-Finish the countries data. *
+-Verify that all sources works and bring back valid data - Build a function that fetch all sources for test. *
+-Reorder the sourcesCountry by the credits. *
+-Add missing countries (only new css sprites and images from now on). *
+-Add new object (also population): source, name, countryId, by source: goo { 'albania': 1 } *
+-After finish all, split the sourcesCountry and the countries to seperated files - Canceled. *
+-Add new field of "isNoData" and fill all relevenat. *
+-Add field of active or not - When have country that not should be. In the array of the countries filter the active countries only. *
+-The current time - Try make it out of the state - Canceled. *
+-For all contries that missing population - Fill in the staticPopulation - There will be population fields: staticPopulationCount, dynamicPopulationCount, populationCountDisplay. *
+-Calculate all missing world country object. *
+-Rebuild all the calculations logic. *
+-Build also the sources data - Move it from settings. *
+-When fetch data of no population - Put loader, and go to the wiki value and search for the population value. save it. Next time don't call it - Canceled. *
+-Show update times. *
+-Show last update time. *
+-In the country box - Display the country code (EU) next to the name of the country. *
+-In the country flag - On click - Redirect to the value in wikipedia (keep the base link in settings). *
+-Add top div with the world statistics. *
+-Design the dashboard. *
+-Design the country box. *
+-For each country there will be a lower case && upper case of country code. Also, Name title and name lowercase. *
+-For each country there will be a flag class name field - Define from regular to extra. *
+-Remove all the boxes of no countries data. *
+-Change the drop downs of Add Contries and Leading Source to buttons, "Countries" and "Sources". *
+-Make the buttons all over the width. Also hover effect. *
+-Remove the "global" icon from bottom. *
+-Countries: *
+-On click on Countries button: *
+-Open a modal with | |			|			|. *
+-First icon will be the global, to include no data countries. *
+-Second icon to select all, and third icon to clean all. *
+-Add option to search country by open a modal. *
+-Then a blank space, to display the name of current country. *
+-Then a search label and text box to search a country. *
+-All country box, will incldue the flag and ISO code (if exists). Selected and unselected with different background color.' *
+-X button in the corner. *
+-Bottom "OK" button. *
+-Sources: *
+-On click on Sources button: *
+-Open a modal with 2 figures that will display the 8 icons of all the sources. *
+-First figrue for active/unactive sources, second figure for the leading source. *
+-Select/unselect and active/inactive by background color. *
+-Each source box, will include an icon of database and name. *
+-X button in the corner. *
+-Bottom "OK" button. *
+-Make sure to change the logic for each modal state parameters. *
+-Make sure to use one background to display none the background, and a few modals. *
+-In the "world covid" box, push all left, add | and icon of trash, to clear all countries from display - Canceled. *
+-In the modal, move all titles to left. *
+-Add dropdown to latest updates: 1h, 2h, 3h, 5h. *
+-Also, add space for full time ("24h 23mins ago"). *
+-Add icon if active, warning or down next to statistics. *
+-Change the 'statistics' to sources status. *
+-Also, design the scrollbar of the modal. *
+-Add a 16X16 of earth flag for the modal updates. *
+-In the modal - Add figure for each of the "other" country, add a file of sources of key value, name and URL, add it right before the credits. *
+-When click on display all countries - Scroll down to the list of all no data countries - Canccelled. *
+-Add status for each source in the modal window. *
+-Add custom tooltip + Make an example. *
+-Add warning sigh on statistics modal. *
+-Do a lot of css effect on this project. *
+-Plan it, All materials can be found in web/covid19-dashboard. *
+-Make a list of countries, based on 2 sources (flags + population) on misc directory. *
+-Change long name logic. *
+-When the sorting is not by cases/deaths/recovers - The leading box will display the name of the country (Check max charecters for leading - add new field for that). *
+-Check all links of wikipedia to find out witch countries not relevant anymore. Mark it on the list. *
+-Remove the panama canel zone and previous country of karibiti (find out witch) and add instead the extra2 countries - Rearrange id's and source all over again. *
+-Merge extra1 + extra2 scss. *
+-Convert the contries array to objects property, the key will be the id of the country. *
+-Insert pop for new countries. *
+-Fix again the css sprite. *
+-Add pop1 and pop2. *
+-Build logic to fetch both pop1 and pop2 as pop1 is the main, and pop2 will complete it (remove static population for the relevant that completed in pop2). *
+-Do highlights like in the Status%20Board.html each time update, and highlight the specific row. *
+-Merge all css and scss files into one file from index.jsx file. *
+-Work with enums. *
+-Expand the source modal and add expected logic. Expected Count, Resulted Count. *
+-Excpected logic. All the loops, check expected. If the loop is a static number, break it after bigger number. *
+-If the number is not equal, mark it. Add expected countries count for each source - Check it live. *
+-If the number is not equal, mark it as warning icon on the statistics modal. *
+-Calculate the poplation of the world only by isUpdatePopulation=true countries - Canccelled. *
+-Add logic to count the number of countries suppose to be for each source. If not equal for one update, mark a symbol of warning next to the source name in the sources status in the modal. *
+-Convert the contries array to objects property, the key will be the id of the country. *
+-Add for each country the precentage population of the world after the population field. *
+-Add sort by population size. *
+-Add ships link to "other" from wikipedia. *
+-Add redirect to wikipedia not only by the flag, but by clicking on the name. make it underline by hover. *
+-When Country have no data, instead of all sources, display text "No data". *
+-Add logic to compare known count of countries expected with the count of countries scanned, if not matched, symbol a warning sign in the statistics modal. *
+-Build the logic of SourceDataModel. *
+-Build a class the called "CovidDataSet" that will include cases deaths recovers and will role as both source data and as update row. *
+-cva, wik, cln. *
+-Find a way to build a generic function to fetch data - Canceled. *
+-Move the scss index back to the root position - Canceled. *
+-Change the + and - to font awesome up and down arrows icons - Canceled. *
+-Finish to build the logic of fetching data. *
+-Add logic to detect both add and subtract on the update. Add update action. *
+-Rearrange master box: *
+-Change the size of the buttons to 110px. *
+-In side, near each button add: *
+-First button: View: [] [] *
+-Second button: Colors: [] [] *
+-Instead of the view on the bottom, change to "mode": [] [] *
+-Add icon of the master to change colors - Night mode (black colors) / Day mode (white colors). *
+-Finish to implement MasterBox. *
+-Check rw/sa / tk. *
+-All link on the location will open a link to google maps: https://www.google.com/maps/place/Mali *
+-Make a hover version with blue color on the location. *
+-Change all Mapsicon icons to white with http://manytools.org/image/colorize-filter/. *
+-Check the "idn" code in flag css files. Consider remove it. *
+-Implement Mapsicon (Create css sprite). *
+-Build the Country component. *
+-The logic of the all the countries from a service called 'countries.service' (inside it will comunicate with data service). *
+-Add active field for the sources and pull only the active ones. *
+-Implement it on react: Test it with the loading screen. *
+-Implement new 4 countries. *
+-Change lowerCode and upperCode to code2Lower, code2Upper, and add code3Lower, code3Upper, and numeric code + Add continent. *
+-Implement it in all countries. *
+-Fix all the missing and wrong flags. *
+-Add more missing countries and flags. *
+-Verify all flags seen and works. *
+-Implement all the countries. *
+-Make sure all works and see all active and all full countries. *
+-Fix sort - 'World' will always be first, 'Other' will always be last. *
+-Make sure all works. *
+-Fix Artsakh and Brčko District flags. *
+-Make sure all works. *
+-Add new model - CountryUI.model.js - All css and static data place there - Canceled. *
+-Separate from the static data of the country - Canceled. *
+-The dynamic data of the country should be stored in "CountryModel" object - Canceled. *
+-For Each country: *
+-Add in countries-data.txt list of all otherCodes. *
+-Add primaryCode2 field. *
+-Remove long codes where needed in existing countries. *
+-Add array of otherCodes. *
+-Change 'continent' field to 'continents'. *
+-Add sort by population size (if not exists already). *
+-Add option to search by name / code2 / code3 / numeric code. *
+-In first run - Build a logic to merge between wikipedia base and google maps base and the value. *
+-Add to all modal a bottom 'OK' button to close the window. *
+-All buttons need to have the same style. *
+-If source not active, the title of it will be fade / gray / opacity 0.5, and no N/A will be on it. *
+-Build a logic that if googleMapsValue is not exists redirect to the wiki page. If location icon not exists put location icon. *
+-Build a data.services that will initiate all the countries and the sources - Canceled. *
+-Add loader for the start - When calling all the APIs in the start. *
+-Show the sources links in bottom of the header - Canceled. *
+-Refresh icon on demand on master. *
+-Add on header an icon that will open a modal with all the credits. *
+-Icons to select for the leading source. *
+-Functionality: *
+-Make the state with redux. *
+-Make a settings file with all links (sources, links, all). *
+-On the header display the global and presentage. *
+-Add loader with precentage of loading ajax data. *
+-The presentage will be display up to 5 digits. 0.0001 *
+-Add rights on the bottom of the header. *
+-Add index of each icon on the header - Canceled. *
+-Store all the state in redux. *
+-Add to the sources.data the source api and the source official page for the credits. *
+-Add X icon on the corner to remove country. *
+-Add on dashboard a list of countries to add back again. *
+-Add the binary clock - Canceled. *
+-Check how to control the order of the countries. *
+-Add statistics panel (latest countries, how many updates, how many cases/recovered/death since start). *
+-Show the population of each country - Sample couple of minutes (do interval). *
+-Build the logic of intervals by 30 seconds apart from each source to another. *
+-Show data of 8 API's by source 3 icons (with random interval times -  https://stackoverflow.com/questions/34656758/javascript-setinterval-with-random-time). *
+-Only if any country data change, active the postMaintenance function - To re-order countries. *
+-Settings service will be saved on the engine service, fetched from the settings service. *
+-Re-arrange redux: settings and data. *
+-Fix the bug of not updating UI. *
+-Fix bug of order not showing real number. *
+-Add id to the country statistics in addition to the order number. *
+-Add the last update source next to the time: 4mins 30secs (GOO). *
+-Add to world population - 100%. *
+-Bring back goo + coa. *
+-Add the setting to work inactive. *
+-Convert all single fields to classes. *
+-UI Changes: *
+-Insert Binary Clock to header. *
+-Instead of manage sources and manage countries: *
+-Manages Sources => Sources (7) (GOO) - Leading source. *
+-Manage Countries => Countries (262) - Visible Countries. *
+-Add interval to change each 10 seconds the color of the header (Use CSS only) - Canceled. *
+-Cancel letter spacing on the times. *
+-Change last update time to: UTC 13/08/2020 15:00:18 (WIK - 30secs ago). *
+-By default display only places with data. *
+-Implement plugin or css for custom title (black background white text). *
+-In the countries modal - Add selection by continent. *
+-Finish the master times. *
+-Handle No-Data countries. *
+-Handle the leading. *
+-Move all the sources links to the data file - Canceled. *
+-Create a credit model with all the fields needed. *
+-Create a credits document according to the fields. *
+-Convert all the export function in the store to classes. *
+-Convert all folders and code to use files folder and index.js file. *
+-Create the credits data file and the credits service. *
+-Implement the master credits. *
+-Add sort by country code. *
+-Master UI Changes: *
+-Create 3 rows vertical next to the buttons: Views, Colors, Direction. *
+-Add sort by continent. *
+-Change sortBy and initiateSortBy to sortType + initiateSortType. *
+-Build enums service to server Object.values of them. *
+-Merge options list and settings list into settings list. *
+-Finish handle buttons on master. *
+-Create random source to be the leading source. *
+-Create regex utils like in the crawler. *
+-Change from 'secs' to 'sec' + also mins. *
+-Handle simple icons on master (default values to be active). *
+-Fix the logic of active. *
+-Deep fix in the logic: *
+-To get full control over the settimeout loop, all the 3 sources need to be copied into the local engine class, where it has control inside the scope of the settimeout loop. *
+-Merge ui-settings in data with settings. *
+-On the countries useCallback, only when countries or sources change, it's re-render. *
+-Copy of all 3 sources: settings, sources, countries in a local fields for the engine service. *
+-Build a function on the engine that do deep copy of all 3 sources to local engine. *
+-Update the engine by source where needed. *
+-Merge initiate settings, initiate data, and maitainance data into 1 function. In this function pass a reference to all functions that update the state and keep them as a local variable of the engine. *
+-Each update of the settings / remove country / source, any change, will be called by a function of the engine, with the specific change, and will be update both local on the engine and to the relevant state. *
+-Update the countries only when sources / countries change. *
+-Update the master only when settings changes. *
+-Merge the initiate data and the maitainance data into 1 function. It's the same logic, just need to change delay time and flags for the first time. *
+-All changes in the settings (last update source name and time) and countries will update local, and then update on the state. *
+-The countries and the sources will be kept as arrays in the state, but objects in the engine. *
+-Each change in the 3 sources, will update local engine and then the state. *
+-Solve the issue of updating the state inside settimeout loop. *
+-Fix re-render of all countries twice each update. *
+-Convert the store types to text utils create enum. *
+-Solve bug that after CVS (not active at the moment) the delay is 1 min instead of 30 sec. *
+-Hint: try moving the logic to select source outside the transition, and if not active, skip to the next source. *
+-Try to fix performance issues (re-render all countries each change) by: https://medium.com/swlh/react-hooks-and-memo-optimally-update-and-render-a-large-list-912c0fd1ead0 *
+-If working, add 'https://www.npmjs.com/package/react-fast-compare' to credits list and to misc packages - Canceled. *
+-Copy all the comments code - Canceled. *
+-Fix a long time of last update by: - Canceled. *
+<div class="time"><div class="current-time">UTC 21/08/2020 19:42:43</div><span class="time-ago">( 6min 31sec ago | CAC)</span></div> - Canceled. *
+-Fix master times hight bug (change with first value of last update) - Canceled. *
+-After a day of research, the compare function works only on stupid parameters, not on an object. *
+-If you want to use memo with object, pass the paramaters separately, {...params}. *
+-Do backup. *
+-Bring back the code to the situation before all the mess. *
+-Bring back the code before the deep compration. *
+-Cancel the render function, loop on the countries on the code. *
+-Convert the key to be the id of the country. *
+-Bring back the compare function. *
+-The sourcesList will continue to be passed as object, country will be spread to separate parameters on the top of the component. *
+-Work on compare "memo" function. *
+-When modal active - Stop the updates on the main panel - To reduce power. When close, resume the data fetch. Do it by flag - Canceled. *
+-Refactor the diff time, single function, and upgrade the function to return the time by number of elements. *
+-Separate the current time and the last update to 2 seperated components. *
+-Instead of 'N/A' on the last update, place empty string. *
+-Add the "next" source to be updated. *
+-Add on the side a loader animation - Display it each time there is an update. *
+-Color the source name in yellow. *
+-When the specific source is updated, blink the source name. *
+-Make a list with credits on misc directory. *
+-On the tooltip, if some icon is active add (On) and if not add (Off) after the tooltip text. *
+-Add the real credits (make an array of all keys and values). *
+-Add "isError" and "isSelect" to the source. *
+-If there is an error on the source - Mark it isError=true. *
+-ToDo: Update the source to be inactive - Don't display error. *
+-Add logic that if no data within 10 seconds - Skip the source. If repeat itself for the same source - Convert it to not active. *
+-In case of failed to fetch data from source, consider source as unactive. *
+-Make line in the country box of N/A if no details from the source. *
+-Add Statistics data to reducers. *
+-Move all updates related to statistics and change the logic accordingly. *
+-Convert all classes to have null values and *
+-Add "TotalUpdatesCount" to update the number of rounds. *
+-Add "TotalUpdatesCycleCount" to update the number of cycle rounds. *
+-Update each round and cycle. *
+-Each 100 (add number on settings) updates try to call it again. *
+-Build recovery try function of a source - If not active by error, each 100 calls try to call it again. *
+-Add countries.service to fetch all kind of data from countries data. *
+-Add in the sources.service for each source (or population) if active or not. If not active, don't display it anywhere in the site - Canceled. *
+-The modal will split into 3 parts: *
+1. Lateset updates - 1 hours back records. *
+2. Simple statistics: start time, number of updates for each source, daily statistics for each source. *
+3. Credits: Me, all asserts, wiki, codepen, google, bulkresizephotos.com, http://manytools.org/image/colorize-filter/, https://resizeimage.net/, stackoverflow, https://www.toptal.com/developers/css/sprite-generator/, https://github.com/djaiss/mapsicon, https://cssspritestool.com/, https://spritegen.website-performance.org/, create-react-app, axios, all npm packages using in this project, Kfir Ram Google doc, stackoverflow.com, font-awesome, flags, react, and so on, axios, node-sass, react-router-dom, jsdom, react-redux, redux, redux-thunk,
+heroku. *
+-Add icons of cases/death/recovered/Added time/Updates count/Last update to sort - ascending / decending. *
+-Add option to active/unactive. *
+-Change the box alert logic, check what is the hights number to determine which alert to focus on. *
+-If the numbers are equal, display "all" alert. *
+-Move the debug log to the settings file. *
+-Bring back modal logic. *
+-UI & settings: *
+-In the sources modal:
+-Add box of population check. *
+-Add a dropdown to change the interval time: 30sec, 1min, 2min, 5min, 10min. *
+-In the statistics modal: *
+-Add the number of updates, and if source not select, add blue icon. *
+-Add total number in the last row. *
+-Total number of cycles and recover modes. *
+-The sources list will include the pop1 and pop2 - Canceled. *
+-Work on active / not active button. *
+-Check that active false, then active true, then again active false - The updates has been stopped. *
+-ToDo: Country creation / add date - Create one date and pass it on the constructor. *
+-Merge the set leading and re-order of the countries to one function, - Canceled. *
+and call it both on the end of each round (on postdata) and in the finalize data (first time run) - Canceled. *
+-Move the both the updateLeading function and the update last update time updateData function, and predata to a single place - to the postdata function - Canceled. *
+-Also try to move there the update last update date time. Leave the pre data to for clean up data and UI only - Canceled. *
+-Do backup. *
+-Make the goo as default source instead of random, cancel the function for the current time. *
+-Change back to LAST UPDATE TIME. *
+-Change from 'updateCountryData' to 'updateData'. *
+-Change from 'updateCountryLastUpdateTime' to 'updateLastUpdateTime'. *
+-Move the 'updateLeading' and 'updateLastUpdateTime' functions from 'updateData' function to a loop inside postdata function. *
+-Verify all working good. *
+-Then keep working on case sorting. Make sure to update the leading only if the source match the leading source. *
+-The propose for now is from the first update to re-order by the leading source cases. *
+-Do backup. *
+-If there is an update, need to blink the css class. *
+-Fix infinity on other country. *
+-Fix WOD source empty values. *
+-Build new function called "refresh UI countries" that contains all the logic in postdata, and run it each sorting click - Canceled. *
+-Merge all predata, postdata, and finalizedata into one function that runs on the countries, each function for it needs. If not pre step, always refresh data (update last updates, and leading value, and sort). *
+-actions: refresh (last update + leading + sorting), finalize, cleaning. *
+-For finalize and refresh - 2 different state functions, they update different stuff. *
+-Only before the finalize data - Select the random source based on error or not, and then refresh it (last update, leading, ect). *
+-Start as sort by LAST_UPDATE and change by clicking on the icon of cases. *
+-Verify all works via versa. *
+-Add defence from other actions. *
+-Add loader on the master box for each time change action. *
+-Fix active logic: If not active, keep perform preGetData and update the next source, and the last update time of each country.
+-Fix update source loader - Don't see it. *
+-Fix next source - Won't update on inactive mode. *
+-Fix long line with pop1 and pop2 and long last update time. *
+-Upgrade loader: *
+-Add circle progress bar around the precentage. *
+-Add random quotes (in asserts). *
+-Add top title 'Fetching data...'. *
+-By the loader bottom text will be 'Loading...(CVA)'. *
+-Add a pre step, before the loading sources, Call it by the title 'Verifying sources...' - Canceled. *
+-In this step only mark the relevant sources as error or not in the sources list - Canceled. *
+-Only to check if the URL exists or not - Canceled. *
+-The second loader title will be 'Fetching data...' - Canceled. *
+-Update credits list both in txt file and in the site. *
+-Fix bug that cannot start with inactive mode. *
+-Replace the 'Last' and the 'Next' with font awesome. *
+-Click on active not working. *
+-Fix bug of unseen action loader. *
+-Handle directions: *
+-In the settings services, add default sorting to all type of sort type. *
+-Will be like: ['-sortValue', 'lowerName']. *
+-Add another field of '-' or '+'. *
+-Add new model called sort, it will replace the existing sort text in the settingsList today. *
+-Add the sort type to the sort model. *
+-In the settings list, the "direction" field will be null. *
+-If it null, take the default sorting. *
+-If the user clicked on the directions, assing the "direction" field and will override the default. *
+-Handle the different kind of sorting. *
+-Handle case sort. Start with default value as case sort, and then go trough the change icon action. *
+-Fix bug of null value on click. *
+-Add default sort value for last update. *
+-Add per milion sorting: *
+-All icons of sorting will reduce to 12px, and add 3 more combined icons with 1M layer: https://fontawesome.com/how-to-use/on-the-web/styling/layering *
+-Add all the logic to support per 1 milion. *
+-Refresh action: *
+-Convert isActive to false. *
+-On refresh, display the master loader, and the text "Source: CVA" (only in this case). *
+-After view mode, do refresh (do loader on master and force reload all the sources). *
+-Fix bug - Icon of leading is stay colored even sort type changed. *
+-Add delay with reach 100%. *
+-Try to change loader to this: *
+https://codepen.io/sergiopedercini/pen/jmKdbj *
+-Add border to the screen loader circle. *
+-After directions, move to view mode. *
+-After 1 second of 100%, remove completley the loader from the DOM. *
+-Add "isRefreshMode" to settings and add condition on [countriesList]. *
+-Check quote with ";". *
+-Fix bug not showing last update date when click on "refresh". *
+-After refresh, a little QA on all the buttons. *
+-For example, inactive and try change sort type / order, inactive and do refresh, change mode active and inactive, so on. *
+-Check refresh while inactive (need to fix active or not active and keep the original value). *
+-Fix quotes: *
+ToDo: *
+1. Add readline package to the credits. *
+2. Add "iconName" field to the categories with dummy value. *
+3. Remove id field from the quote. *
+-Quotes json file need a fix. *
+-Fix quotes duplicate spaces. *
+-Fix /n/r. *
+-Remove <. *
+-Fix unfinished quotes. *
+-Check duplicates quotes. *
+-Check misspelling. *
+-Check all names of all quotes. *
+-Remove all '`' and '"', leave only '. *
+-The category name should be upper case. *
+-Create a list of all quotes categories. *
+-List all ones that not ends with . and fix them. *
+-Search for duplicate lines and remove them - Build logic for that. *
+-Build component with all the icons. *
+-Add the design first, static. *
+-If icon name start with fab, it's type. *
+-Add category quote to the json file and to the loading screen. *
+-Add icon for each category of type. In the side of the quote will display the icon and on the bottom, the category name. *
+-Get the icon by icons categories on quotes service. Each quote will have category id. *
+-Add to credits: https://www.textfixer.com/tools/remove-line-breaks.php *
+-Add lazy loading for the containers. *
+-Reformat all modals. *
+-Add the credits modal. *
+-After new quotes.json, remove the 'name' field from person.json - Canceled.
+-Improvements of quotes: *
+-Create a list of all persons and fix the relevant. *
+-Update the quotes.json file. *
+-Change the UI to show only the name. *
+-Add the link with wikipediaURL and the name of the person. *
+-Check all good. *
+-Add person.json file to each person of quote: *
+-Add the UI of the person, with wikiURL link. *
+-Make a list of person.json, id, name, profession, wikiUrl. *
+-After list complete, remake the quotes.json with personId. *
+-Check for misspell - Canceled. *
+-Fix all # and @. - Canceled. *
+-Mark all merges. - Canceled. *
+-Check for duplicate lines. - Canceled. *
+-Verify all profession ends with . - Canceled. *
+-Make the new logic. - Canceled. *
+-Check random 100-200 quotes. - Canceled. *
+-Handle the time change of the latest updates - Test it with minutes. *
+-Implement the statistics updates list. *
+-Add id to the model. *
+-Add logic for inactive mode (split the update times to seperated function). *
+-Add logic to "new Date" come from the dateTime.utils. *
+-Add memo to the updates list and test it with a lot of update rows - Canceled. *
+-Do the statistics model. *
+-Add POP1 and POP2 to the statistics list. *
+-Add the country's name to the list, if needed add new field for the text class. *
+-Add blink effects in all colors. *
+-Add animation to icons. *
+-Add refreshes counts to the statistics. *
+-First build the statistics model UI and components. *
+-Remove the credits and the Other country sections. *
+-Move the "other" to the country details of other. *
+-Build the logic of statistics data + Test it on "Test" component. *
+-Each time a new update come, blink the row until the next update (same color as the box). *
+-https://stackoverflow.com/questions/38242891/limit-array-size *
+-Total statistics: - Canceled. *
+-StatisticPopulationSourceModel: iconName, sourceName, sourceStatus, sourceNameClassName - Canceled. *
+-StatisticDataSourceModel: iconName, sourceName, sourceStatus, sourceNameClassName, cases, deaths, recovers, updates, lastUpdate - Canceled. *
+-StatisticDataSummarySourceModel: sourceStatus, sourceNameClassName, cases, deaths, recovers, updates, lastUpdate, cycles, tryRecovers, refreshes - Canceled. *
+-Add the logic to update all and to display it on the statistics modal - Canceled. *
+-Add SourcesStatistics model: sourceName, iconName, cases, deaths, recovers, updates, lastUpdate - Canceled. *
+-Add TotalSourcesStatistics model: -> Inherits from SourcesStatistics + extra fields - Canceled. *
+-https://javascript.info/class-inheritance - Canceled. *
+-Add "javascript.info" to Credits - Canceled. *
+-Country details modal: *
+-Flag: 125X66 - Recommended | Coat: 85X90 - Recommended. *
+-Flag max width: 125px | Coat max width: 85px *
+-Flag calculate max height | Coat calculate max height. *
+-Add width to both images. *
+-Add the UI design + Add logic for click on the entire country box (not include the remove button on the corner)  will open the country modal. Change all the links to regular divs. *
+-Sketch all the details: *
+-Flag image |  All details | Coat of arms *
+========================================= *
+Live Data *
+CAC | CLN | COA | CVA | CVS | GOO | WIK | WOD *
+virus | viruses | skull-crossbones | skull | heart | shield-virus *
+SourceName | Cases (icon) | Cases per Milion (icon) | Deaths (icon) | Deaths per Milion (icon) | Recovers (icon) | Recovers per Milion (icon) | Updates count (icon) | Last update time (icon) *
+========================================= *
+Statistics + Total Row. *
+========================================= *
+Latestes Updates. *
+========================================= *
+-Add size of the country. *
+-Add alert for each box (live data, statistics, latest updates). *
+-Add alert - Canceled. + update panel to the country. *
+-Add no data case to the country. *
+-Missing data: capital, founded year, phone code, size. *
+-Backup on the iOmega. *
+-Copy the new assert directory to the misc directory. *
+-Remove all * + Resize columns + Replace the "km2" symbol. *
+-Add columns for: Verified Google data * + Verified sizes (125px | 85px) * + Google map URL * + Verified final view. *
+-Check all size of flags are minimum width of 125px, and minimum coat width is 85px. *
+-After verify image sizes - Do backup to the assert directory. *
+-Verify independent / founded year for each country by search in Google / Wikipedia. *
+-Add large flag + Coat of arms + All the details (population *, continent*, capital *, founded year *, country number *, country code 2 *, country code 3 *, additional codes *, phone code *). *
+-Add the google maps full URL. *
+-Update the countries list.txt. *
+-Separate this tasks of covid19 to general tasks in different document. *
+-Add the data to the country-data in the misc diretory. *
+-Change all independents years to numbers instead of strings - Canceled. *
+-Copy all the data to the countries-data.js file. *
+-Verify all data correct on countries-data.js file. *
+-Add agesList array field + 'km2' to area. *
+-On the component of images display one flag and coat to example. *
+-Create the scss file for big flags and coats. *
+-Update the images component to display big flags and coat of arms. *
+-Add the design for max hight and max width for flag and coat. *
+-Need new flags for 32 + 16: Bonaire, Costa Rica - Canceled. *
+-Create "other" big flag. *
+-Fix the wrong flags. *
+-After finish to fix all - Backup on Misc folder the assert folder. *
+-Complete the country UI modal. *
+-Add links to wikipedia and google map (Check if exists). *
+-Resize the earth image again. *
+-Add the components of the rest of the country modal. *
+-Do the "other" country design. *
+-Check whats wrong with WOD source. *
+-Do the logic of change hours count of specific country. *
+-Add logic of founded year (year - X years ago) (agesList array field) on the initiate step (for each independent year).  *
+-Logic: *
+-Add a general function that adds 'ago' to the display time. *
+-Fix all bugs of of summary data. *
+-Add for each country 'summaryData', and the same for the source data, update the counter. Also add total counter. *
+-UI: *
+-For each source add StatisticSourceModel: [SourceName]: iconName, sourceName, cases, deaths, recovers, updatesCount, lastUpdateTime. *
+-Also update the total row each time + Move the updates count to the TotalStatisticModel. *
+-Add large flags + Coat of arms to all countries. *
+-Instead of redirect to wikipedia when click on country flag (or name), Open a modal with all details: *
+big flag, name, population, *
+All sources data in big data (include each source last update of this specific country), *
+history of updates past 5h, same as statistics panel, and bottom link to wikipedia. *
+-Add country statistics - Number of cases, deaths, recovers for each source, like in the statistics modal. *
+-Add case for no data in the country. *
+-Add in big the statistics for each source + Also, add all the values and places of the country by all available sorting - Canceled. *
+-For the "Other" country place all the links to the relevant others. *
+-Add credits to: *
+https://countrycode.org *
+https://www.iloveimg.com *
+https://ezgif.com/webp-to-png *
+https://ezgif.com/gif-to-apng *
+https://onlinepngtools.com/create-transparent-png *
+https://svgtopng.com *
+https://jpg2png.com *
+-Add number of updates + and move the select to the right side. *
+-After finish the entire country modal: *
+-Change the logic temporary to load all countries (include all with no data).
+-Check each country to see the data, and mark it on the countries data.txt + update the countries list.txt + Remove all *.
+-Convert all 'find' and findIndex - to for loop - performance - Canceled. *
+-Continue from Diego Garcia. *

@@ -1,4 +1,4 @@
-const pathUtils = require('../backup/path.utils');
+const { pathUtils } = require('../utils');
 
 const settings = {
     // ===BACKUP=== //
@@ -6,13 +6,13 @@ const settings = {
     // (Working example: 'C:\\Or\\Web\\world-covid-19-data\\').
     OUTER_APPLICATION_PATH: pathUtils.getJoinPath({
         targetPath: __dirname,
-        targetName: '../../../'
+        targetName: '../../../../'
     }),
     // Determine the inner application path where all the source of the application is located.
     // (Working example: 'C:\\Or\\Web\\world-covid-19-data\\world-covid-19-data\\').
     INNER_APPLICATION_PATH: pathUtils.getJoinPath({
         targetPath: __dirname,
-        targetName: '../../'
+        targetName: '../../../'
     }),
     // Determine the directory path of the node_modules.
     // (Working example: 'C:\\Or\\Web\\world-covid-19-data\\world-covid-19-data\\node_modules').

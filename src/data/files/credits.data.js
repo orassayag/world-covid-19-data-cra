@@ -7,7 +7,7 @@ class SourcesData {
     constructor() {
         const { POP1_API_URL, POP2_API_URL, CAC_API_URL, CLN_API_URL, COA_API_URL,
             CVA_API_URL, CVS_API_URL, GOO_API_URL, WIK_API_URL, WOD_API_URL } = settings;
-
+        // Credits list.
         this.creditsList = [
             new CreditModel({
                 id: 1,

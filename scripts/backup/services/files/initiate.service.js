@@ -1,8 +1,5 @@
-const settings = require('../backup/settings');
-const fileUtils = require('../backup/file.utils');
-const globalUtils = require('../backup/global.utils');
-const pathUtils = require('../backup/path.utils');
-const validationUtils = require('../backup/validation.utils');
+const settings = require('../../settings/settings');
+const { fileUtils, globalUtils, pathUtils, validationUtils } = require('../../utils');
 
 class InitiateService {
 
@@ -27,6 +24,7 @@ class InitiateService {
             process.stdout.clearLine();
             process.stdout.cursorTo(0);
             console.log(error);
+            process.exit(0);
         });
         // Handle any unhandledRejection promise error.
         process.on('unhandledRejection', (reason, promise) => {
@@ -34,6 +32,7 @@ class InitiateService {
             process.stdout.cursorTo(0);
             console.log(reason);
             console.log(promise);
+            process.exit(0);
         });
     }
 
