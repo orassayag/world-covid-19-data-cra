@@ -14,7 +14,7 @@ const IconBox = (props) => {
         type={iconType}
         tooltip={null}
         tooltipDirection={null}
-        iconName={name}
+        iconName={null}
         isSpin={false}
       />
       <h2>{icon}</h2>
