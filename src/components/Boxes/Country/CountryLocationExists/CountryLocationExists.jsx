@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CountryLocationExists = (props) => {
     const { locationClassName } = props;
 

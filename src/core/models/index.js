@@ -23,6 +23,7 @@ import SummaryDataItemModel from './files/SummaryDataItem.model';
 import SummaryTimeItemModel from './files/SummaryTimeItem.model';
 import UpdateSourceDataModel from './files/UpdateSourceData.model';
 import UpdateSourceDataItemModel from './files/UpdateSourceDataItem.model';
+
 export {
 	CountryIdentityItemModel, CountryModel, CreditModel, FetchDataResultsModel, LoadingListModel,
 	LocalCountryModel, LocalCountryResultModel, OtherPlaceModel, QuoteModel, SettingsListModel,

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import './MasterOptions.scss';
 import MasterButtons from '../MasterButtons/MasterButtons';
 import MasterViews from '../MasterViews/MasterViews';

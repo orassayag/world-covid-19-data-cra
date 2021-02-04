@@ -5,4 +5,4 @@ react-redux
 redux
 redux-thunk
 cross-env
-react-helmet
+react-helmet-async

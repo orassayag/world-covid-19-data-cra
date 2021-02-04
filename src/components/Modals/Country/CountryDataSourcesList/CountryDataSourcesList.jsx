@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryDataSourcesList.scss';
 import CountryDataSourceItem from '../CountryDataSourceItem/CountryDataSourceItem';
 

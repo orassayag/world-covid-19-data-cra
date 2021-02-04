@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryLeadingBox.scss';
 import { Icon } from '../../../UI';
 

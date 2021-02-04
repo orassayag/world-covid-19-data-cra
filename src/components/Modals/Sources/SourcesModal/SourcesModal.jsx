@@ -1,4 +1,3 @@
-import React from 'react';
 import './SourcesModal.scss';
 
 const SourcesModal = (props) => {

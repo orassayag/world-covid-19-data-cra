@@ -1,5 +1,3 @@
-import React from 'react';
-
 const StatisticsExitButton = (props) => {
     const { onActionClick } = props;
 

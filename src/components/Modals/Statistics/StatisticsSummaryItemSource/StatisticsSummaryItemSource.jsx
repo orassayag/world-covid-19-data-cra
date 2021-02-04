@@ -1,4 +1,3 @@
-import React from 'react';
 import './StatisticsSummaryItemSource.scss';
 import { Icon } from '../../../UI';
 

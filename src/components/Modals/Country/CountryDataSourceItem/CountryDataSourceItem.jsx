@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import './CountryDataSourceItem.scss';
 import { textUtils } from '../../../../utils';
 import CountryDataSourceDisplayItem from '../CountryDataSourceDisplayItem/CountryDataSourceDisplayItem';

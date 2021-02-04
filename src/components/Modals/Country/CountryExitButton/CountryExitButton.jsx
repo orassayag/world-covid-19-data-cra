@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CountryExitButton = (props) => {
     const { onActionClick } = props;
 

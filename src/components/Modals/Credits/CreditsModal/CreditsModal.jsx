@@ -1,4 +1,3 @@
-import React from 'react';
 import './CreditsModal.scss';
 import CreditsExitButton from '../CreditsExitButton/CreditsExitButton';
 import CreditsLink from '../CreditsLink/CreditsLink';

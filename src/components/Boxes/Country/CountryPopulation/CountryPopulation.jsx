@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryPopulation.scss';
 import { Icon } from '../../../UI';
 

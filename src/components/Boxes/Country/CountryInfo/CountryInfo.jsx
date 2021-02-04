@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryInfo.scss';
 import CountryName from '../CountryName/CountryName';
 import CountryPopulation from '../CountryPopulation/CountryPopulation';

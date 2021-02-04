@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountrySummaryItemStatus.scss';
 
 const CountrySummaryItemStatus = (props) => {

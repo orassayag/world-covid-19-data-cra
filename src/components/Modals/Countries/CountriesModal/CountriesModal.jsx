@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountriesModal.scss';
 
 const CountriesModal = (props) => {

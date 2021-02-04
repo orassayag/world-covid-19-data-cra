@@ -1,5 +1,18 @@
 Completed + canceled tasks:
 ===========================
+-Try to upgrade to CRA 4+. *
+-Remove all "import { React }".
+-Convert all <Fragmant> to <>. *
+-Fix the world to be with smaller numbers since it have big numbers + world country panel. *
+-Fix the 'replaceCharacter' function (if exists), according to the logic in 'udemy-courses' project, and replace it *
+in all places (where don't need flag, pass '': regexUtils.createRegex(origin, ''). *
+-Update packages + re-create package.json file. *
+-Verify all still works as expected: live + local modes. *
+-Re-format error numbers - canceled. *
+-Remove all comments. *
+-Format all files. *
+-Move all completed tasks to complete_tasks.txt. *
+-Upload to GitHub. *
 -Add REMEMBER message to here. *
 -Move all tasks here to future_tasks.txt. *
 -Fix uneeded formats with: "formatFiles.excludePattern": "**/node_modules,**/.vscode,**/dist/**,**/.chrome,**/misc". *

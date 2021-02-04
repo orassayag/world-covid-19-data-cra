@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryIdentity.scss';
 import CountryImage from '../CountryImage/CountryImage';
 import CountryInfo from '../CountryInfo/CountryInfo';

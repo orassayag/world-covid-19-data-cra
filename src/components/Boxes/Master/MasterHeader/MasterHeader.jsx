@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import './MasterHeader.scss';
 import MasterBinaryClock from '../MasterBinaryClock/MasterBinaryClock';
 import MasterHeaderIcon from '../MasterHeaderIcon/MasterHeaderIcon';

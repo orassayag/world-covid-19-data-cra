@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryStatisticsItem.scss';
 import { Icon } from '../../../UI';
 

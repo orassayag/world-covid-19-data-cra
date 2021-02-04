@@ -8,11 +8,12 @@
                         flex-direction: column;
                         justify-content: left;
                         align-items: flex-start;
-                        width: 95%;
+                        width: 97.5%;
                         -webkit-touch-callout: none;
                         -webkit-user-select: none;
                         user-select: none;
                         margin-bottom: 1.4rem;
+                        margin-right: -5px;
 
                         &.no-data {
                             width: 100%;

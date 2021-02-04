@@ -1,4 +1,3 @@
-import React from 'react';
 import './StatisticsModal.scss';
 import StatisticsExitButton from '../StatisticsExitButton/StatisticsExitButton';
 import StatisticsOkButton from '../StatisticsOkButton/StatisticsOkButton';

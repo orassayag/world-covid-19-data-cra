@@ -3,10 +3,11 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import settings from '../settings/settings';
 import { dataReducers, settingsReducers, statisticsReducers, statisticsUpdatesReducers } from '../store/reducers';
 import { ComponentMode, EnvironmentMode } from '../core/enums';
-import { textUtils } from '../utils';
+import { timeUtils, textUtils } from '../utils';
 
 const { ENVIRONMENT_MODE, COMPONENT_MODE } = settings;
 settings.ENVIRONMENT_MODE = process.env.NODE_ENV;
@@ -24,13 +25,18 @@ if (COMPONENT_MODE === ComponentMode.APP) {
         statisticsUpdates: statisticsUpdatesReducers.getStatisticsUpdatesReducer
     });
     app = (
-        <Suspense fallback={null}>
-            <Provider store={createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))}>
-                <BrowserRouter>
-                    {component}
-                </BrowserRouter>
-            </Provider>
-        </Suspense>
+        <HelmetProvider>
+            <Suspense fallback={null}>
+                <Provider store={createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))}>
+                    <Helmet>
+                        <title data-rh="true">World Covid 19 Data | Covid 19 World Data | {timeUtils.getTitleDate()}</title>
+                    </Helmet>
+                    <BrowserRouter>
+                        {component}
+                    </BrowserRouter>
+                </Provider>
+            </Suspense>
+        </HelmetProvider>
     );
 }
 else {

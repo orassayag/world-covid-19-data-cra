@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryRemove.scss';
 import { Icon } from '../../../UI';
 

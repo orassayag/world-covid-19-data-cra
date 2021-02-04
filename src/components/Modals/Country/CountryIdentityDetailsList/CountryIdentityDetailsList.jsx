@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryIdentityDetailsList.scss';
 import CountryIdentityDetailsItem from '../CountryIdentityDetailsItem/CountryIdentityDetailsItem';
 

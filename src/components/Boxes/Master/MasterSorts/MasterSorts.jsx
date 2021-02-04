@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import './MasterSorts.scss';
 import { ButtonIcon } from '../../../UI';
 import { enumService } from '../../../../services';

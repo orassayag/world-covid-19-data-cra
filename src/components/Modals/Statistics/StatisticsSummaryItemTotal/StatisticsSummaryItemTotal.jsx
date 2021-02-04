@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import './StatisticsSummaryItemTotal.scss';
 import StatisticsSummaryItemSource from '../StatisticsSummaryItemSource/StatisticsSummaryItemSource';
 
@@ -50,7 +49,7 @@ const StatisticsSummaryItemTotal = () => {
   }
 
   return (
-    <Fragment>
+    <>
       <div className="delimiter"></div>
       <div className="source-item total">
         {summaryItemsTotalDOM.slice(0, 4)}
@@ -58,7 +57,7 @@ const StatisticsSummaryItemTotal = () => {
       <div className="source-item total">
         {summaryItemsTotalDOM.slice(5, 8)}
       </div>
-    </Fragment>
+    </>
   );
 };
 

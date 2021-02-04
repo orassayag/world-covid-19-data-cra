@@ -1,4 +1,3 @@
-import React from 'react';
 import './MasterUpdateLoader.scss';
 import { Icon } from '../../../UI';
 

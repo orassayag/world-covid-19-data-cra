@@ -1,4 +1,3 @@
-import React from 'react';
 import './MasterCurrentTime.scss';
 import { Icon } from '../../../UI';
 import { timeUtils } from '../../../../utils';

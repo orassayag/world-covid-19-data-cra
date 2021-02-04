@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryIdentityFlag.scss';
 
 const CountryIdentityFlag = (props) => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountrySummary.scss';
 import CountrySummarySources from '../CountrySummarySources/CountrySummarySources';
 

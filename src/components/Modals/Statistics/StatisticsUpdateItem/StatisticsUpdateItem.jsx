@@ -1,4 +1,3 @@
-import React from 'react';
 import './StatisticsUpdateItem.scss';
 import StatisticsUpdateItemSource from '../StatisticsUpdateItemSource/StatisticsUpdateItemSource';
 

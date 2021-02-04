@@ -1,4 +1,4 @@
-import React, { memo, forwardRef } from 'react';
+import { memo, forwardRef } from 'react';
 import './CountryBox.scss';
 import CountryData from '../CountryData/CountryData';
 import CountryIdentity from '../CountryIdentity/CountryIdentity';

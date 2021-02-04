@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import './MasterLastUpdate.scss';
 import { Icon } from '../../../UI';
 
@@ -8,7 +7,7 @@ const MasterLastUpdate = (props) => {
     return (
         <div className="last-item">
             {lastUpdateDateDisplay && lastUpdateSourceName && nextUpdateSourceName &&
-                <Fragment>
+                <>
                     <div className="icon">
                         <Icon
                             name="sync-alt"
@@ -21,7 +20,7 @@ const MasterLastUpdate = (props) => {
                                 name="long-arrow-alt-right"
                             /> {nextUpdateSourceName}</span>
                     </div>
-                </Fragment>
+                </>
             }
         </div>
     );

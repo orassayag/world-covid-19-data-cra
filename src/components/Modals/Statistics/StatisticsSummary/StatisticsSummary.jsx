@@ -1,4 +1,3 @@
-import React from 'react';
 import './StatisticsSummary.scss';
 import StatisticsSummarySources from '../StatisticsSummarySources/StatisticsSummarySources';
 import StatisticsSummaryTop from '../StatisticsSummaryTop/StatisticsSummaryTop';

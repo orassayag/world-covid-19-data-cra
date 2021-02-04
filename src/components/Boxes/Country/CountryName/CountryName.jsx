@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryName.scss';
 
 const CountryName = (props) => {

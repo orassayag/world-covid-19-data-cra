@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryImage.scss';
 
 const CountryImage = (props) => {

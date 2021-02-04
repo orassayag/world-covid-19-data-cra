@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryIdentityTitle.scss';
 
 const CountryIdentityTitle = (props) => {

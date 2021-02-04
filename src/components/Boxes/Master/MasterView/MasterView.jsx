@@ -1,4 +1,3 @@
-import React from 'react';
 import './MasterView.scss';
 import { ButtonIcon } from '../../../UI';
 

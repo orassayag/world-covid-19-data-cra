@@ -1,4 +1,3 @@
-import React from 'react';
 import './StatisticsSummaryItem.scss';
 import StatisticsSummaryItemSource from '../StatisticsSummaryItemSource/StatisticsSummaryItemSource';
 import StatisticsSummaryItemStatus from '../StatisticsSummaryItemStatus/StatisticsSummaryItemStatus';

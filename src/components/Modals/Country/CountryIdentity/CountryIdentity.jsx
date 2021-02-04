@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryIdentity.scss';
 import CountryIdentityFlag from '../CountryIdentityFlag/CountryIdentityFlag';
 import CountryIdentityCoat from '../CountryIdentityCoat/CountryIdentityCoat';

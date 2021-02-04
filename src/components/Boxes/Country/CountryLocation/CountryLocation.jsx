@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryLocation.scss';
 import CountryLocationEmpty from '../CountryLocationEmpty/CountryLocationEmpty';
 import CountryLocationExists from '../CountryLocationExists/CountryLocationExists';

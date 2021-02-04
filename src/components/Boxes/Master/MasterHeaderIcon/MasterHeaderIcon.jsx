@@ -1,4 +1,3 @@
-import React from 'react';
 import './MasterHeaderIcon.scss';
 import { Icon } from '../../../UI';
 

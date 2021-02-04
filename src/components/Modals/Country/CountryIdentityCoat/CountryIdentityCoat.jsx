@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryIdentityCoat.scss';
 
 const CountryIdentityCoat = (props) => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import './MasterTimes.scss';
 import MasterCurrentTime from '../MasterCurrentTime/MasterCurrentTime';
 import MasterLastUpdate from '../MasterLastUpdate/MasterLastUpdate';

@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import './CountryData.scss';
 import CountryDataNoData from '../CountryDataNoData/CountryDataNoData';
 import CountryDataSourcesList from '../CountryDataSourcesList/CountryDataSourcesList';
@@ -16,7 +15,7 @@ const CountryData = (props) => {
   if (isContainData) {
     const updateSourceName = updateSourceData ? updateSourceData.sourceName : '';
     dataDOM = (
-      <Fragment>
+      <>
         <div className="live-data">
           <CountryDataTitle />
           <CountryUpdatePanel
@@ -38,7 +37,7 @@ const CountryData = (props) => {
           sourcesList={sourcesList}
           summaryData={summaryData}
         />
-      </Fragment>
+      </>
     );
   }
   else {

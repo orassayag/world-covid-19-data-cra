@@ -1,7 +1,7 @@
-import React, { useRef, useEffect, useCallback, createRef } from 'react';
+import { useRef, useEffect, useCallback, createRef } from 'react';
 import { useDispatch, useSelector, batch } from 'react-redux';
 import './App.scss';
-import { CountryBox, Error, MasterBox, MetaTags, ModalContainer, ScreenLoader } from '../../components';
+import { CountryBox, Error, MasterBox, ModalContainer, ScreenLoader } from '../../components';
 import { dataActions, settingsActions, statisticsActions, statisticsUpdatesActions } from '../../store/actions/actions';
 import { engineService } from '../../services';
 import { coreUtils } from '../../utils';
@@ -173,7 +173,6 @@ const App = (props) => {
 
   return (
     <div className="main">
-      {MetaTags}
       {!isScreenLoaderComplete &&
         <ScreenLoader
           isActive={isActive}

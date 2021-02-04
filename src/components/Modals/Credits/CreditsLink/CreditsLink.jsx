@@ -1,4 +1,3 @@
-import React from 'react';
 import './CreditsLink.scss';
 
 const CreditsLink = (props) => {

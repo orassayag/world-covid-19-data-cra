@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import './StatisticsUpdateItemSource.scss';
 import { Icon } from '../../../UI';
 
@@ -8,11 +7,11 @@ const StatisticsUpdateItemSource = (props) => {
   return (
     <div className={type}>
       {count &&
-        <Fragment>
+        <>
           <Icon
             name={iconName}
           /> {updateType}{countDisplay}
-        </Fragment>
+        </>
       }
     </div>
   );

@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import './CountrySummaryItemTotal.scss';
 import CountrySummaryItemSource from '../CountrySummaryItemSource/CountrySummaryItemSource';
 
@@ -15,12 +14,12 @@ const CountrySummaryItemTotal = (props) => {
   }
 
   return (
-    <Fragment>
+    <>
       <div className="delimiter"></div>
       <div className="source-item total">
         {summaryItemsTotalDOM}
       </div>
-    </Fragment>
+    </>
   );
 };
 

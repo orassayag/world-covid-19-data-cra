@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryLeading.scss';
 import CountryLeadingBox from '../CountryLeadingBox/CountryLeadingBox';
 import CountryLocation from '../CountryLocation/CountryLocation';

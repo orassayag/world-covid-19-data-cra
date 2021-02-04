@@ -1,4 +1,3 @@
-import React from 'react';
 import './StatisticsUpdates.scss';
 import StatisticsActionsPanel from '../StatisticsActionsPanel/StatisticsActionsPanel';
 import StatisticsUpdatesData from '../StatisticsUpdatesData/StatisticsUpdatesData';

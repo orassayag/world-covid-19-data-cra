@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import './MasterActions.scss';
 import { ButtonIcon, LinkIcon } from '../../../UI';
 import { creditService } from '../../../../services';

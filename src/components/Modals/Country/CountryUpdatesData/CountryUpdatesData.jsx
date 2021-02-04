@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryUpdatesData.scss';
 import CountryUpdateItem from '../CountryUpdateItem/CountryUpdateItem';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryData.scss';
 import CountrySource from '../CountrySource/CountrySource';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryOkButton.scss';
 
 const CountryOkButton = (props) => {

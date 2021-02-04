@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryUpdatesTimeSelector.scss';
 
 const CountryUpdatesTimeSelector = (props) => {

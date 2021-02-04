@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import './CountryModal.scss';
 import CountryData from '../CountryData/CountryData';
 import CountryExitButton from '../CountryExitButton/CountryExitButton';

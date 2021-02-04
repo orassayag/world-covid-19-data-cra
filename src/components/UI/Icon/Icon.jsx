@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Icon = (props) => {
     const { name, value, type, tooltip, tooltipDirection, iconName, isSpin } = props;
     const tooltipAttr = tooltip ? { [`data-tip-${tooltipDirection ? tooltipDirection : 'top'}`]: tooltip } : null;

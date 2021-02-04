@@ -1,4 +1,3 @@
-import React from 'react';
 import './MasterButtons.scss';
 import MasterButton from '../MasterButton/MasterButton';
 

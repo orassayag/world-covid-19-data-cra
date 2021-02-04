@@ -1,4 +1,3 @@
-import React from 'react';
 import './MasterViews.scss';
 import MasterView from '../MasterView/MasterView';
 import { enumService } from '../../../../services';

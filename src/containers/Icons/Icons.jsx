@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Icons.scss';
 import { Icon } from '../../components';
 import { quoteService } from '../../services';

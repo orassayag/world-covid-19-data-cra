@@ -1,4 +1,3 @@
-import React from 'react';
 import './CountryUpdates.scss';
 import CountryUpdatesData from '../CountryUpdatesData/CountryUpdatesData';
 import CountryUpdatesTimeSelector from '../CountryUpdatesTimeSelector/CountryUpdatesTimeSelector';

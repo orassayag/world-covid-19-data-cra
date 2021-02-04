@@ -1,4 +1,3 @@
-import React from 'react';
 import './Images.scss';
 import { CountrySortType } from '../../core/enums';
 import { countryService, sortService } from '../../services';
