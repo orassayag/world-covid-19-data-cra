@@ -1,5 +1,8 @@
 Completed + canceled tasks:
 ===========================
+-Add the missing section of files in the package.json file. *
+-Add take the .stylelintrc file from one of the client in the starter kits. *
+-Change in .eslintrc to React 17.0.1. *
 -Try to upgrade to CRA 4+. *
 -Remove all "import { React }".
 -Convert all <Fragmant> to <>. *
