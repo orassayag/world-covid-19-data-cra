@@ -1,5 +1,18 @@
 Completed + canceled tasks:
 ===========================
+-For starter-kits and world-covid-19-data: Update create-react-app. *
+-Update packages. *
+-Fix comment:         // Get the backup title from the console.s *
+-Fix all README.me + package.json from 'create-react-up' to 'create-react-app'. *
+-Change all ect => etc - In all projects. *
+-Verify package.json project name. *
+-Change all README.md files to the title of the project as first line (Only one #). *
+-Change from 'Start to be built' to 'Built in', and remove space lines, \ *
+and the "-Goal:", and remove the 'This project was bootstrapped *
+with [Create React App](https://github.com/facebook/create-react-app).' *
+line under to the description with line space, all fixes in README.md. *
+-Fix the in index.js this (support development in all browsers): *
+const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null) || compose; *
 -Add the missing section of files in the package.json file. *
 -Add take the .stylelintrc file from one of the client in the starter kits. *
 -Change in .eslintrc to React 17.0.1. *
