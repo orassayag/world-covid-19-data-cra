@@ -46,7 +46,7 @@ class SettingService {
         if (!this.isAppComponent()) {
             return;
         }
-        // ToDo: Active when implement query parameters.
+        // ToDo: Active when implementing query parameters.
         // ToDo: Here check query parameters for the settings.
         // Settings.
         return this.settingsList;

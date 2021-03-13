@@ -11,7 +11,7 @@ import apiService from './api.service';
 import countryCommonLogicService from './countryCommonLogic.service';
 import localService from './local.service';
 import sortService from './sort.service';
-import { coreUtils, logicUtils, textUtils, timeUtils } from '../../utils';
+import { coreUtils, logicUtils, textUtils, timeUtils, validationUtils } from '../../utils';
 
 class CountryService {
 
@@ -23,13 +23,13 @@ class CountryService {
 	}
 
 	initiateCountriesList() {
-		// ToDo: Check query parameters here if relevent.
+		// ToDo: Check query parameters here if relevant.
 		const countriesList = this.getCountriesList(null, {
 			filterOptions: {
 				isActive: [true],
 				isContainData: [true]
 			},
-			sortType: sortService.sortsList[CountrySortType.LAST_UPDATE_TIME], // Don't change this, it's initiate value.
+			sortType: sortService.sortsList[CountrySortType.LAST_UPDATE_TIME], // Don't change this, it's initial value.
 			forceSortDirection: null,
 			isReturnArray: false
 		});
@@ -90,7 +90,7 @@ class CountryService {
 			country = countriesList[index];
 		}
 		country.order = order;
-		if (country.statisticsData.length > 0) {
+		if (validationUtils.isExists(country.statisticsData)) {
 			country.statisticsData[0].value = (country.order + 1).toString();
 		}
 		countriesList[index] = country;
@@ -306,7 +306,7 @@ class CountryService {
 	}
 
 	finalizeCountryData(country, sourcesList, sourcesKeysList, worldPopulationCount) {
-		// Calculate the "populationPercentageDisplay" to the countries which are missing.
+		// Calculate the 'populationPercentageDisplay' to the countries which are missing.
 		if (!country.populationPercentageDisplay) {
 			country.populationCount = country.staticPopulationCount;
 			country.populationPercentageDisplay = textUtils.getPercentageDisplay(country.populationCount, worldPopulationCount);
@@ -390,11 +390,11 @@ class CountryService {
 		if (numericCode) {
 			countryDetailsList.push(new CountryIdentityItemModel({
 				iconName: 'passport',
-				iconTooltip: 'Country numberic code',
+				iconTooltip: 'Country numeric code',
 				value: numericCode
 			}));
 		}
-		if (continents.length > 0) {
+		if (validationUtils.isExists(continents)) {
 			countryDetailsList.push(new CountryIdentityItemModel({
 				iconName: 'images',
 				iconTooltip: 'Continents',
@@ -415,7 +415,7 @@ class CountryService {
 				value: capitalName
 			}));
 		}
-		if (independentYears.length > 0) {
+		if (validationUtils.isExists(independentYears)) {
 			let independentText = '';
 			for (let i = 0; i < independentYears.length; i++) {
 				const year = independentYears[i];
@@ -667,7 +667,7 @@ class CountryService {
 		let sortValue = null;
 		if (country.sourcesData) {
 			let sourceDataItems = country.sourcesData[leadingSourceName];
-			if (sourceDataItems && sourceDataItems.dataItems.length > 0) {
+			if (sourceDataItems && validationUtils.isExists(sourceDataItems.dataItems)) {
 				sourceDataItems = sourceDataItems.dataItems[index];
 				leadingValueDisplay = sourceDataItems[leadingValueDisplayFieldName];
 				sortValue = sourceDataItems[sourceDataItemsFieldName];
@@ -677,11 +677,11 @@ class CountryService {
 		country.sortValue = sortValue;
 		country.leadingIconName = iconName;
 		if (source && updateCountryType && country.updateSourceData) {
-			const isReleventUpdate = source.lowerName === leadingSourceName && updateCountryType === UpdateCountryType.DATA;
-			if (isReleventUpdate) {
+			const isRelevantUpdate = source.lowerName === leadingSourceName && updateCountryType === UpdateCountryType.DATA;
+			if (isRelevantUpdate) {
 				const dataItem = country.updateSourceData.dataItems[index];
 				if (dataItem) {
-					country.leadingClassName = dataItem[sourceDataItemsFieldName] > 0 ? ` ${sortTypeName}` : '';
+					country.leadingClassName = validationUtils.isExists(dataItem[sourceDataItemsFieldName]) ? ` ${sortTypeName}` : '';
 				}
 			}
 		}

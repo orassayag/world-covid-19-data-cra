@@ -9,14 +9,14 @@ const CountriesModal = (props) => {
         <button onClick={onActionClick} data-action="modal">
           <i className="fas fa-times"></i>
         </button>
-        <div className="contries-container">
+        <div className="countries-container">
           <div className="countries-actions">
             <div className="icons">
               <i className="fas fa-globe"></i>
               <i className="fas fa-list"></i>
               <i className="far fa-file"></i>
             </div>
-            <div className="search-contry">
+            <div className="search-country">
               <div className="search-country-container">
                 <input type="text" name="search-country"></input>
               </div>

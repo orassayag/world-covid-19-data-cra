@@ -1,4 +1,5 @@
 import textUtils from './text.utils';
+import validationUtils from './validation.utils';
 
 class LogicUtils {
 
@@ -15,7 +16,7 @@ class LogicUtils {
     }
 
     filter(array, filter) {
-        if (Object.keys(filter).length <= 0) {
+        if (!validationUtils.isExists(Object.keys(filter))) {
             return array;
         }
         const query = this.buildFilter(filter);
@@ -26,7 +27,7 @@ class LogicUtils {
     buildFilter(filter) {
         let query = {};
         for (let keys in filter) {
-            if (filter[keys].constructor === Array && filter[keys].length > 0) {
+            if (filter[keys].constructor === Array && validationUtils.isExists(filter[keys])) {
                 query[keys] = filter[keys];
             }
         }

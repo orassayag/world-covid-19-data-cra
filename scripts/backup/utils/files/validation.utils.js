@@ -10,7 +10,7 @@ class ValidationUtils {
         return Object.prototype.toString.call(variable) === '[object Array]';
     }
 
-    // This method checks if a given value is a valid number and return the result.
+    // This method validates if a given value is a valid number and returns the result.
     isValidNumber(number) {
         number = Number(number);
         return !isNaN(number) && typeof number == 'number';

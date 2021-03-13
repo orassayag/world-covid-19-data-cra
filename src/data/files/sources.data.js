@@ -15,7 +15,7 @@ class SourcesData {
 				upperName: SourceName.POP1.toUpperCase(),
 				apiURL: POP1_API_URL,
 				isJSON: false,
-				excpectedRowsCount: 233,
+				expectedRowsCount: 233,
 				order: 1,
 				isActive: true,
 				isCovidData: false
@@ -25,7 +25,7 @@ class SourcesData {
 				upperName: SourceName.POP2.toUpperCase(),
 				apiURL: POP2_API_URL,
 				isJSON: false,
-				excpectedRowsCount: 242,
+				expectedRowsCount: 242,
 				order: 2,
 				isActive: true,
 				isCovidData: false
@@ -35,7 +35,7 @@ class SourcesData {
 				upperName: SourceName.CAC.toUpperCase(),
 				apiURL: CAC_API_URL,
 				isJSON: true,
-				excpectedRowsCount: 250,
+				expectedRowsCount: 250,
 				order: 3,
 				isActive: true,
 				isCovidData: true
@@ -45,7 +45,7 @@ class SourcesData {
 				upperName: SourceName.CLN.toUpperCase(),
 				apiURL: CLN_API_URL,
 				isJSON: true,
-				excpectedRowsCount: 216,
+				expectedRowsCount: 216,
 				order: 4,
 				isActive: true,
 				isCovidData: true
@@ -55,7 +55,7 @@ class SourcesData {
 				upperName: SourceName.COA.toUpperCase(),
 				apiURL: COA_API_URL,
 				isJSON: true,
-				excpectedRowsCount: 187,
+				expectedRowsCount: 187,
 				order: 5,
 				isActive: true,
 				isCovidData: true
@@ -65,7 +65,7 @@ class SourcesData {
 				upperName: SourceName.CVA.toUpperCase(),
 				apiURL: CVA_API_URL,
 				isJSON: true,
-				excpectedRowsCount: 216,
+				expectedRowsCount: 216,
 				order: 6,
 				isActive: true,
 				isCovidData: true
@@ -75,7 +75,7 @@ class SourcesData {
 				upperName: SourceName.CVS.toUpperCase(),
 				apiURL: CVS_API_URL,
 				isJSON: true,
-				excpectedRowsCount: 200,
+				expectedRowsCount: 200,
 				order: 7,
 				isActive: true,
 				isCovidData: true
@@ -85,7 +85,7 @@ class SourcesData {
 				upperName: SourceName.GOO.toUpperCase(),
 				apiURL: GOO_API_URL,
 				isJSON: false,
-				excpectedRowsCount: 229,
+				expectedRowsCount: 229,
 				order: 8,
 				isActive: true,
 				isCovidData: true
@@ -95,7 +95,7 @@ class SourcesData {
 				upperName: SourceName.WIK.toUpperCase(),
 				apiURL: WIK_API_URL,
 				isJSON: false,
-				excpectedRowsCount: 229,
+				expectedRowsCount: 229,
 				order: 9,
 				isActive: true,
 				isCovidData: true
@@ -105,7 +105,7 @@ class SourcesData {
 				upperName: SourceName.WOD.toUpperCase(),
 				apiURL: WOD_API_URL,
 				isJSON: false,
-				excpectedRowsCount: 99,
+				expectedRowsCount: 99,
 				order: 10,
 				isActive: true,
 				isCovidData: true

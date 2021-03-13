@@ -8,7 +8,7 @@ class PathUtils {
         const { targetPath, targetName } = data;
         // Check if the targetPath parameter was received.
         if (!targetPath) {
-            throw new Error(`targetPath not received: ${targetPath} (1000013)`);
+            throw new Error(`targetPath not received: ${targetPath} (1000012)`);
         }
         return path.join(targetPath, targetName);
     }

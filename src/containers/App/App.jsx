@@ -4,7 +4,7 @@ import './App.scss';
 import { CountryBox, Error, MasterBox, ModalContainer, ScreenLoader } from '../../components';
 import { dataActions, settingsActions, statisticsActions, statisticsUpdatesActions } from '../../store/actions/actions';
 import { engineService } from '../../services';
-import { coreUtils } from '../../utils';
+import { coreUtils, validationUtils } from '../../utils';
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const App = (props) => {
   const countriesList = useSelector((state) => state.data.countriesList);
   const { isActive, isRefreshMode, viewType, isDisplayError, activeModalName,
     activeModalValue, isReplaceModalMode, isActionLoader } = settingsList;
-  const { loadingPrecentage, isScreenLoaderComplete } = loadingList;
+  const { loadingPercentage, isScreenLoaderComplete } = loadingList;
   // Functions to update the state.
   const onSetStateCurrentTime = (data) => dispatch(statisticsActions.setStateCurrentTime(data));
   const onSetStateSettingsList = (listName, listValues) => dispatch(settingsActions.setStateSettingsList(listName, listValues));
@@ -48,7 +48,7 @@ const App = (props) => {
     batch(() => {
       dispatch(dataActions.setStateDataCollection('countriesList', countriesList));
       dispatch(statisticsActions.setStateStatisticsList(statisticsList));
-      if (statisticsUpdatesList && statisticsUpdatesList.length > 0) {
+      if (validationUtils.isExists(statisticsUpdatesList)) {
         dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesList(statisticsUpdatesList));
         dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesSettingsList(statisticsUpdatesSettingsList));
       }
@@ -68,7 +68,7 @@ const App = (props) => {
       dispatch(dataActions.setStateDataCollection('countriesList', countriesList));
       dispatch(settingsActions.setStateSettingsList('settingsList', settingsList));
       dispatch(statisticsActions.setStateStatisticsList(statisticsList));
-      if (statisticsUpdatesList && statisticsUpdatesList.length > 0) {
+      if (validationUtils.isExists(statisticsUpdatesList)) {
         dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesList(statisticsUpdatesList));
         dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesSettingsList(statisticsUpdatesSettingsList));
       }
@@ -80,7 +80,7 @@ const App = (props) => {
       dispatch(dataActions.setStateDataCollection('countriesList', countriesList));
       dispatch(dataActions.setStateDataCollection('countriesNameIdList', countriesNameIdList));
       dispatch(statisticsActions.setStateStatisticsList(statisticsList));
-      if (statisticsUpdatesList && statisticsUpdatesList.length > 0) {
+      if (validationUtils.isExists(statisticsUpdatesList)) {
         dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesList(statisticsUpdatesList));
       }
     });
@@ -149,7 +149,7 @@ const App = (props) => {
   }, []);
 
   // Validate all OK to show the data and generate the countries.
-  const isInitiateComplete = !isDisplayError && countriesList && countriesList.length > 0 && loadingPrecentage === 100;
+  const isInitiateComplete = !isDisplayError && validationUtils.isExists(countriesList) && loadingPercentage === 100;
   const renderCountries = useCallback(() => {
     const countriesDOM = [];
     const refsList = [];

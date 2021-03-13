@@ -92,7 +92,7 @@ class BackupScript {
     async verifyBackup() {
         await globalUtils.sleep(this.backupData.millisecondsDelayVerifyBackupCount);
         if (!await fileUtils.isPathExists(this.backupData.targetFullPath)) {
-            throw new Error('No backup was provided (1000002)');
+            throw new Error('No backup was provided (1000001)');
         }
         logUtils.log(`FINISH TO CREATE BACKUP: ${this.backupData.targetBackupName}`);
     }

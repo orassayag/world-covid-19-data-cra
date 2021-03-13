@@ -4,11 +4,11 @@ class FileUtils {
 
     constructor() { }
 
-    // This method check if a receive target path is exist.
+    // This method validates if a receive target path exists.
     async isPathExists(targetPath) {
         // Check if the path parameter was received.
         if (!targetPath) {
-            throw new Error(`targetPath not received: ${targetPath} (1000003)`);
+            throw new Error(`targetPath not received: ${targetPath} (1000007)`);
         }
         // Check if the path parameter exists.
         try {

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './Icons.scss';
 import { Icon } from '../../components';
 import { quoteService } from '../../services';
+import { validationUtils } from '../../utils';
 
 const IconBox = (props) => {
   const { icon } = props;
@@ -30,7 +31,7 @@ const Icons = () => {
   }, []);
 
   const iconsDOM = [];
-  if (list.length > 0) {
+  if (validationUtils.isExists(list)) {
     for (let i = 0; i < list.length; i++) {
       iconsDOM.push(
         (<IconBox

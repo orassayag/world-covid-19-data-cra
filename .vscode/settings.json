@@ -33,7 +33,6 @@
 		"stylelintrc",
 		"svgr",
 		"todos",
-		"unactive",
 		"uncompiled",
 		"Åland"
 	],
@@ -50,5 +49,5 @@
 	"editor.tabSize": 4,
 	"editor.insertSpaces": true,
 	"editor.detectIndentation": true,
-	"formatFiles.excludePattern": "**/node_modules,**/.vscode,**/dist/**,**/.chrome,**/misc"
+	"formatFiles.excludePattern": "**/node_modules,**/.vscode,**/dist,**/dist/**,**/.chrome,**/misc,**/misc/**,**/sources,**/sources/**"
 }

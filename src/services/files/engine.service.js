@@ -6,7 +6,7 @@ import sortService from './sort.service';
 import sourceService from './source.service';
 import statisticService from './statistic.service';
 import statisticUpdateService from './statisticUpdate.service';
-import { textUtils, timeUtils } from '../../utils';
+import { textUtils, timeUtils, validationUtils } from '../../utils';
 
 class EngineService {
 
@@ -122,7 +122,7 @@ class EngineService {
 
     updateLocalStatisticsUpdatesList(updateStatisticsUpdatesListResults) {
         const { statisticsUpdatesList, statisticsUpdatesSettingsList } = updateStatisticsUpdatesListResults;
-        if (statisticsUpdatesList && statisticsUpdatesList.length > 0) {
+        if (validationUtils.isExists(statisticsUpdatesList)) {
             this.statisticsUpdatesList = [...statisticsUpdatesList];
         }
         this.statisticsUpdatesSettingsList = {
@@ -332,9 +332,9 @@ class EngineService {
         this.timer = setTimeout(transition, this.getDelayTime());
     }
 
-    removeLoader(currentPrecentage) {
+    removeLoader(currentPercentage) {
         // Remove loader from the DOM.
-        if (currentPrecentage === 100) {
+        if (currentPercentage === 100) {
             setTimeout(() => {
                 this.updateSettingsListField('loadingList', {
                     isScreenLoaderComplete: true
@@ -346,12 +346,12 @@ class EngineService {
     checkPoint() {
         // Set loader percentage for the first load.
         if (!this.isInitiateComplete && !this.settingsList.isRefreshMode) {
-            const currentPrecentage = textUtils.getAbsolutePercentage(this.sourcesIndex + 1, this.sourcesKeysList.length);
+            const currentPercentage = textUtils.getAbsolutePercentage(this.sourcesIndex + 1, this.sourcesKeysList.length);
             this.updateSettingsListField('loadingList', {
-                loadingPrecentage: currentPrecentage,
+                loadingPercentage: currentPercentage,
                 loadingSourceName: this.getSource(this.sourcesIndex).upperName
             });
-            this.removeLoader(currentPrecentage);
+            this.removeLoader(currentPercentage);
         }
         const indexResult = this.getSourceAndIndex(true);
         this.sourcesIndex = indexResult.updatedIndex;
@@ -438,7 +438,7 @@ class EngineService {
         // Set sort fields list.
         const { updatedSortType } = this.setSortValues(this.settingsList.sortType.sortTypeName, null);
         this.settingsList.sortType = updatedSortType;
-        // Last round in first time fetch data.
+        // Last round to first time fetch data.
         this.countriesList = this.updateCountries(CountriesActionType.FINALIZE, null);
         // Update the countries count displayed in the master box.
         const updatedStatisticsList = {
@@ -557,7 +557,7 @@ class EngineService {
         // Update the countries names (for statistics modal).
         this.countriesNameIdList = countryService.updateCountriesNameIdList(this.countriesList);
         // Update all update statistics items.
-        if (this.statisticsUpdatesList.length > 0) {
+        if (validationUtils.isExists(this.statisticsUpdatesList)) {
             this.statisticsUpdatesList = statisticUpdateService.updateStatisticsVisibility({
                 statisticsUpdatesList: this.statisticsUpdatesList,
                 countryId: countryId,

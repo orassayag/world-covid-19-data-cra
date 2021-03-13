@@ -6,7 +6,7 @@ const ScreenLoader = (props) => {
     if (!isActive) {
         return null;
     }
-    const { loadingPrecentage, loadingSourceName, loadingQuote } = loadingList;
+    const { loadingPercentage, loadingSourceName, loadingQuote } = loadingList;
     const { quote, quoteName, quoteNameURL, categoryName, categoryIconName, categoryIconType } = loadingQuote;
     const dotsDOM = [];
     for (let i = 0; i < 3; i++) {
@@ -16,7 +16,7 @@ const ScreenLoader = (props) => {
     }
 
     return (
-        <div className={`loader${!isDisplayError && loadingPrecentage === 100 ? ' hide' : ''}`}>
+        <div className={`loader${!isDisplayError && loadingPercentage === 100 ? ' hide' : ''}`}>
             <div className="container">
                 <div className="title">
                     Fetching data{dotsDOM}
@@ -30,12 +30,12 @@ const ScreenLoader = (props) => {
                                     a 15.9155 15.9155 0 0 1 0 -31.831"
                             />
                             <path className="circle"
-                                strokeDasharray={`${loadingPrecentage}, 100`}
+                                strokeDasharray={`${loadingPercentage}, 100`}
                                 d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831"
                             />
-                            <text x="18" y="20.35" className="percentage">{loadingPrecentage}%</text>
+                            <text x="18" y="20.35" className="percentage">{loadingPercentage}%</text>
                         </svg>
                     </div>
                 </div>
