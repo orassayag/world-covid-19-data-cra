@@ -7,4 +7,4 @@ class ValidationUtils {
     }
 }
 
-module.exports = new ValidationUtils();
+export default new ValidationUtils();
