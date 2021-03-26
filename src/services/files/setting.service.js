@@ -47,7 +47,7 @@ class SettingService {
             return;
         }
         // ToDo: Active when implementing query parameters.
-        // ToDo: Here check query parameters for the settings.
+        // ToDo: Here check the query parameters for the settings.
         // Settings.
         return this.settingsList;
     }

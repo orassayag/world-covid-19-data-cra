@@ -9,7 +9,7 @@ class SourceService {
     }
 
     initiateSourcesList() {
-        // ToDo: Check query parameters here if relevant.
+        // ToDo: Check the query parameters here if relevant.
         const sourcesList = this.getSourcesList(null, {
             filterOptions: null,
             sortType: SourceSortType.ORDER,

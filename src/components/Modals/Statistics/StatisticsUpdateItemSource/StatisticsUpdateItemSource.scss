@@ -7,23 +7,23 @@
                         .update-item {
                             &.alert {
                                 &.all {
-                                    -webkit-animation: alertall 2s ease-in-out infinite;
-                                    animation: alertall 2s ease-in-out infinite;
+                                    -webkit-animation: alert-all 2s ease-in-out infinite;
+                                    animation: alert-all 2s ease-in-out infinite;
                                 }
 
                                 &.death {
-                                    -webkit-animation: alertdeath 2s ease-in-out infinite;
-                                    animation: alertdeath 2s ease-in-out infinite;
+                                    -webkit-animation: alert-death 2s ease-in-out infinite;
+                                    animation: alert-death 2s ease-in-out infinite;
                                 }
 
                                 &.recover {
-                                    -webkit-animation: alertrecover 2s ease-in-out infinite;
-                                    animation: alertrecover 2s ease-in-out infinite;
+                                    -webkit-animation: alert-recover 2s ease-in-out infinite;
+                                    animation: alert-recover 2s ease-in-out infinite;
                                 }
 
                                 &.case {
-                                    -webkit-animation: alertcase 2s ease-in-out infinite;
-                                    animation: alertcase 2s ease-in-out infinite;
+                                    -webkit-animation: alert-case 2s ease-in-out infinite;
+                                    animation: alert-case 2s ease-in-out infinite;
                                 }
 
                                 .death,

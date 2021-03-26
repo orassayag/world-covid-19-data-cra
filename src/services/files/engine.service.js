@@ -58,7 +58,7 @@ class EngineService {
         this.tryRecoverRounds = 0;
         this.tryRecoverLeft = this.recoverUpdatesCount;
         // Previous object.
-        this.previousObject = null; // In order to save previous collection as state was before changes.
+        this.previousObject = null; // In order to save a previous collection as state was before changes.
     }
 
     initiateMode(mode) {
@@ -225,7 +225,7 @@ class EngineService {
         const updatedStatisticsList = {
             nextUpdateSourceName: indexResult.source.upperName
         };
-        // Update statistics updates times.
+        // Update the statistics updates times.
         this.statisticsUpdatesList = statisticUpdateService.updateStatisticsUpdatesListTimes(this.statisticsUpdatesList);
         this.onSetStateUpdateRound({
             countriesList: this.countriesList,
@@ -250,12 +250,12 @@ class EngineService {
             // Current source.
             const source = this.getSource(this.sourcesIndex);
             if (this.isInitiateComplete && !this.settingsList.isRefreshMode) {
-                // Cleanup previous countries updates.
+                // Cleanup the previous countries updates.
                 this.countriesList = this.updateCountries(CountriesActionType.CLEANUP, null);
-                // Cleanup previous statistics updates.
+                // Cleanup the previous statistics updates.
                 this.statisticsUpdatesList = statisticUpdateService.cleanStatisticsUpdatesList(this.statisticsUpdatesList);
             }
-            // Fetch data.
+            // Fetch the data.
             this.setUpdatesLoader(true);
             const fetchDataResults = await countryService.getCountryData({
                 source: source,
@@ -264,7 +264,7 @@ class EngineService {
                 countriesKeysList: this.countriesKeysList,
                 isInitiateComplete: this.isInitiateComplete
             });
-            // Validate results.
+            // Validate the results.
             if (!this.validateFetchDataResults(fetchDataResults)) {
                 this.nextInterval(transition);
                 return;
@@ -300,7 +300,7 @@ class EngineService {
                 this.updateLocalStatisticsUpdatesList(updateStatisticsUpdatesListResults);
             }
             if (this.isContinueToNextRound()) {
-                // Continue to next round.
+                // Continue to the next round.
                 this.nextInterval(transition);
             }
         };
@@ -333,7 +333,7 @@ class EngineService {
     }
 
     removeLoader(currentPercentage) {
-        // Remove loader from the DOM.
+        // Remove the loader from the DOM.
         if (currentPercentage === 100) {
             setTimeout(() => {
                 this.updateSettingsListField('loadingList', {
@@ -344,7 +344,7 @@ class EngineService {
     }
 
     checkPoint() {
-        // Set loader percentage for the first load.
+        // Set the loader percentage for the first load.
         if (!this.isInitiateComplete && !this.settingsList.isRefreshMode) {
             const currentPercentage = textUtils.getAbsolutePercentage(this.sourcesIndex + 1, this.sourcesKeysList.length);
             this.updateSettingsListField('loadingList', {
@@ -431,7 +431,7 @@ class EngineService {
         this.isInitiateComplete = true;
         this.liveStandardDelayTime = settings.LIVE_DELAY_BETWEEN_SOURCES_FETCH;
         this.localStandardDelayTime = settings.LOCAL_DELAY_BETWEEN_SOURCES_FETCH;
-        // Random leading source if not exists.
+        // Random a leading source if not exists.
         if (!this.settingsList.leadingSource) {
             this.settingsList.leadingSource = sourceService.getRandomSource(this.sourcesList);
         }
@@ -445,7 +445,7 @@ class EngineService {
             totalVisibleCountriesCount: this.countriesNameIdList.length
         };
         this.updateLocalStatisticsList(updatedStatisticsList);
-        // Set sources and countries for the first time.
+        // Set the sources and the countries for the first time.
         this.onSetStateInitiateSources({
             sourcesList: this.sourcesList,
             countriesList: this.countriesList,
@@ -469,7 +469,7 @@ class EngineService {
             countriesList: this.countriesList,
             countriesKeysList: this.countriesKeysList
         });
-        // Set countries, settings and statistics in refresh mode.
+        // Set the countries, the settings and the statistics in refresh mode.
         this.updateLocalSettingsList({
             isActive: this.previousObject.isActive,
             isRefreshMode: false
@@ -675,7 +675,7 @@ class EngineService {
         }
         setTimeout(() => { // For the master loader effect.
             if (isChangeSettingsOnly) {
-                // Update settings only.
+                // Update the settings only.
                 this.updateSettingsListField('settingsList', updatedSettingsList);
                 // Refresh or change mode only action.
                 if (action === 'refresh') {

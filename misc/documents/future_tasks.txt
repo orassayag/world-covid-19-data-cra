@@ -11,7 +11,7 @@ Close todo tasks:
 -Do the countries modal.
 -On the model of countries add options to filter by continent (europe, asia, africa, etc...).
 -Add search in the countries modal by independent year / capital name / phone code.
--The full data alt title - "Display all locations".
+-The full data alt title - 'Display all locations'.
 -Convert all the modal to components UI.
 -Implement all the logic.
 
@@ -30,7 +30,7 @@ Mode 2: Same, but the countries disappear after each update, only alerts updated
 
 -Add new view mode:
 -To fit all countries to a single screen without scroll.
--The master will also shrink and will contain a "back" button to return to the original view.
+-The master will also shrink and will contain a 'back' button to return to the original view.
 
 -Mode file:
 -Convert the index.jsx and all the applications to work with one file that will then determine the environment.
@@ -40,7 +40,7 @@ Mode 2: Same, but the countries disappear after each update, only alerts updated
 -Rearrange the following task, that is still relevant and what is not.
 -The colors should be the final task (before cleanup and so on).
 
--Remove the "differenceTime" field in the calculation of times, if there is no use to it.
+-Remove the 'differenceTime' field in the calculation of times, if there is no use to it.
 -When updates the sources, add to the countries new field to force update (add it to the compare function).
 -In the countries service - Add logic to fetch only active countries, only countries with data, and all countries without data, countries to update population.
 -On the sources modal - If one or both of the population sources are off, new to add logic to check if population value exists, if not, don't display any population information (on country identity component and on leading value percentage).
@@ -49,7 +49,7 @@ Mode 2: Same, but the countries disappear after each update, only alerts updated
 -Change favicon and title of the application.
 -Do all the ToDo points.
 -Search in all projects the 'i' tag and replace it with icon components (not include country flags).
--Do all the "ToDo" points.
+-Do all the 'ToDo' points.
 -Check if all sources inactive - Only then display error on the screen.
 -Change favicon + page title.
 -Add title on all the icons.
@@ -76,7 +76,7 @@ Mode 2: Same, but the countries disappear after each update, only alerts updated
 -Clear all comments of code.
 -Remove all Backups directory.
 -Correct all spell mistakes in this document.
--Before upload the project source to github, create the link and replace it on "source" credit.
+-Before upload the project source to github, create the link and replace it on 'source' credit.
 -Fix all spell mistakes in all TXT files.
 
 Future tasks:

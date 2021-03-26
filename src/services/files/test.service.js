@@ -25,7 +25,7 @@ class TestService {
 	}
 
 	async testFlowSources() {
-		console.log('initiate start');
+		console.log('Initiate start.');
 		let countriesList = countriesData.countriesList;
 		const sources = Object.values(SourceName);
 		for (let i = 0; i < sources.length; i++) {
@@ -37,7 +37,7 @@ class TestService {
 			countriesList = data;
 		}
 		countriesList = this.finalizeData(countriesList);
-		console.log('initiate end');
+		console.log('Initiate end.');
 		let timer, i = 0;
 		const maximum = sources.length;
 		const transition = async () => {

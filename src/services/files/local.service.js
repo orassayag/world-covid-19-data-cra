@@ -81,7 +81,7 @@ class LocalDataService {
     }
 
     createRandomCountriesList() {
-        // Get random countries list to update (not include world).
+        // Get random countries list to update (not include the world).
         let numbersList = new Set();
         let index = 0;
         const countriesCount = textUtils.getRandomNumber(1, this.simulateLocalMaximumCountriesPerRound);
@@ -92,7 +92,7 @@ class LocalDataService {
             }
             index++;
         }
-        // Remove the world country id.
+        // Remove the world country Id.
         numbersList.delete(this.worldCountryId);
         this.lastRoundNumbersList = numbersList;
         numbersList = [...numbersList];

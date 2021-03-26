@@ -15,7 +15,7 @@ Completed + canceled tasks:
 01. Update the 'REMEMBER' section of this document. *
 02. ' all the outcome of the crawling will be created' comment should be updated. *
 03. Add to package.json file the 'INSTRUCTIONS.md' key in the files section (if it exists in the project). *
-04. In the 'initate.service - const { Mode, ScriptType } = require('../../core/enums/files/system.enum'); - Need to change to ../../core/enums'. *
+04. In the initiate.service - const { Mode, ScriptType } = require('../../core/enums/files/system.enum'); - Need to change to ../../core/enums. *
 05. Check if async copyDirectory( is not with line break. *
 06. Fix createDirectory - No need for await in createSessionDirectory method. *
 07. 'Validate internet connection works.' => 'Validate that the internet connection works.' *
@@ -194,7 +194,7 @@ and create a list of all ids available for each source. *
 -Answer the results to https://github.com/facebook/create-react-app/issues/10167 to 'marko-hologram' reply - Canceled. *
 -Convert the project to use DOM Parser instead of JSDom package. *
 -Check for all browser support. *
--Solve bug with FireFox: *
+-Solve a bug with FireFox: *
 -Create a simple new project with jsdom and see if there is still a bug with FireFox. *
 -If so, try https://www.npmjs.com/package/parse5 and see if an exception exists. *
 -If no, Check all other browsers. *
@@ -684,7 +684,7 @@ ToDo: *
 -Add person.json file to each person of quote: *
 -Add the UI of the person, with wikiURL link. *
 -Make a list of person.json, id, name, profession, wikiUrl. *
--After list complete, remake the quotes.json with personId. *
+-After the list is complete, remake the quotes.json with personId. *
 -Check for misspell - Canceled. *
 -Fix all # and @. - Canceled. *
 -Mark all merges. - Canceled. *

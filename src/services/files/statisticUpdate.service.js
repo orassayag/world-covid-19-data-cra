@@ -70,7 +70,7 @@ class StatisticUpdateService {
     }
 
     updateStatisticsUpdatesListTimes(statisticsUpdatesList) {
-        // Update times.
+        // Update the times.
         const dateNow = timeUtils.getCurrentTime();
         for (let i = 0; i < statisticsUpdatesList.length; i++) {
             statisticsUpdatesList[i] = this.updateTimes(statisticsUpdatesList[i], dateNow);
@@ -146,7 +146,7 @@ class StatisticUpdateService {
     }
 
     cleanStatisticsUpdatesList(statisticsUpdatesList) {
-        // Clear previous updates.
+        // Clear the previous updates.
         for (let i = 0; i < statisticsUpdatesList.length; i++) {
             const statisticUpdate = statisticsUpdatesList[i];
             if (statisticUpdate.updateClassName) {

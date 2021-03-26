@@ -13,7 +13,7 @@ const SourcesModal = (props) => {
           <div className="sources-select">
             <div className="title">
               Active Sources
-                  </div>
+            </div>
             <div className="sources-list">
               <div className="source active">
                 <div className="image">
@@ -21,7 +21,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   GOO
-                      </div>
+                </div>
               </div>
               <div className="source active">
                 <div className="image">
@@ -29,7 +29,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   WOD
-                      </div>
+                </div>
               </div>
               <div className="source active">
                 <div className="image">
@@ -37,7 +37,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   CVA
-                      </div>
+                </div>
               </div>
               <div className="source active">
                 <div className="image">
@@ -45,7 +45,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   COA
-                      </div>
+                </div>
               </div>
               <div className="source active">
                 <div className="image">
@@ -53,7 +53,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   WIK
-                      </div>
+                </div>
               </div>
               <div className="source active">
                 <div className="image">
@@ -61,7 +61,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   CAC
-                      </div>
+                </div>
               </div>
               <div className="source active">
                 <div className="image">
@@ -69,7 +69,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   CVS
-                      </div>
+                </div>
               </div>
               <div className="source active">
                 <div className="image">
@@ -77,7 +77,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   CLN
-                      </div>
+                </div>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   GOO
-                      </div>
+                </div>
               </div>
               <div className="source">
                 <div className="image">
@@ -100,7 +100,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   WOD
-                      </div>
+                </div>
               </div>
               <div className="source">
                 <div className="image">
@@ -108,7 +108,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   CVA
-                      </div>
+                </div>
               </div>
               <div className="source">
                 <div className="image">
@@ -116,7 +116,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   COA
-                      </div>
+                </div>
               </div>
               <div className="source">
                 <div className="image">
@@ -124,7 +124,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   WIK
-                      </div>
+                </div>
               </div>
               <div className="source">
                 <div className="image">
@@ -132,7 +132,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   CAC
-                      </div>
+                </div>
               </div>
               <div className="source active">
                 <div className="image">
@@ -140,7 +140,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   CVS
-                      </div>
+                </div>
               </div>
               <div className="source">
                 <div className="image">
@@ -148,7 +148,7 @@ const SourcesModal = (props) => {
                 </div>
                 <div className="name">
                   CLN
-                      </div>
+                </div>
               </div>
             </div>
           </div>
@@ -178,7 +178,7 @@ const SourcesModal = (props) => {
           <div className="interval-select">
             <div className="title">
               Updates per:
-                  </div>
+            </div>
             <div className="time-selector">
               <select name="select" value="1" onChange={() => { }}>
                 <option value="30">30sec</option>

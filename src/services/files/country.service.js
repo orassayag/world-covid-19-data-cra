@@ -311,7 +311,7 @@ class CountryService {
 			country.populationCount = country.staticPopulationCount;
 			country.populationPercentageDisplay = textUtils.getPercentageDisplay(country.populationCount, worldPopulationCount);
 		}
-		// Set statistics data.
+		// Set the statistics data.
 		country.statisticsData = [
 			new StatisticsDataItemModel({
 				value: (country.order + 1).toString(),
@@ -330,7 +330,7 @@ class CountryService {
 				iconName: 'hourglass-half'
 			})
 		];
-		// Set summary data.
+		// Set the summary data.
 		country.summaryData = this.initiateSummaryData(sourcesList, sourcesKeysList);
 		return country;
 	}
@@ -488,9 +488,9 @@ class CountryService {
 			source = fetchDataResults.source;
 			updateCountryType = fetchDataResults.updateCountryType;
 		}
-		// Update last update time and added time.
+		// Update the last update time and the added time.
 		country = this.updateTimes(country, sourcesKeysList, dateNow);
-		// Update leading.
+		// Update the leading.
 		country = this.updateLeading({
 			country: country,
 			source: source,
@@ -501,7 +501,7 @@ class CountryService {
 	}
 
 	cleanupCountryData(country, sourcesKeysList) {
-		// Clear previous updates.
+		// Clear the previous updates.
 		if (country.updateSourceData) {
 			for (let i = 0; i < sourcesKeysList.length; i++) {
 				const sourceKey = [sourcesKeysList[i]];
@@ -517,7 +517,7 @@ class CountryService {
 			country.boxClassName = '';
 			country.updateSourceData = null;
 		}
-		// Clear summary data.
+		// Clear the summary data.
 		if (country.lastUpdateDate) {
 			for (let i = 0; i < sourcesKeysList.length; i++) {
 				const sourceSummary = country.summaryData.summaryDataList[sourcesKeysList[i]];
@@ -1589,7 +1589,7 @@ class CountryService {
 
 	compareCountryProps(prevProps, nextProps) {
 		// ToDo: Since only country object is compared,
-		// when sources list updated, need to re-render all countries.
+		// when sources list updated, need to re-render all the countries.
 		return JSON.stringify(prevProps) === JSON.stringify(nextProps);
 	}
 

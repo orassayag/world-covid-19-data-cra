@@ -13390,7 +13390,7 @@ class CountriesData {
 				'CAR': 69
 			}
 		};
-		// Set statistic ids.
+		// Set statistic Ids.
 		this.setStaticIds();
 	}
 

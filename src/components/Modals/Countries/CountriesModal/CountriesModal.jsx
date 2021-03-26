@@ -45,7 +45,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                         </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -53,7 +53,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -61,7 +61,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -69,7 +69,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -77,7 +77,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -85,7 +85,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -93,7 +93,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -101,7 +101,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country active">
               <div className="image">
@@ -109,7 +109,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -117,7 +117,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -125,7 +125,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -133,7 +133,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -141,7 +141,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -149,7 +149,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -157,7 +157,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -165,7 +165,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country active">
               <div className="image">
@@ -173,7 +173,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -181,7 +181,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -189,7 +189,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -197,7 +197,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -205,7 +205,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -213,7 +213,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -221,7 +221,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -229,7 +229,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country active">
               <div className="image">
@@ -237,7 +237,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -245,7 +245,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -253,7 +253,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -261,7 +261,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -269,7 +269,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -277,7 +277,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -285,7 +285,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -293,7 +293,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country active">
               <div className="image">
@@ -301,7 +301,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -309,7 +309,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -317,7 +317,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -325,7 +325,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -333,7 +333,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -341,7 +341,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -349,7 +349,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -357,7 +357,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country active">
               <div className="image">
@@ -365,7 +365,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -373,7 +373,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -381,7 +381,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -389,7 +389,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -397,7 +397,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -405,7 +405,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -413,7 +413,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
             <div className="country">
               <div className="image">
@@ -421,7 +421,7 @@ const CountriesModal = (props) => {
               </div>
               <div className="code">
                 AU
-                     </div>
+              </div>
             </div>
           </div>
           <div className="actions">
@@ -430,7 +430,7 @@ const CountriesModal = (props) => {
             </div>
             <div className="current-country">
               Bonaire (Caribbean Netherlands)
-                         </div>
+            </div>
           </div>
         </div>
       </div>
