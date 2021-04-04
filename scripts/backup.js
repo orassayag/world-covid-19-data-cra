@@ -94,7 +94,7 @@ class BackupScript {
         if (!await fileUtils.isPathExists(this.backupData.targetFullPath)) {
             throw new Error('No backup was provided (1000001)');
         }
-        logUtils.log(`FINISH TO CREATE BACKUP: ${this.backupData.targetBackupName}`);
+        logUtils.log(`FINISH TO CREATE A BACKUP: ${this.backupData.targetBackupName}`);
     }
 }
 

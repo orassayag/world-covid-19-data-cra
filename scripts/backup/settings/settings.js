@@ -28,7 +28,7 @@ const settings = {
     APPLICATION_PATH: 'world-covid-19-data', // All these paths will be calculated during runtime in the 'initiate service'.
     MILLISECONDS_DELAY_VERIFY_BACKUP_COUNT: 1000, // Determine the period of time in milliseconds to check that files were created / moved to the target path.
     BACKUP_MAXIMUM_DIRECTORY_VERSIONS_COUNT: 50, // Determine the number of times in loop to check for version of a backup.
-    IGNORE_DIRECTORIES: ['dist', 'node_modules', 'assert', 'sources'], // Determine the directories to ignore when a backup copy is taking place.
+    IGNORE_DIRECTORIES: ['.git', 'dist', 'node_modules', 'assert', 'sources'], // Determine the directories to ignore when a backup copy is taking place.
     IGNORE_FILES: [''], // Determine the files to ignore when the back copy is taking place.
     INCLUDE_FILES: ['.gitignore']  // Determine the files to force include when the back copy is taking place.
 };
