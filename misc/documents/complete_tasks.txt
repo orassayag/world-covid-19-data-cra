@@ -1,5 +1,8 @@
 Completed + canceled tasks:
 ===========================
+-Comments: Change 'validateEnumData' to 'data'. *
+-Remove the 'await' from 'await fileUtils.createDirectory(value);'. *
+-In settings.js convert utils path to index, and check if it still works. *
 14. In all places change to use isExists instead of .length > 0 or .length <= 0. *
 -Bring back production to true in settings.js. *
 -Fix all spell mistakes vig Gmail. *
