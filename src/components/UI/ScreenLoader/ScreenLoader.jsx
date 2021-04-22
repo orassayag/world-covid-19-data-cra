@@ -3,7 +3,7 @@ import { Icon } from '../';
 
 const ScreenLoader = (props) => {
     const { isActive, loadingList, isDisplayError } = props;
-    if (!isActive) {
+    if (!isActive || !loadingList.loadingPercentage) {
         return null;
     }
     const { loadingPercentage, loadingSourceName, loadingQuote } = loadingList;

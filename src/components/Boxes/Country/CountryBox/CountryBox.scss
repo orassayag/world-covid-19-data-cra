@@ -65,16 +65,16 @@
                 }
             }
         }
+    }
+}
 
-        @media (min-width: 319px) and (max-width: 499px) {
-            .main {
-                .page {
-                    .main-container {
-                        .container {
-                            .box {
-                                width: 100%;
-                            }
-                        }
+@media (min-width: 319px) and (max-width: 499px) {
+    .main {
+        .page {
+            .main-container {
+                .container {
+                    .box {
+                        width: 100%;
                     }
                 }
             }

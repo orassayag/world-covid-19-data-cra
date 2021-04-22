@@ -8,7 +8,7 @@ import { statisticUpdateService } from '../../../../services';
 const StatisticsUpdates = (props) => {
   const { countriesNameIdList, statisticsUpdatesList, statisticsUpdatesHoursCount,
     statisticsUpdatesCountryId, onActionClick, onActionChange } = props;
-  const dateNow = timeUtils.getCurrentTime();
+    const dateNow = timeUtils.getCurrentDate();
   const countryIdQuery = statisticsUpdatesCountryId === -1 ? {} : { countryId: [statisticsUpdatesCountryId] };
   const displayStatisticsUpdatesList = statisticUpdateService.getStatisticsUpdatesList(statisticsUpdatesList, {
     filterOptions: {

@@ -1,5 +1,9 @@
 Future tasks:
 =============
+-Add '© Or Assayag, All rights reserved 2018 - 2021' (current year) in the bottom of the page, and in the credits modal.
+-Do as much 'ToDo' points as possible.
+-Add 'logUtils' and convert all 'console.log' to a main function (copy from other project).
+-Convert all the static strings in the dom search logic to 'separator.service'.
 
 Close todo tasks:
 =================

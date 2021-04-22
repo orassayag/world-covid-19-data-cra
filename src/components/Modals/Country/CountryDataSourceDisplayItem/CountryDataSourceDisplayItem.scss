@@ -76,3 +76,40 @@
         }
     }
 }
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .main {
+        .modal {
+            .modal-content {
+                &.country {
+                    .content {
+                        .country-data {
+                            .live-data {
+                                .data-list {
+                                    .data-item {
+                                        .items {
+                                            .item {
+
+                                                &.small {
+                                                    display: none;
+                                                }
+
+                                                &.big {
+                                                    width: auto;
+                                                }
+
+                                                .percentage {
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

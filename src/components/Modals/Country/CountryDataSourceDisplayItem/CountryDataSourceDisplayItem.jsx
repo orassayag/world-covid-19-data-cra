@@ -13,7 +13,7 @@ const CountryDataSourceDisplayItem = (props) => {
           />
         </span>
       </div>
-      <div className="number">{number}{itemClassName === 'big' ? ` | ${percentage}%` : ''}</div>
+      <div className="number">{number}{itemClassName === 'big' ? <span className="percentage"> | ${percentage}%</span> : ''}</div>
     </div>
   );
 };

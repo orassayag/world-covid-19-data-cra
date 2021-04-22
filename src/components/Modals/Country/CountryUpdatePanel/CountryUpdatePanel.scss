@@ -75,3 +75,21 @@
         }
     }
 }
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .main {
+        .modal {
+            .modal-content {
+                &.country {
+                    .content {
+                        .country-data {
+                            .update-panel {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

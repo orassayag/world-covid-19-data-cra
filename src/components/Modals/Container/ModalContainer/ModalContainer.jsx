@@ -23,6 +23,7 @@ const ModalContainer = (props) => {
     }
 
     return (
+        // ToDo: Convert the modal name into an enum.
         <div className="modal">
             {(() => {
                 switch (activeModalName) {

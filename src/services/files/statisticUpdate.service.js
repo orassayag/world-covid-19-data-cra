@@ -71,7 +71,7 @@ class StatisticUpdateService {
 
     updateStatisticsUpdatesListTimes(statisticsUpdatesList) {
         // Update the times.
-        const dateNow = timeUtils.getCurrentTime();
+        const dateNow = timeUtils.getCurrentDate();
         for (let i = 0; i < statisticsUpdatesList.length; i++) {
             statisticsUpdatesList[i] = this.updateTimes(statisticsUpdatesList[i], dateNow);
         }
@@ -159,7 +159,7 @@ class StatisticUpdateService {
 
     getCountryStatisticsUpdates(data) {
         const { countryId, updatesHoursCount, statisticsUpdatesList } = data;
-        const dateNow = timeUtils.getCurrentTime();
+        const dateNow = timeUtils.getCurrentDate();
         return this.getStatisticsUpdatesList(statisticsUpdatesList, {
             filterOptions: {
                 countryId: [countryId],

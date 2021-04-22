@@ -43,12 +43,15 @@ class StatisticsReducers {
 
 	getStatisticsReducer = (state = this.initialState, action) => {
 		switch (action.type) {
-			case StatisticsType.STATISTICS_SET_STATE_STATISTICS_LIST:
-				{ return this.setStateStatisticsList(state, action); }
-			case StatisticsType.STATISTICS_SET_STATE_CURRENT_TIME:
-				{ return this.setStateCurrentTime(state, action); }
-			case StatisticsType.STATISTICS_SET_STATE_STATISTICS_FIELD:
-				{ return this.setStateStatisticsField(state, action); }
+			case StatisticsType.STATISTICS_SET_STATE_STATISTICS_LIST: {
+				return this.setStateStatisticsList(state, action);
+			}
+			case StatisticsType.STATISTICS_SET_STATE_CURRENT_TIME: {
+				return this.setStateCurrentTime(state, action);
+			}
+			case StatisticsType.STATISTICS_SET_STATE_STATISTICS_FIELD: {
+				return this.setStateStatisticsField(state, action);
+			}
 		}
 		return state;
 	}

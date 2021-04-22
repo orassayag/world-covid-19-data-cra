@@ -1,4 +1,5 @@
 import textUtils from './text.utils';
+import validationUtils from './validation.utils';
 
 class TimeUtils {
 
@@ -7,8 +8,8 @@ class TimeUtils {
         this.monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     }
 
-    getCurrentTime() {
-        return new Date();
+    getCurrentDate(value) {
+        return value ? validationUtils.isValidArray(value) ? new Date(...value) : new Date(value) : new Date();
     }
 
     getTimeDisplay(date) {
@@ -121,7 +122,7 @@ class TimeUtils {
     }
 
     subtractHours(date, hours) {
-        return new Date(date.getTime() - (hours * 60) * 60000);
+        return this.getCurrentDate(date.getTime() - (hours * 60) * 60000);
     }
 
     getDisplayTextTime(displayTime) {
@@ -129,7 +130,7 @@ class TimeUtils {
     }
 
     getTitleDate() {
-        const date = this.getCurrentTime();
+        const date = this.getCurrentDate();
         return `${this.monthNames[date.getMonth()]} ${this.getDay(date, true)}, ${this.getYear(date, true)}`;
     }
 }

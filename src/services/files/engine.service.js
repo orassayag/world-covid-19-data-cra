@@ -167,7 +167,7 @@ class EngineService {
     }
 
     updateClock() {
-        const dateNow = timeUtils.getCurrentTime();
+        const dateNow = timeUtils.getCurrentDate();
         this.singlesList.currentTime = dateNow;
         const lastUpdateResult = timeUtils.getDifferenceTimesDisplay({
             startDateTime: this.statisticsList.lastUpdateDate,
@@ -283,7 +283,7 @@ class EngineService {
                 // Update round data state.
                 const indexResult = this.getSourceAndIndex(false);
                 const updatedStatisticsList = {
-                    lastUpdateDate: timeUtils.getCurrentTime(),
+                    lastUpdateDate: timeUtils.getCurrentDate(),
                     lastUpdateSourceName: source.upperName,
                     nextUpdateSourceName: indexResult.source.upperName,
                     isLastUpdateChanges: fetchDataResults.updateCountryType === UpdateCountryType.DATA,
@@ -478,7 +478,7 @@ class EngineService {
         const refreshSource = this.getSource(this.sourcesRefreshIndex);
         this.sourcesRefreshIndex = 0;
         this.updateLocalStatisticsList({
-            lastUpdateDate: timeUtils.getCurrentTime(),
+            lastUpdateDate: timeUtils.getCurrentDate(),
             lastUpdateSourceName: refreshSource ? refreshSource.upperName : this.statisticsList.lastUpdateSourceName,
             totalUpdatesCount: this.statisticsList.totalUpdatesCount + this.sourcesKeysList.length,
             totalUpdateCyclesCount: this.statisticsList.totalUpdateCyclesCount + 1
@@ -579,6 +579,7 @@ class EngineService {
     }
 
     runMasterActionClick(data) {
+        // ToDo: Convert the action into an enum.
         const { action, value, id } = data;
         if (!action || (!value && action !== 'modal')) {
             return;
@@ -699,6 +700,7 @@ class EngineService {
     }
 
     runCountryActionUpdate(data) {
+        // ToDo: Convert the action into an enum.
         const { action, value, countryId } = data;
         if (!action || !value || !countryId) {
             return;
@@ -733,6 +735,7 @@ class EngineService {
     }
 
     runGlobalStatisticsActionUpdate(data) {
+        // ToDo: Convert the action into an enum.
         const { action, value } = data;
         if (!action || !value) {
             return;

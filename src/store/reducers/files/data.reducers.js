@@ -22,8 +22,9 @@ class DataReducers {
 
 	getDataReducer = (state = this.initialState, action) => {
 		switch (action.type) {
-			case DataType.DATA_SET_STATE_DATA_COLLECTION:
-				{ return this.setStateDataCollection(state, action); }
+			case DataType.DATA_SET_STATE_DATA_COLLECTION: {
+				return this.setStateDataCollection(state, action);
+			}
 		}
 		return state;
 	};

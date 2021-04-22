@@ -25,8 +25,9 @@ class SettingsReducers {
 
 	getSettingsReducer = (state = this.initialState, action) => {
 		switch (action.type) {
-			case SettingsType.SETTINGS_SET_STATE_SETTINGS_LIST:
-				{ return this.setStateSettingsList(state, action); }
+			case SettingsType.SETTINGS_SET_STATE_SETTINGS_LIST: {
+				return this.setStateSettingsList(state, action);
+			}
 		}
 		return state;
 	}

@@ -22,7 +22,7 @@ const CountryModal = (props) => {
   }, []);
 
   return (
-    <div className={`modal-content country ${isContainData ? '' : 'no-data'} f16 f16-extra`}>
+    <div className={`modal-content country${isContainData ? ' ' : 'no-data '}f16 f16-extra`}>
       <div className="content">
         <CountryExitButton
           onActionClick={onActionClick}

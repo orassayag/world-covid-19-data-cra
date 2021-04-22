@@ -32,10 +32,12 @@ class StatisticsUpdatesReducers {
 
 	getStatisticsUpdatesReducer = (state = this.initialState, action) => {
 		switch (action.type) {
-			case StatisticsUpdatesType.STATISTICS_UPDATES_SET_STATE_STATISTICS_UPDATES_LIST:
-				{ return this.setStateStatisticsUpdatesList(state, action); }
-			case StatisticsUpdatesType.STATISTICS_UPDATES_SET_STATE_STATISTICS_UPDATES_SETTINGS_LIST:
-				{ return this.setStateStatisticsUpdatesSettingsList(state, action); }
+			case StatisticsUpdatesType.STATISTICS_UPDATES_SET_STATE_STATISTICS_UPDATES_LIST: {
+				return this.setStateStatisticsUpdatesList(state, action);
+			}
+			case StatisticsUpdatesType.STATISTICS_UPDATES_SET_STATE_STATISTICS_UPDATES_SETTINGS_LIST: {
+				return this.setStateStatisticsUpdatesSettingsList(state, action);
+			}
 		}
 		return state;
 	}

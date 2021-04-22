@@ -57,7 +57,8 @@ const SortDirection = textUtils.createEnum([
 ]);
 
 const SourceSortType = textUtils.createEnum([
-	['ORDER', 'order']
+	['ORDER', 'order'],
+	['NAME', 'name']
 ]);
 
 const StatisticsUpdatesSortType = textUtils.createEnum([

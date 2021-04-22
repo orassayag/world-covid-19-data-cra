@@ -24,22 +24,22 @@
                 }
             }
         }
+    }
+}
 
-        @media (min-width: 319px) and (max-width: 499px) {
-            .main {
-                .page {
-                    .main-container {
-                        .container {
-                            .box {
-                                .data {
-                                    .sources {
-                                        .source {
-                                            display: flex;
-                                            flex-direction: row;
-                                            justify-content: center;
-                                            align-items: center;
-                                        }
-                                    }
+@media (min-width: 319px) and (max-width: 499px) {
+    .main {
+        .page {
+            .main-container {
+                .container {
+                    .box {
+                        .data {
+                            .sources {
+                                .source {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
                                 }
                             }
                         }

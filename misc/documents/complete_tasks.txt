@@ -1,5 +1,38 @@
 Completed + canceled tasks:
 ===========================
+-Improve the dialog windows modals to be responsive * + Fix bug in quotes in mobile. *
+-Fix loader bug in local mode. *
+-Fix duplicate space in 'modal-content country  f16 f16-extra'. *
+-Update packages + Recreate package-lock.json. *
+-Clear unused enums and make sure all in used really exists. *
+-Remove the 'destination' parameter in the 'filterDirectories' method + Verify that backup still works. *
+-Rename and check: countLimitService.countLimitData.millisecondsSendEmailDelayCount. *
+-Check and reset the '.vscode/settings.json' by 'C:/Or/Web/auto-packages-updater/auto-packages-updater/.vscode/settings.json' + *
+Format all documents and re-add 'cSpell.words' all the words + add the 'cSpell.ignorePaths'. *
+-Convert all 'new Date()' to be from the timeUtils. Change in all places. *
+-In validation file path (probably a JSON file) there is a 'Expected a number' comment, need to fix it *
+ (take the comment from the auto-packages-updater project). *
+-Convert 'removeLastCharacter' to use 'removeLastCharacters'. *
+-Make sure to have space between /* cSpell:disable */ in the 'INSTRUCTIONS.md' file. *
+-Add text to the 'INSTRUCTIONS.md' file. *
+-Make sure to fix the grammar mistake in the 'enum.utils.js' file (an enum-like object). *
+-In the 'README.md' file, fix in all places to 'In the terminal'. *
+-Make sure that all places 'this.exit' function - Need to be 'await this.exit'. *
+-Search for 'async ' and create a list of functions/methods, and make sure that all calls have await. *
+-In the 'package.json' file change to 'private: false'. *
+-Scan all files for spell mistakes with the 'files-spell-checker' project. *
+-Make sure all switch-case have curly braces. *
+-Remove code comments to a backup TXT file. *
+-Remove the duplicate empty lines: \n\s*\n\s*\n *
+-Remove the first empty line: ^(?<![\s])\n *
+-Remove the last empty line: \n\s*$(?!\n) *
+-Detect all comments without a dot at the end: ^// .*(?<!\.)$ *
+-Format all documents. *
+-Verify all works well. *
+-Fix TXT files spell mistakes via Gmail. *
+-Move all complete tasks from here to complete_tasks.txt. *
+-Upload to GitHub. *
+-Backup to iOmega. *
 -Comments: Change 'validateEnumData' to 'data'. *
 -Remove the 'await' from 'await fileUtils.createDirectory(value);'. *
 -In settings.js convert utils path to index, and check if it still works. *
@@ -206,7 +239,7 @@ and create a list of all ids available for each source. *
 -Try to replace jsom with parse5. *
 -Fix upload bug in Firefox - Asked question in StackOverflow: *
 https://stackoverflow.com/questions/64650119/react-error-sharedarraybuffer-is-not-defined-in-firefox *
--Statistics modal maintainance: *
+-Statistics modal maintenance: *
 -Check ref country still works. *
 -Check normal behaviour still works. *
 -Clear comments. *
@@ -281,7 +314,7 @@ https://en.wikipedia.org/wiki/Proto-state#List_of_modern_proto-states *
 -After finish all, split the sourcesCountry and the countries to separate files - Canceled. *
 -Add a new field of 'isNoData' and fill all relevant fields. *
 -Add field of active or not - When have countries that not should be. In the array of the countries filter the active countries only. *
--The current time - Try make it out of the state - Canceled. *
+-The current time - Try to make it out of the state - Canceled. *
 -For all countries that are missing population - Fill in the staticPopulation - There will be population fields: staticPopulationCount, dynamicPopulationCount, populationCountDisplay. *
 -Calculate all missing world country objects. *loading - Get all the p
 -Rebuild all the calculation logic. *
@@ -692,34 +725,34 @@ ToDo: *
 -Fix all # and @. - Canceled. *
 -Mark all merges. - Canceled. *
 -Check for duplicate lines. - Canceled. *
--Verify all profession ends with . - Canceled. *
+-Verify all professions . - Canceled. *
 -Make the new logic. - Canceled. *
 -Check random 100-200 quotes. - Canceled. *
 -Handle the time change of the latest updates - Test it with minutes. *
 -Implement the statistics updates list. *
 -Add id to the model. *
--Add logic for inactive mode (split the update times to seperated function). *
--Add logic to 'new Date' come from the dateTime.utils. *
+-Add logic for inactive mode (split the update times to separate function). *
+-Add logic to 'new Date' comes from the dateTime.utils. *
 -Add memo to the updates list and test it with a lot of update rows - Canceled. *
 -Do the statistics model. *
 -Add POP1 and POP2 to the statistics list. *
--Add the country's name to the list, if needed add new field for the text class. *
+-Add the country's name to the list, if needed add a new field for the text class. *
 -Add blink effects in all colors. *
 -Add animation to icons. *
 -Add refreshes counts to the statistics. *
 -First build the statistics model UI and components. *
 -Remove the credits and the Other country sections. *
--Move the 'other' to the country details of other. *
+-Move the 'other' to the country details of others. *
 -Build the logic of statistics data + Test it on 'Test' component. *
--Each time a new update come, blink the row until the next update (same color as the box). *
+-Each time a new update comes, blink the row until the next update (same color as the box). *
 -https://stackoverflow.com/questions/38242891/limit-array-size *
 -Total statistics: - Canceled. *
 -StatisticPopulationSourceModel: iconName, sourceName, sourceStatus, sourceNameClassName - Canceled. *
 -StatisticDataSourceModel: iconName, sourceName, sourceStatus, sourceNameClassName, cases, deaths, recovers, updates, lastUpdate - Canceled. *
 -StatisticDataSummarySourceModel: sourceStatus, sourceNameClassName, cases, deaths, recovers, updates, lastUpdate, cycles, tryRecovers, refreshes - Canceled. *
 -Add the logic to update all and to display it on the statistics modal - Canceled. *
--Add SourcesStatistics model: sourceName, iconName, cases, deaths, recovers, updates, lastUpdate - Canceled. *
--Add TotalSourcesStatistics model: -> Inherits from SourcesStatistics + extra fields - Canceled. *
+-Add the SourcesStatistics model: sourceName, iconName, cases, deaths, recovers, updates, lastUpdate - Canceled. *
+-Add the TotalSourcesStatistics model: -> Inherits from SourcesStatistics + extra fields - Canceled. *
 -https://javascript.info/class-inheritance - Canceled. *
 -Add 'javascript.info' to Credits - Canceled. *
 -Country details modal: *
@@ -727,18 +760,18 @@ ToDo: *
 -Flag max width: 125px | Coat max width: 85px *
 -Flag calculate max height | Coat calculate max height. *
 -Add width to both images. *
--Add the UI design + Add logic for click on the entire country box (not include the remove button on the corner)  will open the country modal. Change all the links to regular divs. *
+-Add the UI design + Add logic for clicking on the entire country box (not including the remove button on the corner)  will open the country modal. Change all the links to regular divs. *
 -Sketch all the details: *
 -Flag image |  All details | Coat of arms *
 ========================================= *
 Live Data *
 CAC | CLN | COA | CVA | CVS | GOO | WIK | WOD *
 virus | viruses | skull-crossbones | skull | heart | shield-virus *
-SourceName | Cases (icon) | Cases per Milion (icon) | Deaths (icon) | Deaths per Milion (icon) | Recovers (icon) | Recovers per Milion (icon) | Updates count (icon) | Last update time (icon) *
+SourceName | Cases (icon) | Cases per Million (icon) | Deaths (icon) | Deaths per Million (icon) | Recovers (icon) | Recovers per Million (icon) | Updates count (icon) | Last update time (icon) *
 ========================================= *
 Statistics + Total Row. *
 ========================================= *
-Latestes Updates. *
+Latests Updates. *
 ========================================= *
 -Add size of the country. *
 -Add alert for each box (live data, statistics, latest updates). *
@@ -749,38 +782,38 @@ Latestes Updates. *
 -Copy the new assert directory to the misc directory. *
 -Remove all * + Resize columns + Replace the 'km2' symbol. *
 -Add columns for: Verified Google data * + Verified sizes (125px | 85px) * + Google map URL * + Verified final view. *
--Check all size of flags are minimum width of 125px, and minimum coat width is 85px. *
+-Check all sizes of flags are minimum width of 125px, and minimum coat width is 85px. *
 -After verify image sizes - Do backup to the assert directory. *
 -Verify independent / founded year for each country by search in Google / Wikipedia. *
 -Add large flag + Coat of arms + All the details (population *, continent*, capital *, founded year *, country number *, country code 2 *, country code 3 *, additional codes *, phone code *). *
 -Add the google maps full URL. *
 -Update the countries list.txt. *
--Separate this tasks of covid19 to general tasks in different document. *
--Add the data to the country-data in the misc diretory. *
+-Separate these tasks of covid19 to general tasks in different documents. *
+-Add the data to the country-data in the misc directory. *
 -Change all independents years to numbers instead of strings - Canceled. *
 -Copy all the data to the countries-data.js file. *
 -Verify all data correct on countries-data.js file. *
 -Add agesList array field + 'km2' to area. *
--On the component of images display one flag and coat to example. *
+-On the component of images display one flag and coat for example. *
 -Create the scss file for big flags and coats. *
--Update the images component to display big flags and coat of arms. *
--Add the design for max hight and max width for flag and coat. *
+-Update the images component to display big flags and coats of arms. *
+-Add the design for max height and max width for flag and coat. *
 -Need new flags for 32 + 16: Bonaire, Costa Rica - Canceled. *
 -Create 'other' big flag. *
 -Fix the wrong flags. *
--After finish to fix all - Backup on Misc folder the assert folder. *
+-After finishing to fix all - Backup on the Misc directory the assert directory. *
 -Complete the country UI modal. *
 -Add links to wikipedia and google map (Check if exists). *
 -Resize the earth image again. *
 -Add the components of the rest of the country modal. *
 -Do the 'other' country design. *
--Check whats wrong with WOD source. *
--Do the logic of change hours count of specific country. *
+-Check what's wrong with WOD source. *
+-Do the logic of changing the hours count of a specific country. *
 -Add logic of founded year (year - X years ago) (agesList array field) on the initiate step (for each independent year).  *
 -Logic: *
 -Add a general function that adds 'ago' to the display time. *
--Fix all bugs of of summary data. *
--Add for each country 'summaryData', and the same for the source data, update the counter. Also add total counter. *
+-Fix all bugs of summary data. *
+-Add for each country 'summaryData', and the same for the source data, update the counter. Also add a total counter. *
 -UI: *
 -For each source add StatisticSourceModel: [SourceName]: iconName, sourceName, cases, deaths, recovers, updatesCount, lastUpdateTime. *
 -Also update the total row each time + Move the updates count to the TotalStatisticModel. *
@@ -803,7 +836,7 @@ https://svgtopng.com *
 https://jpg2png.com *
 -Add number of updates + and move the select to the right side. *
 -After finish the entire country modal: *
--Change the logic temporary to load all countries (include all with no data).
+-Change the logic temporarily to load all countries (include all with no data).
 -Check each country to see the data, and mark it on the countries data.txt + update the countries list.txt + Remove all *.
 -Convert all 'find' and findIndex - to for loop - performance - Canceled. *
 -Continue from Diego Garcia. *

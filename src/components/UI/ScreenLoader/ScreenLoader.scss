@@ -223,3 +223,25 @@
         }
     }
 }
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .loader {
+        .container {
+            .quote {
+                blockquote {
+                    font-size: 1.2em;
+                    padding: 0.5em 0.5em 0.2em 1.8em;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 8;
+                    -webkit-box-orient: vertical;
+
+                    &:before {
+                        top: -25px;
+                    }
+                }
+            }
+        }
+    }
+}

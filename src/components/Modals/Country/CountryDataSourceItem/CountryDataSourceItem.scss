@@ -34,3 +34,34 @@
         }
     }
 }
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .main {
+        .modal {
+            .modal-content {
+                &.country {
+                    .content {
+                        .country-data {
+                            .live-data {
+                                .data-item {
+                                    flex-direction: column;
+
+                                    .name {
+                                        width: 100%;
+                                        margin-right: 5px;
+                                        text-align: center;
+                                        font-size: 13px;
+                                    }
+                                }
+
+                                .items {
+                                    margin: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

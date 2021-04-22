@@ -16,7 +16,7 @@ import { coreUtils, logicUtils, textUtils, timeUtils, validationUtils } from '..
 class CountryService {
 
 	constructor() {
-		const dateNow = timeUtils.getCurrentTime();
+		const dateNow = timeUtils.getCurrentDate();
 		this.pastDummySortValue = dateNow.setDate(dateNow.getDate() - 1);
 		this.isCountriesLog = settings.IS_COUNTRIES_LOG;
 		this.countriesKeysList = [];
@@ -153,7 +153,7 @@ class CountryService {
 		const { source, settingsList, countriesList, countriesKeysList, isInitiateComplete } = data;
 		let fetchDataResults = null;
 		if (this.isCountriesLog) {
-			const dateNow = timeUtils.getCurrentTime();
+			const dateNow = timeUtils.getCurrentDate();
 			console.log(`${source.lowerName} | ${timeUtils.getTimeDisplay(dateNow)}`);
 		}
 		if (!source.isActive) {
@@ -340,7 +340,7 @@ class CountryService {
 	}
 
 	getCountryAge(year) {
-		return Math.abs(year - timeUtils.getCurrentTime().getFullYear());
+		return Math.abs(year - timeUtils.getCurrentDate().getFullYear());
 	}
 
 	getDisplayPopulation(populationCountDisplay, populationPercentageDisplay) {
@@ -557,7 +557,7 @@ class CountryService {
 			worldPopulationCount = countriesList[countriesData.worldCountryId].dynamicPopulationCount;
 			countriesList[countriesData.worldCountryId].populationPercentageDisplay = '100';
 		}
-		const dateNow = timeUtils.getCurrentTime();
+		const dateNow = timeUtils.getCurrentDate();
 		for (let i = 0; i < countriesKeysList.length; i++) {
 			const countryId = countriesKeysList[i];
 			let country = countriesList[countryId];
@@ -860,17 +860,19 @@ class CountryService {
 		switch (type) {
 			case SourceNumberType.CASE:
 			case SourceNumberType.DEATH:
-			case SourceNumberType.RECOVER:
+			case SourceNumberType.RECOVER: {
 				if (!textUtils.isInvalidNumber(newValue)) {
 					currentValue += newValue;
 					currentValueDisplay = textUtils.getStringCommaFromNumber(currentValue);
 				}
 				break;
-			case SourceNumberType.UPDATE:
+			}
+			case SourceNumberType.UPDATE: {
 				currentValue = currentValue > 0 ? currentValue + 1 : 1;
 				currentValueDisplay = textUtils.getStringCommaFromNumber(currentValue);
 				break;
-			case SourceNumberType.LAST_UPDATE:
+			}
+			case SourceNumberType.LAST_UPDATE: {
 				currentValue = newValue;
 				currentValueDisplay = newValueDisplay;
 				return new SummaryTimeItemModel({
@@ -879,6 +881,7 @@ class CountryService {
 					value: currentValue,
 					valueDisplay: currentValueDisplay
 				});
+			}
 		}
 		return new SummaryDataItemModel({
 			type: type,
@@ -957,7 +960,7 @@ class CountryService {
 				country.boxClassName = this.getBoxClassName(casesDiff, deathsDiff, recoversDiff);
 				country.updatesCount++;
 				country.updatesCountDisplay = textUtils.getStringCommaFromNumber(country.updatesCount);
-				country.lastUpdateDate = timeUtils.getCurrentTime();
+				country.lastUpdateDate = timeUtils.getCurrentDate();
 				country.lastUpdateSourceName = upperName;
 				country.statisticsData[2].value = country.updatesCountDisplay;
 				country = this.setSummaryData({
@@ -1589,7 +1592,7 @@ class CountryService {
 
 	compareCountryProps(prevProps, nextProps) {
 		// ToDo: Since only country object is compared,
-		// when sources list updated, need to re-render all the countries.
+		// when sources list are updated, there is a need to re-render all the countries.
 		return JSON.stringify(prevProps) === JSON.stringify(nextProps);
 	}
 

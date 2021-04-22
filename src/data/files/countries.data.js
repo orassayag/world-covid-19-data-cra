@@ -5,7 +5,7 @@ import { timeUtils } from '../../utils';
 class CountriesData {
 
 	constructor() {
-		const date = timeUtils.getCurrentTime();
+		const date = timeUtils.getCurrentDate();
 		this.worldCountryId = null;
 		this.otherCountryId = null;
 		this.countriesKeysList = null;

@@ -97,3 +97,23 @@
         }
     }
 }
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .main {
+        .modal {
+            .modal-content {
+                width: 90%;
+                height: 100%;
+
+                &.countries,
+                &.country,
+                &.credits,
+                &.sources,
+                &.statistics {
+                    width: 90%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

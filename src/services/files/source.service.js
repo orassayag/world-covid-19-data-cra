@@ -60,6 +60,10 @@ class SourceService {
         return logicUtils.sort(sourcesList, ['order']);
     }
 
+    nameSort(sourcesList) {
+        return logicUtils.sort(sourcesList, ['order']);
+    }
+
     getRandomSource(sourcesList) {
         sourcesList = this.getSourcesList(sourcesList, {
             filterOptions: {

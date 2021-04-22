@@ -30,3 +30,20 @@
         }
     }
 }
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .main {
+        .modal {
+            .modal-content {
+                &.country {
+                    .content {
+                        .country-data {
+                            width: 95.5%;
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

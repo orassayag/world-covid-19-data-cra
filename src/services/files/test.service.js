@@ -51,7 +51,7 @@ class TestService {
 				countriesList: countriesList
 			});
 			countriesList = data;
-			const dateNow = timeUtils.getCurrentTime();
+			const dateNow = timeUtils.getCurrentDate();
 			console.log(`${timeUtils.getTimeDisplay(dateNow)} | ${source}`);
 			console.log(Object.values(countriesList).filter(c => c.updateSourceData !== null).map(c => { return { name: c.displayName, updateSourceData: c.updateSourceData }; }));
 			countriesList = this.clearCurrentUpdates(countriesList);
