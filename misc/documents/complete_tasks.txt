@@ -1,5 +1,6 @@
 Completed + canceled tasks:
 ===========================
+-Fix bug with 'World' - The font size is too large. *
 -Improve the dialog windows modals to be responsive * + Fix bug in quotes in mobile. *
 -Fix loader bug in local mode. *
 -Fix duplicate space in 'modal-content country  f16 f16-extra'. *
