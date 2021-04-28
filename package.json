@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": false,
   "description": "The client application's role is to contain the UI and display it to the user. World-covid-19-data is an application to display data of cases, deaths, and recovers for each country and are known in the world, from the 8 different APIs.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/orassayag/world-covid-19-data.git"
+  },
   "keywords": [
     "react",
     "redux",
@@ -97,10 +101,10 @@
     "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.1",
     "react-helmet-async": "^1.0.9",
-    "react-redux": "^7.2.3",
+    "react-redux": "^7.2.4",
     "react-refresh": "^0.8.3",
     "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5",
+    "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",

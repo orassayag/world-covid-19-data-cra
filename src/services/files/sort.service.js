@@ -1,86 +1,86 @@
 import { SortModel } from '../../core/models';
-import { CountrySortType, SortDirection } from '../../core/enums';
+import { CountrySortTypeEnum, SortDirectionEnum } from '../../core/enums';
 
 class SortService {
 
     constructor() {
         this.sortsList = {
-            [CountrySortType.CASE]: new SortModel({
-                sortTypeName: CountrySortType.CASE,
+            [CountrySortTypeEnum.CASE]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.CASE,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             }),
-            [CountrySortType.CASE_PER_MILLION]: new SortModel({
-                sortTypeName: CountrySortType.CASE_PER_MILLION,
+            [CountrySortTypeEnum.CASE_PER_MILLION]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.CASE_PER_MILLION,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             }),
-            [CountrySortType.DEATH]: new SortModel({
-                sortTypeName: CountrySortType.DEATH,
+            [CountrySortTypeEnum.DEATH]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.DEATH,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             }),
-            [CountrySortType.DEATH_PER_MILLION]: new SortModel({
-                sortTypeName: CountrySortType.DEATH_PER_MILLION,
+            [CountrySortTypeEnum.DEATH_PER_MILLION]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.DEATH_PER_MILLION,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             }),
-            [CountrySortType.RECOVER]: new SortModel({
-                sortTypeName: CountrySortType.RECOVER,
+            [CountrySortTypeEnum.RECOVER]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.RECOVER,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             }),
-            [CountrySortType.RECOVER_PER_MILLION]: new SortModel({
-                sortTypeName: CountrySortType.RECOVER_PER_MILLION,
+            [CountrySortTypeEnum.RECOVER_PER_MILLION]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.RECOVER_PER_MILLION,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             }),
-            [CountrySortType.NAME]: new SortModel({
-                sortTypeName: CountrySortType.NAME,
+            [CountrySortTypeEnum.NAME]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.NAME,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.ASCENDING,
+                direction: SortDirectionEnum.ASCENDING,
                 directionSymbol: ''
             }),
-            [CountrySortType.CODE]: new SortModel({
-                sortTypeName: CountrySortType.CODE,
+            [CountrySortTypeEnum.CODE]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.CODE,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.ASCENDING,
+                direction: SortDirectionEnum.ASCENDING,
                 directionSymbol: ''
             }),
-            [CountrySortType.CONTINENT]: new SortModel({
-                sortTypeName: CountrySortType.CONTINENT,
+            [CountrySortTypeEnum.CONTINENT]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.CONTINENT,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.ASCENDING,
+                direction: SortDirectionEnum.ASCENDING,
                 directionSymbol: ''
             }),
-            [CountrySortType.POPULATION]: new SortModel({
-                sortTypeName: CountrySortType.POPULATION,
+            [CountrySortTypeEnum.POPULATION]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.POPULATION,
                 fieldsList: ['sortValue'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             }),
-            [CountrySortType.ADD_TIME]: new SortModel({
-                sortTypeName: CountrySortType.ADD_TIME,
+            [CountrySortTypeEnum.ADD_TIME]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.ADD_TIME,
                 fieldsList: ['sortValue', 'lowerName'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             }),
-            [CountrySortType.UPDATES_COUNT]: new SortModel({
-                sortTypeName: CountrySortType.UPDATES_COUNT,
+            [CountrySortTypeEnum.UPDATES_COUNT]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.UPDATES_COUNT,
                 fieldsList: ['sortValue', 'lowerName'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             }),
-            [CountrySortType.LAST_UPDATE_TIME]: new SortModel({
-                sortTypeName: CountrySortType.LAST_UPDATE_TIME,
+            [CountrySortTypeEnum.LAST_UPDATE_TIME]: new SortModel({
+                sortTypeName: CountrySortTypeEnum.LAST_UPDATE_TIME,
                 fieldsList: ['sortValue', 'lowerName'],
-                direction: SortDirection.DESCENDING,
+                direction: SortDirectionEnum.DESCENDING,
                 directionSymbol: '-'
             })
         };

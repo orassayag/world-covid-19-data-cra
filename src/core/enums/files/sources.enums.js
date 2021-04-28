@@ -1,6 +1,6 @@
 import { textUtils } from '../../../utils';
 
-const SourceName = textUtils.createEnum([
+const SourceNameEnum = textUtils.createEnum([
 	['POP1', 'pop1'],
 	['POP2', 'pop2'],
 	['CAC', 'cac'],
@@ -13,7 +13,7 @@ const SourceName = textUtils.createEnum([
 	['WOD', 'wod']
 ]);
 
-const SourceNumberType = textUtils.createEnum([
+const SourceNumberTypeEnum = textUtils.createEnum([
 	['CASE', 'case'],
 	['DEATH', 'death'],
 	['RECOVER', 'recover'],
@@ -21,9 +21,9 @@ const SourceNumberType = textUtils.createEnum([
 	['LAST_UPDATE', 'last_update']
 ]);
 
-const SourceUpdateType = textUtils.createEnum([
+const SourceUpdateTypeEnum = textUtils.createEnum([
 	['ADD', '+'],
 	['SUB', '-']
 ]);
 
-export { SourceName, SourceNumberType, SourceUpdateType };
+export { SourceNameEnum, SourceNumberTypeEnum, SourceUpdateTypeEnum };

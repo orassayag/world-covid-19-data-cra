@@ -1,6 +1,6 @@
 import { creditsData } from '../../data';
-import { CreditSortType } from '../../core/enums';
-import { logicUtils } from '../../utils';
+import { CreditSortTypeEnum } from '../../core/enums';
+import { logicUtils, timeUtils } from '../../utils';
 
 class CreditService {
 
@@ -9,11 +9,11 @@ class CreditService {
             filterOptions: {
                 isMaster: [true]
             },
-            sortType: CreditSortType.ORDER
+            sortType: CreditSortTypeEnum.ORDER
         });
         this.allCredits = this.getCreditsList({
             filterOptions: null,
-            sortType: CreditSortType.ORDER
+            sortType: CreditSortTypeEnum.ORDER
         });
     }
 
@@ -42,6 +42,19 @@ class CreditService {
 
     orderSort(creditsList) {
         return logicUtils.sort(creditsList, ['order']);
+    }
+
+    getFooterCreatorCredits() {
+        const created = 'Created by';
+        const creator = 'Or Assayag';
+        const years = `2018 - ${timeUtils.getYear(timeUtils.getCurrentDate(), true)}`;
+        const tooltip = `${created} ${creator}, ${years}`;
+        return {
+            created: created,
+            creator: creator,
+            years: years,
+            tooltip: tooltip
+        };
     }
 }
 

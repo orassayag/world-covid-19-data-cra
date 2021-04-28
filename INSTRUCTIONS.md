@@ -10,6 +10,7 @@
 6. Once finished with the node_modules installation, You are ready to start the application.
 7. In the terminal run 'npm start'. If everything goes well, you will start to see
    the loading screen and right after that - The countries boxes.
+Please note: The project is not finished yet and has been prospered until further notification.
 
 ## Author
 

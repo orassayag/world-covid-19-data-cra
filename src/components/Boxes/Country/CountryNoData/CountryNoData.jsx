@@ -1,13 +1,13 @@
 import './CountryNoData.scss';
+import { Icon } from '../../../UI';
 
 const CountryNoData = () => {
 
     return (
-        // ToDo: Convert to the Icon component.
         <div className="no-data-container">
-            <div className="icon">
-                <i className="fas fa-search"></i>
-            </div>
+            <Icon
+                name="fa-search"
+            />
             <div className="title">
                 No Data Found
             </div>

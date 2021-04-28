@@ -1,11 +1,44 @@
 Completed + canceled tasks:
 ===========================
+-Update packages + Recreate package-lock.json. *
+-Do the few first tasks in the 'future_tasks.txt' file: *
+-Add 'Created by Or Assayag (Link to linkedin), 2018 - 2021' (current year) in the bottom of the page, and in the credits modal. *
+-Do as many 'ToDo' points as possible. *
+-Add 'logUtils' and convert all 'console.log' to a main function (copy from other project). *
+-Convert all the static strings in the dom search logic to 'separator.service'. *
+-Convert in all places from all versions of canceled keyword to 'Canceled' keyword. *
+-Add in all places 'name.model' to all models. *
+-Check that in all places the name of the file includes the name of tha parent directory. For example: name.model inside 'models' directory. *
+-Don't forget to do the same rename logic for all the enums in the project. *
+-Change in all places the config from 'misc/backup' to 'misc/backups' directory. *
+-Change all (where it's possible) from 'console.log' to 'logUtils.log'. *
+-Take the latest settings from '.vscode/settings.json' and implement them. *
+-Change in all places that globalUtils will be on top. *
+-Replace the 'getCurrentDate' method with the updated one from the 'udemy-courses' project. *
+-Copy the '.eslintignore' file from the 'udemy-courses' project. *
+-Add to the 'package.json' file (below the 'description' field) the 'repository' field: *
+"repository": { *
+  "type": "git", *
+  "url": "git://github.com/username/repository.git" *
+} *
+-Remove code comments to a backup TXT file. *
+-Remove the duplicate empty lines: \n\s*\n\s*\n *
+-Remove the first empty line: ^(?<![\s])\n *
+-Remove the last empty line: \n\s*$(?!\n) *
+-Detect all comments without a dot at the end: ^// .*(?<!\.)$ *
+-Add to the 'INSTRUCTIONS.md' and the 'README.md' note about the uncomplete project - Take it from the 'spam-revenge' project. *
+-Format all documents. *
+-Verify all works well. *
+-Fix TXT files spell mistakes via Gmail (Also, convert '_' to ' ' in all places when checking). *
+-Move all complete tasks from here to complete_tasks.txt. *
+-Upload to GitHub. *
+-Backup to iOmega. *
 -Fix bug with 'World' - The font size is too large. *
 -Improve the dialog windows modals to be responsive * + Fix bug in quotes in mobile. *
 -Fix loader bug in local mode. *
 -Fix duplicate space in 'modal-content country  f16 f16-extra'. *
 -Update packages + Recreate package-lock.json. *
--Clear unused enums and make sure all in used really exists. *
+-Clear unused enums and make sure all in used really exist. *
 -Remove the 'destination' parameter in the 'filterDirectories' method + Verify that backup still works. *
 -Rename and check: countLimitService.countLimitData.millisecondsSendEmailDelayCount. *
 -Check and reset the '.vscode/settings.json' by 'C:/Or/Web/auto-packages-updater/auto-packages-updater/.vscode/settings.json' + *
@@ -106,7 +139,7 @@ const composeEnhancers = (process.env.NODE_ENV === 'development' ? window.__REDU
 in all places (where don't need flag, pass '': regexUtils.createRegex(origin, ''). *
 -Update packages + re-create package.json file. *
 -Verify all still works as expected: live + local modes. *
--Re-format error numbers - canceled. *
+-Re-format error numbers - Canceled. *
 -Remove all comments. *
 -Format all files. *
 -Move all completed tasks to complete_tasks.txt. *

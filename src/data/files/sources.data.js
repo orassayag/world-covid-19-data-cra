@@ -1,6 +1,6 @@
 import settings from '../../settings/settings';
 import { SourceModel } from '../../core/models';
-import { SourceName } from '../../core/enums';
+import { SourceNameEnum } from '../../core/enums';
 
 class SourcesData {
 
@@ -10,9 +10,9 @@ class SourcesData {
 		// Note: Don't change the order of the sources,
 		// it's important for the population calculation logic.
 		this.sourcesList = {
-			[SourceName.POP1]: new SourceModel({
-				lowerName: SourceName.POP1,
-				upperName: SourceName.POP1.toUpperCase(),
+			[SourceNameEnum.POP1]: new SourceModel({
+				lowerName: SourceNameEnum.POP1,
+				upperName: SourceNameEnum.POP1.toUpperCase(),
 				apiURL: POP1_API_URL,
 				isJSON: false,
 				expectedRowsCount: 233,
@@ -20,9 +20,9 @@ class SourcesData {
 				isActive: true,
 				isCovidData: false
 			}),
-			[SourceName.POP2]: new SourceModel({
-				lowerName: SourceName.POP2,
-				upperName: SourceName.POP2.toUpperCase(),
+			[SourceNameEnum.POP2]: new SourceModel({
+				lowerName: SourceNameEnum.POP2,
+				upperName: SourceNameEnum.POP2.toUpperCase(),
 				apiURL: POP2_API_URL,
 				isJSON: false,
 				expectedRowsCount: 242,
@@ -30,9 +30,9 @@ class SourcesData {
 				isActive: true,
 				isCovidData: false
 			}),
-			[SourceName.CAC]: new SourceModel({
-				lowerName: SourceName.CAC,
-				upperName: SourceName.CAC.toUpperCase(),
+			[SourceNameEnum.CAC]: new SourceModel({
+				lowerName: SourceNameEnum.CAC,
+				upperName: SourceNameEnum.CAC.toUpperCase(),
 				apiURL: CAC_API_URL,
 				isJSON: true,
 				expectedRowsCount: 250,
@@ -40,9 +40,9 @@ class SourcesData {
 				isActive: true,
 				isCovidData: true
 			}),
-			[SourceName.CLN]: new SourceModel({
-				lowerName: SourceName.CLN,
-				upperName: SourceName.CLN.toUpperCase(),
+			[SourceNameEnum.CLN]: new SourceModel({
+				lowerName: SourceNameEnum.CLN,
+				upperName: SourceNameEnum.CLN.toUpperCase(),
 				apiURL: CLN_API_URL,
 				isJSON: true,
 				expectedRowsCount: 216,
@@ -50,9 +50,9 @@ class SourcesData {
 				isActive: true,
 				isCovidData: true
 			}),
-			[SourceName.COA]: new SourceModel({
-				lowerName: SourceName.COA,
-				upperName: SourceName.COA.toUpperCase(),
+			[SourceNameEnum.COA]: new SourceModel({
+				lowerName: SourceNameEnum.COA,
+				upperName: SourceNameEnum.COA.toUpperCase(),
 				apiURL: COA_API_URL,
 				isJSON: true,
 				expectedRowsCount: 187,
@@ -60,9 +60,9 @@ class SourcesData {
 				isActive: true,
 				isCovidData: true
 			}),
-			[SourceName.CVA]: new SourceModel({
-				lowerName: SourceName.CVA,
-				upperName: SourceName.CVA.toUpperCase(),
+			[SourceNameEnum.CVA]: new SourceModel({
+				lowerName: SourceNameEnum.CVA,
+				upperName: SourceNameEnum.CVA.toUpperCase(),
 				apiURL: CVA_API_URL,
 				isJSON: true,
 				expectedRowsCount: 216,
@@ -70,9 +70,9 @@ class SourcesData {
 				isActive: true,
 				isCovidData: true
 			}),
-			[SourceName.CVS]: new SourceModel({
-				lowerName: SourceName.CVS,
-				upperName: SourceName.CVS.toUpperCase(),
+			[SourceNameEnum.CVS]: new SourceModel({
+				lowerName: SourceNameEnum.CVS,
+				upperName: SourceNameEnum.CVS.toUpperCase(),
 				apiURL: CVS_API_URL,
 				isJSON: true,
 				expectedRowsCount: 200,
@@ -80,9 +80,9 @@ class SourcesData {
 				isActive: true,
 				isCovidData: true
 			}),
-			[SourceName.GOO]: new SourceModel({
-				lowerName: SourceName.GOO,
-				upperName: SourceName.GOO.toUpperCase(),
+			[SourceNameEnum.GOO]: new SourceModel({
+				lowerName: SourceNameEnum.GOO,
+				upperName: SourceNameEnum.GOO.toUpperCase(),
 				apiURL: GOO_API_URL,
 				isJSON: false,
 				expectedRowsCount: 229,
@@ -90,9 +90,9 @@ class SourcesData {
 				isActive: true,
 				isCovidData: true
 			}),
-			[SourceName.WIK]: new SourceModel({
-				lowerName: SourceName.WIK,
-				upperName: SourceName.WIK.toUpperCase(),
+			[SourceNameEnum.WIK]: new SourceModel({
+				lowerName: SourceNameEnum.WIK,
+				upperName: SourceNameEnum.WIK.toUpperCase(),
 				apiURL: WIK_API_URL,
 				isJSON: false,
 				expectedRowsCount: 229,
@@ -100,9 +100,9 @@ class SourcesData {
 				isActive: true,
 				isCovidData: true
 			}),
-			[SourceName.WOD]: new SourceModel({
-				lowerName: SourceName.WOD,
-				upperName: SourceName.WOD.toUpperCase(),
+			[SourceNameEnum.WOD]: new SourceModel({
+				lowerName: SourceNameEnum.WOD,
+				upperName: SourceNameEnum.WOD.toUpperCase(),
 				apiURL: WOD_API_URL,
 				isJSON: false,
 				expectedRowsCount: 99,

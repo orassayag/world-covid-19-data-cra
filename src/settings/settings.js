@@ -1,9 +1,9 @@
-import { ComponentMode, EnvironmentMode } from '../core/enums';
+import { ComponentModeEnum, EnvironmentModeEnum } from '../core/enums';
 
 const settings = {
     // ===SYSTEM=== //
-    ENVIRONMENT_MODE: EnvironmentMode.DEVELOPMENT, // DEVELOPMENT | PRODUCTION. The environment mode of the application.
-    COMPONENT_MODE: ComponentMode.APP, // APP | ICONS | IMAGES | TEST. Display the data, a list of icons, only a list of names and flags, or the test component.
+    ENVIRONMENT_MODE: EnvironmentModeEnum.DEVELOPMENT, // DEVELOPMENT | PRODUCTION. The environment mode of the application.
+    COMPONENT_MODE: ComponentModeEnum.APP, // APP | ICONS | IMAGES | TEST. Display the data, a list of icons, only a list of names and flags, or the test component.
 
     // ===FLAG=== //
     IS_COUNTRIES_LOG: false, // true | false. Display console log for each country update.

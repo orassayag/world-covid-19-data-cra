@@ -1,19 +1,19 @@
 require('./backup/services/files/initiate.service').initiate();
 const settings = require('./backup/settings/settings');
+const { BackupDataModel } = require('./backup/models');
 const { fileUtils, globalUtils, logUtils, pathUtils, textUtils, timeUtils } = require('./backup/utils');
-const { BackupData } = require('./backup/models');
 
 class BackupScript {
 
     constructor() {
-        this.backupData = null;
+        this.backupDataModel = null;
         this.backupTitle = null;
     }
 
     initiate() {
         // Get the backup title from the console.
         this.backupTitle = textUtils.removeAllCharacters(textUtils.toLowerCase(process.argv[2]), '.');
-        this.backupData = new BackupData(settings);
+        this.backupDataModel = new BackupDataModel(settings);
         logUtils.log('INITIATE THE BASE PARAMETERS');
     }
 
@@ -35,20 +35,20 @@ class BackupScript {
     async setParameters() {
         logUtils.log('SET THE PARAMETERS');
         let backupTemporaryPath = null;
-        for (let i = 0; i < this.backupData.backupMaximumDirectoryVersionsCount; i++) {
+        for (let i = 0; i < this.backupDataModel.backupMaximumDirectoryVersionsCount; i++) {
             const backupName = textUtils.getBackupName({
-                applicationName: this.backupData.applicationName,
+                applicationName: this.backupDataModel.applicationName,
                 date: timeUtils.getDateNoSpaces(),
                 title: this.backupTitle,
                 index: i
             });
             backupTemporaryPath = pathUtils.getJoinPath({
-                targetPath: this.backupData.backupsPath,
+                targetPath: this.backupDataModel.backupsPath,
                 targetName: textUtils.addBackslash(backupName)
             });
             if (!await fileUtils.isPathExists(backupTemporaryPath)) {
-                this.backupData.targetBackupName = backupName;
-                this.backupData.targetFullPath = backupTemporaryPath;
+                this.backupDataModel.targetBackupName = backupName;
+                this.backupDataModel.targetFullPath = backupTemporaryPath;
                 break;
             }
         }
@@ -57,20 +57,20 @@ class BackupScript {
     async runBackup() {
         logUtils.log('RUN BACKUP');
         // Validate the backup name.
-        if (!this.backupData.targetBackupName) {
+        if (!this.backupDataModel.targetBackupName) {
             throw new Error('No backup name was provided (1000000)');
         }
         // Reset the backup directory.
-        await fileUtils.removeDirectoryIfExists(this.backupData.targetFullPath);
-        await fileUtils.createDirectoryIfNotExists(this.backupData.targetFullPath);
-        await fileUtils.copyDirectory(this.backupData.sourceFullPath, this.backupData.targetFullPath, this.filterDirectories.bind(this));
+        await fileUtils.removeDirectoryIfExists(this.backupDataModel.targetFullPath);
+        await fileUtils.createDirectoryIfNotExists(this.backupDataModel.targetFullPath);
+        await fileUtils.copyDirectory(this.backupDataModel.sourceFullPath, this.backupDataModel.targetFullPath, this.filterDirectories.bind(this));
         // Verify the backup directory existence.
         await this.verifyBackup();
     }
 
     filterDirectories(source) {
         let isIncluded = true;
-        let { ignoreDirectories, ignoreFiles, includeFiles } = this.backupData.backupDirectory;
+        let { ignoreDirectories, ignoreFiles, includeFiles } = this.backupDataModel.backupDirectoryModel;
         for (let i = 0, length = ignoreDirectories.length; i < length; i++) {
             const currentPath = ignoreDirectories[i];
             isIncluded = !(source.indexOf(currentPath) > -1);
@@ -89,11 +89,11 @@ class BackupScript {
     }
 
     async verifyBackup() {
-        await globalUtils.sleep(this.backupData.millisecondsDelayVerifyBackupCount);
-        if (!await fileUtils.isPathExists(this.backupData.targetFullPath)) {
+        await globalUtils.sleep(this.backupDataModel.millisecondsDelayVerifyBackupCount);
+        if (!await fileUtils.isPathExists(this.backupDataModel.targetFullPath)) {
             throw new Error('No backup was provided (1000001)');
         }
-        logUtils.log(`FINISH TO CREATE A BACKUP: ${this.backupData.targetBackupName}`);
+        logUtils.log(`FINISH TO CREATE A BACKUP: ${this.backupDataModel.targetBackupName}`);
     }
 }
 

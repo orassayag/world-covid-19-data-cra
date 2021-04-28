@@ -1,5 +1,5 @@
 import { SourceDataModel, SourceDataItemModel } from '../../core/models';
-import { SourceNumberType } from '../../core/enums';
+import { SourceNumberTypeEnum } from '../../core/enums';
 import { textUtils } from '../../utils';
 
 class CountryCommonLogicService {
@@ -15,7 +15,7 @@ class CountryCommonLogicService {
         const { lowerName, isCases, casesPair, isDeaths, deathsPair, isRecovers, recoversPair } = data;
         country.sourcesData[lowerName] = new SourceDataModel({
             cases: new SourceDataItemModel({
-                type: SourceNumberType.CASE,
+                type: SourceNumberTypeEnum.CASE,
                 iconName: 'virus',
                 itemClass: isCases ? ' case' : '',
                 valuesPair: casesPair,
@@ -23,7 +23,7 @@ class CountryCommonLogicService {
                 perMillionIconName: 'viruses'
             }),
             deaths: new SourceDataItemModel({
-                type: SourceNumberType.DEATH,
+                type: SourceNumberTypeEnum.DEATH,
                 iconName: 'skull-crossbones',
                 itemClass: isDeaths ? ' death' : '',
                 valuesPair: deathsPair,
@@ -31,7 +31,7 @@ class CountryCommonLogicService {
                 perMillionIconName: 'skull'
             }),
             recovers: new SourceDataItemModel({
-                type: SourceNumberType.RECOVER,
+                type: SourceNumberTypeEnum.RECOVER,
                 iconName: 'heart',
                 itemClass: isRecovers ? ' recover' : '',
                 valuesPair: recoversPair,

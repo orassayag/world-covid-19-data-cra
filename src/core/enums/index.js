@@ -1,12 +1,15 @@
+import { CountryActionNameEnum } from './files/countries.enums';
+import { ModalNameEnum } from './files/modals.enums';
 import {
-    ColorType, ComponentMode, CountriesActionType, CountrySortType, CreditSortType,
-    DataMode, EnvironmentMode, SortDirection, SourceSortType, StatisticsUpdatesSortType,
-    UpdateCountryType, ViewType
+    ColorTypeEnum, ComponentModeEnum, CountriesActionTypeEnum, CountrySortTypeEnum, CreditSortTypeEnum,
+    DataModeEnum, EnvironmentModeEnum, SortDirectionEnum, SourceSortTypeEnum, StatisticsUpdatesSortTypeEnum,
+    UpdateCountryTypeEnum, ViewTypeEnum
 } from './files/settings.enums';
-import { SourceName, SourceNumberType, SourceUpdateType } from './files/sources.enums';
+import { SourceNameEnum, SourceNumberTypeEnum, SourceUpdateTypeEnum } from './files/sources.enums';
 
 export {
-    ColorType, ComponentMode, CountriesActionType, CountrySortType, CreditSortType,
-    DataMode, EnvironmentMode, SortDirection, SourceName, SourceNumberType, SourceSortType,
-    SourceUpdateType, StatisticsUpdatesSortType, UpdateCountryType, ViewType
+    ColorTypeEnum, ComponentModeEnum, CountriesActionTypeEnum, CountryActionNameEnum, CountrySortTypeEnum,
+    CreditSortTypeEnum, DataModeEnum, EnvironmentModeEnum, ModalNameEnum, SortDirectionEnum, SourceNameEnum,
+    SourceNumberTypeEnum, SourceSortTypeEnum, SourceUpdateTypeEnum, StatisticsUpdatesSortTypeEnum,
+    UpdateCountryTypeEnum, ViewTypeEnum
 };

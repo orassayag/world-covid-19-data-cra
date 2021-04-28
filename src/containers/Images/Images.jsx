@@ -1,11 +1,12 @@
 import './Images.scss';
-import { CountrySortType } from '../../core/enums';
+import { Footer } from '../../components';
+import { CountrySortTypeEnum } from '../../core/enums';
 import { countryService, sortService } from '../../services';
 
 const Images = () => {
   const countriesList = countryService.getCountriesList(null, {
     filterOptions: null,
-    sortType: sortService.sortsList[CountrySortType.NAME],
+    sortType: sortService.sortsList[CountrySortTypeEnum.NAME],
     isReturnArray: true
   });
   const countriesDOM = [];
@@ -42,6 +43,7 @@ const Images = () => {
       <div className="countries">
         {countriesDOM}
       </div>
+      <Footer />
     </div>
   );
 };

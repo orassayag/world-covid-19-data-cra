@@ -1,6 +1,6 @@
 import { countriesData } from '../../data';
-import { SourceName } from '../../core/enums';
-import { timeUtils } from '../../utils';
+import { SourceNameEnum } from '../../core/enums';
+import { logUtils, timeUtils } from '../../utils';
 
 class TestService {
 
@@ -8,10 +8,10 @@ class TestService {
 
 	async testLogicSources(maxSourceIndex) {
 		let countriesList = countriesData.countriesList;
-		const sources = Object.values(SourceName);
+		const sources = Object.values(SourceNameEnum);
 		for (let i = 0; i < sources.length; i++) {
 			const src = sources[i];
-			console.log(src);
+			logUtils.log(src);
 			const { data } = await this.getData({
 				source: src,
 				countriesList: countriesList
@@ -25,9 +25,9 @@ class TestService {
 	}
 
 	async testFlowSources() {
-		console.log('Initiate start.');
+		logUtils.log('Initiate start.');
 		let countriesList = countriesData.countriesList;
-		const sources = Object.values(SourceName);
+		const sources = Object.values(SourceNameEnum);
 		for (let i = 0; i < sources.length; i++) {
 			const src = sources[i];
 			const { data } = await this.getData({
@@ -37,7 +37,7 @@ class TestService {
 			countriesList = data;
 		}
 		countriesList = this.finalizeData(countriesList);
-		console.log('Initiate end.');
+		logUtils.log('Initiate end.');
 		let timer, i = 0;
 		const maximum = sources.length;
 		const transition = async () => {
@@ -52,8 +52,8 @@ class TestService {
 			});
 			countriesList = data;
 			const dateNow = timeUtils.getCurrentDate();
-			console.log(`${timeUtils.getTimeDisplay(dateNow)} | ${source}`);
-			console.log(Object.values(countriesList).filter(c => c.updateSourceData !== null).map(c => { return { name: c.displayName, updateSourceData: c.updateSourceData }; }));
+			logUtils.log(`${timeUtils.getTimeDisplay(dateNow)} | ${source}`);
+			logUtils.log(Object.values(countriesList).filter(c => c.updateSourceData !== null).map(c => { return { name: c.displayName, updateSourceData: c.updateSourceData }; }));
 			countriesList = this.clearCurrentUpdates(countriesList);
 			i++;
 			timer = setTimeout(transition, 30 * 1000);

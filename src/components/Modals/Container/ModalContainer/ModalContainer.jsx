@@ -5,6 +5,7 @@ import CountryModel from '../../Country/CountryModal/CountryModal';
 import CreditsModal from '../../Credits/CreditsModal/CreditsModal';
 import SourcesModal from '../../Sources/SourcesModal/SourcesModal';
 import StatisticsModal from '../../Statistics/StatisticsModal/StatisticsModal';
+import { ModalNameEnum } from '../../../../core/enums';
 import { engineService } from '../../../../services';
 
 const ModalContainer = (props) => {
@@ -23,16 +24,15 @@ const ModalContainer = (props) => {
     }
 
     return (
-        // ToDo: Convert the modal name into an enum.
         <div className="modal">
             {(() => {
                 switch (activeModalName) {
-                    case 'countries': {
+                    case ModalNameEnum.COUNTRIES: {
                         return (<CountriesModal
                             onActionClick={onActionClick}
                         />);
                     }
-                    case 'country': {
+                    case ModalNameEnum.COUNTRY: {
                         const countryData = engineService.getCountryData({
                             id: activeModalValue,
                             countriesList: countriesList,
@@ -45,17 +45,17 @@ const ModalContainer = (props) => {
                             onActionClick={onActionClick}
                         />);
                     }
-                    case 'credits': {
+                    case ModalNameEnum.CREDITS: {
                         return (<CreditsModal
                             onActionClick={onActionClick}
                         />);
                     }
-                    case 'sources': {
+                    case ModalNameEnum.SOURCES: {
                         return (<SourcesModal
                             onActionClick={onActionClick}
                         />);
                     }
-                    case 'statistics': {
+                    case ModalNameEnum.STATISTICS: {
                         return (<StatisticsModal
                             countriesNameIdList={countriesNameIdList}
                             statisticsUpdatesList={statisticsUpdatesList}

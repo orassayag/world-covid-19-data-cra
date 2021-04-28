@@ -2,7 +2,7 @@ import settings from '../../settings/settings';
 import { localData } from '../../data';
 import { LocalCountryResultModel } from '../../core/models';
 import countryCommonLogicService from './countryCommonLogic.service';
-import { textUtils } from '../../utils';
+import { logUtils, textUtils } from '../../utils';
 
 class LocalDataService {
 
@@ -77,7 +77,7 @@ class LocalDataService {
                 updatedCountriesList: Object.values(countriesList),
                 totalNumberValues: totalNumberValues
             });
-        }).catch(e => console.log(e));
+        }).catch(e => logUtils.log(e));
     }
 
     createRandomCountriesList() {

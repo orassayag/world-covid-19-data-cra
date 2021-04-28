@@ -1,4 +1,4 @@
-const BackupData = require('./files/BackupData');
-const BackupDirectory = require('./files/BackupDirectory');
+const BackupDataModel = require('./files/BackupData.model');
+const BackupDirectoryModel = require('./files/BackupDirectory.model');
 
-module.exports = { BackupData, BackupDirectory };
+module.exports = { BackupDataModel, BackupDirectoryModel };

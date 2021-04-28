@@ -1,5 +1,5 @@
 import { sourcesData } from '../../data';
-import { SourceSortType } from '../../core/enums';
+import { SourceSortTypeEnum } from '../../core/enums';
 import { logicUtils, textUtils } from '../../utils';
 
 class SourceService {
@@ -12,7 +12,7 @@ class SourceService {
         // ToDo: Check the query parameters here if relevant.
         const sourcesList = this.getSourcesList(null, {
             filterOptions: null,
-            sortType: SourceSortType.ORDER,
+            sortType: SourceSortTypeEnum.ORDER,
             isReturnArray: false
         });
         const sourcesListValues = Object.values(sourcesList);
@@ -71,7 +71,7 @@ class SourceService {
                 isCovidData: [true],
                 isError: [false]
             },
-            sortType: SourceSortType.NAME,
+            sortType: SourceSortTypeEnum.NAME,
             isReturnArray: true
         });
         return sourcesList[textUtils.getRandomNumber(0, sourcesList.length)];

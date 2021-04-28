@@ -1,14 +1,14 @@
 import './StatisticsUpdates.scss';
 import StatisticsActionsPanel from '../StatisticsActionsPanel/StatisticsActionsPanel';
 import StatisticsUpdatesData from '../StatisticsUpdatesData/StatisticsUpdatesData';
-import { StatisticsUpdatesSortType } from '../../../../core/enums';
+import { StatisticsUpdatesSortTypeEnum } from '../../../../core/enums';
 import { timeUtils } from '../../../../utils';
 import { statisticUpdateService } from '../../../../services';
 
 const StatisticsUpdates = (props) => {
   const { countriesNameIdList, statisticsUpdatesList, statisticsUpdatesHoursCount,
     statisticsUpdatesCountryId, onActionClick, onActionChange } = props;
-    const dateNow = timeUtils.getCurrentDate();
+  const dateNow = timeUtils.getCurrentDate();
   const countryIdQuery = statisticsUpdatesCountryId === -1 ? {} : { countryId: [statisticsUpdatesCountryId] };
   const displayStatisticsUpdatesList = statisticUpdateService.getStatisticsUpdatesList(statisticsUpdatesList, {
     filterOptions: {
@@ -18,7 +18,7 @@ const StatisticsUpdates = (props) => {
       fromDate: timeUtils.subtractHours(dateNow, statisticsUpdatesHoursCount),
       toDate: dateNow
     },
-    sortType: StatisticsUpdatesSortType.LAST_UPDATE_TIME
+    sortType: StatisticsUpdatesSortTypeEnum.LAST_UPDATE_TIME
   });
 
   return (

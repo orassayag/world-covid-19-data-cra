@@ -6,14 +6,14 @@ import { BrowserRouter } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import settings from '../settings/settings';
 import { dataReducers, settingsReducers, statisticsReducers, statisticsUpdatesReducers } from '../store/reducers';
-import { ComponentMode, EnvironmentMode } from '../core/enums';
+import { ComponentModeEnum, EnvironmentModeEnum } from '../core/enums';
 import { timeUtils, textUtils } from '../utils';
 
 const { ENVIRONMENT_MODE, COMPONENT_MODE } = settings;
 settings.ENVIRONMENT_MODE = process.env.NODE_ENV;
-const isDevelopment = process.env.NODE_ENV === 'development' || ENVIRONMENT_MODE === EnvironmentMode.DEVELOPMENT;
+const isDevelopment = process.env.NODE_ENV === 'development' || ENVIRONMENT_MODE === EnvironmentModeEnum.DEVELOPMENT;
 let app = null;
-if (COMPONENT_MODE === ComponentMode.APP) {
+if (COMPONENT_MODE === ComponentModeEnum.APP) {
     const mode = textUtils.getParameterByName('mode', window.location.href);
     const App = React.lazy(() => import('../containers/App/App'));
     const component = (<App mode={mode} />);

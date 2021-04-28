@@ -9,8 +9,7 @@ class QuoteService {
     constructor() { }
 
     getRandomQuote() {
-        // ToDo: Take the length of the quotes, not a static number.
-        const quote = quotes[textUtils.getRandomNumber(1, 52145).toString()];
+        const quote = quotes[textUtils.getRandomNumber(1, Object.keys(quotes).length).toString()];
         quote.quote = quote.quote.substring(0);
         const quoteCategory = quotesCategories[quote.categoryId.toString()];
         const categoryIconName = quoteCategory.iconNames.length === 0 ? quoteCategory.iconNames[0] :

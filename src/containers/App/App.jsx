@@ -1,8 +1,9 @@
 import { useRef, useEffect, useCallback, createRef } from 'react';
 import { useDispatch, useSelector, batch } from 'react-redux';
 import './App.scss';
-import { CountryBox, Error, MasterBox, ModalContainer, ScreenLoader } from '../../components';
+import { CountryBox, Error, Footer, MasterBox, ModalContainer, ScreenLoader } from '../../components';
 import { dataActions, settingsActions, statisticsActions, statisticsUpdatesActions } from '../../store/actions/actions';
+import { ModalNameEnum } from '../../core/enums';
 import { engineService } from '../../services';
 import { coreUtils, validationUtils } from '../../utils';
 
@@ -116,7 +117,7 @@ const App = (props) => {
   // After exit from any modal - Scroll back to the element's vertical position.
   const scrollToCountry = useCallback((data) => {
     const { action, value } = data;
-    if (action === 'modal' && !value && activeModalValue && !isReplaceModalMode && activeModalName !== 'country') {
+    if (action === 'modal' && !value && activeModalValue && !isReplaceModalMode && activeModalName !== ModalNameEnum.COUNTRY) {
       setTimeout(() => {
         const offsetTop = elRefs.current.find(c => c.current?.dataset?.countryId === activeModalValue).current.offsetTop;
         if (offsetTop > window.innerHeight) {
@@ -201,6 +202,7 @@ const App = (props) => {
               {renderCountries()}
             </div>
           </div>
+          <Footer />
         </div>
       }
     </div>

@@ -1,6 +1,6 @@
 import settings from '../../settings/settings';
 import { StatisticUpdateModel, StatisticUpdateDataItemModel, StatisticsUpdatesSettingsListModel } from '../../core/models';
-import { StatisticsUpdatesSortType } from '../../core/enums';
+import { StatisticsUpdatesSortTypeEnum } from '../../core/enums';
 import { logicUtils, timeUtils } from '../../utils';
 
 class StatisticUpdateService {
@@ -12,7 +12,7 @@ class StatisticUpdateService {
     initiateStatisticsUpdatesList() {
         return this.getStatisticsUpdatesList(null, {
             filterOptions: null,
-            sortType: StatisticsUpdatesSortType.LAST_UPDATE_TIME
+            sortType: StatisticsUpdatesSortTypeEnum.LAST_UPDATE_TIME
         });
     }
 
@@ -59,7 +59,7 @@ class StatisticUpdateService {
         if (statisticsUpdatesList.length >= this.maximumStatisticsItems) {
             statisticsUpdatesList = this.getStatisticsUpdatesList(statisticsUpdatesList, {
                 filterOptions: null,
-                sortType: StatisticsUpdatesSortType.LAST_UPDATE_TIME
+                sortType: StatisticsUpdatesSortTypeEnum.LAST_UPDATE_TIME
             });
             statisticsUpdatesList = [statisticUpdate, ...statisticsUpdatesList.slice(0, this.maximumStatisticsItems - 1)];
         }
@@ -167,7 +167,7 @@ class StatisticUpdateService {
                 fromDate: timeUtils.subtractHours(dateNow, updatesHoursCount),
                 toDate: dateNow
             },
-            sortType: StatisticsUpdatesSortType.LAST_UPDATE_TIME
+            sortType: StatisticsUpdatesSortTypeEnum.LAST_UPDATE_TIME
         });
     }
 

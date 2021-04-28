@@ -1,6 +1,6 @@
 import settings from '../../settings/settings';
 import { LoadingListModel, SettingsListModel } from '../../core/models';
-import { ColorType, CountrySortType, ComponentMode, ViewType } from '../../core/enums';
+import { ColorTypeEnum, CountrySortTypeEnum, ComponentModeEnum, ViewTypeEnum } from '../../core/enums';
 import quoteService from './quote.service';
 import sortService from './sort.service';
 
@@ -14,9 +14,9 @@ class SettingService {
         this.settingsList = new SettingsListModel({
             isActive: true,
             isLiveMode: true,
-            viewType: ViewType.HORIZONTAL,
-            colorType: ColorType.NIGHT,
-            sortType: sortService.sortsList[CountrySortType.CASE]
+            viewType: ViewTypeEnum.HORIZONTAL,
+            colorType: ColorTypeEnum.NIGHT,
+            sortType: sortService.sortsList[CountrySortTypeEnum.CASE]
         });
     }
 
@@ -53,7 +53,7 @@ class SettingService {
     }
 
     isAppComponent() {
-        return settings.COMPONENT_MODE === ComponentMode.APP;
+        return settings.COMPONENT_MODE === ComponentModeEnum.APP;
     }
 }
 

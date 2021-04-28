@@ -1,5 +1,8 @@
 import settings from '../../settings/settings';
-import { CountriesActionType, DataMode, SortDirection, UpdateCountryType } from '../../core/enums';
+import {
+    CountryActionNameEnum, CountriesActionTypeEnum, DataModeEnum, ModalNameEnum, SortDirectionEnum,
+    UpdateCountryTypeEnum
+} from '../../core/enums';
 import countryService from './country.service';
 import settingService from './setting.service';
 import sortService from './sort.service';
@@ -62,11 +65,11 @@ class EngineService {
     }
 
     initiateMode(mode) {
-        this.mode = DataMode.LIVE;
-        if (mode === DataMode.LOCAL) {
-            this.mode = DataMode.LOCAL;
+        this.mode = DataModeEnum.LIVE;
+        if (mode === DataModeEnum.LOCAL) {
+            this.mode = DataModeEnum.LOCAL;
         }
-        this.settingsList.isLiveMode = this.mode === DataMode.LIVE;
+        this.settingsList.isLiveMode = this.mode === DataModeEnum.LIVE;
     }
 
     initiateSources(data) {
@@ -221,7 +224,7 @@ class EngineService {
 
     updateInactiveData() {
         const indexResult = this.getSourceAndIndex(false);
-        this.countriesList = this.updateCountries(CountriesActionType.INACTIVE, null);
+        this.countriesList = this.updateCountries(CountriesActionTypeEnum.INACTIVE, null);
         const updatedStatisticsList = {
             nextUpdateSourceName: indexResult.source.upperName
         };
@@ -251,7 +254,7 @@ class EngineService {
             const source = this.getSource(this.sourcesIndex);
             if (this.isInitiateComplete && !this.settingsList.isRefreshMode) {
                 // Cleanup the previous countries updates.
-                this.countriesList = this.updateCountries(CountriesActionType.CLEANUP, null);
+                this.countriesList = this.updateCountries(CountriesActionTypeEnum.CLEANUP, null);
                 // Cleanup the previous statistics updates.
                 this.statisticsUpdatesList = statisticUpdateService.cleanStatisticsUpdatesList(this.statisticsUpdatesList);
             }
@@ -272,7 +275,7 @@ class EngineService {
             this.setUpdatesLoader(false);
             if (this.isInitiateComplete && !this.settingsList.isRefreshMode) {
                 // Update new countries data.
-                this.countriesList = this.updateCountries(CountriesActionType.UPDATE, fetchDataResults);
+                this.countriesList = this.updateCountries(CountriesActionTypeEnum.UPDATE, fetchDataResults);
                 // Update new statistics updates data.
                 const updateStatisticsUpdatesListResults = statisticUpdateService.updateStatisticsUpdatesList({
                     statisticsUpdatesList: this.statisticsUpdatesList,
@@ -286,7 +289,7 @@ class EngineService {
                     lastUpdateDate: timeUtils.getCurrentDate(),
                     lastUpdateSourceName: source.upperName,
                     nextUpdateSourceName: indexResult.source.upperName,
-                    isLastUpdateChanges: fetchDataResults.updateCountryType === UpdateCountryType.DATA,
+                    isLastUpdateChanges: fetchDataResults.updateCountryType === UpdateCountryTypeEnum.DATA,
                     totalUpdatesCount: this.statisticsList.totalUpdatesCount + 1,
                     totalUpdateCyclesCount: this.sourcesIndex === 0 && this.statisticsList.totalUpdatesCount > 1 ?
                         this.statisticsList.totalUpdateCyclesCount + 1 : this.statisticsList.totalUpdateCyclesCount
@@ -439,7 +442,7 @@ class EngineService {
         const { updatedSortType } = this.setSortValues(this.settingsList.sortType.sortTypeName, null);
         this.settingsList.sortType = updatedSortType;
         // Last round to first time fetch data.
-        this.countriesList = this.updateCountries(CountriesActionType.FINALIZE, null);
+        this.countriesList = this.updateCountries(CountriesActionTypeEnum.FINALIZE, null);
         // Update the countries count displayed in the master box.
         const updatedStatisticsList = {
             totalVisibleCountriesCount: this.countriesNameIdList.length
@@ -461,7 +464,7 @@ class EngineService {
             refreshSourceName: null
         });
         // Last round in refresh mode fetch data.
-        this.countriesList = this.updateCountries(CountriesActionType.UPDATE, null);
+        this.countriesList = this.updateCountries(CountriesActionTypeEnum.UPDATE, null);
         // Update new statistics updates data.
         const updateStatisticsUpdatesListResults = statisticUpdateService.updateStatisticsUpdatesList({
             statisticsUpdatesList: this.statisticsUpdatesList,
@@ -523,8 +526,8 @@ class EngineService {
         sortType = { ...sortType };
         let symbol = null;
         switch (forceSortDirection) {
-            case SortDirection.DESCENDING: { symbol = '-'; break; }
-            case SortDirection.ASCENDING: { symbol = ''; break; }
+            case SortDirectionEnum.DESCENDING: { symbol = '-'; break; }
+            case SortDirectionEnum.ASCENDING: { symbol = ''; break; }
             default: { symbol = sortType.directionSymbol; break; }
         }
         const fieldsList = [...sortType.fieldsList];
@@ -601,7 +604,7 @@ class EngineService {
                     if (this.settingsList.activeModalName) {
                         fieldValue = null;
                     }
-                    if (fieldValue === 'country') {
+                    if (fieldValue === ModalNameEnum.COUNTRY) {
                         additionalSettings = {
                             activeModalValue: id,
                             isReplaceModalMode: false
@@ -612,7 +615,7 @@ class EngineService {
             }
             case 'replace-modal': {
                 fieldName = 'activeModalName';
-                if (fieldValue === 'country') {
+                if (fieldValue === ModalNameEnum.COUNTRY) {
                     additionalSettings = {
                         activeModalValue: id,
                         isReplaceModalMode: true
@@ -686,7 +689,7 @@ class EngineService {
             else {
                 this.updateLocalSettingsList(updatedSettingsList);
                 // Update the data according to the settings update.
-                this.countriesList = this.updateCountries(CountriesActionType.REFRESH, null);
+                this.countriesList = this.updateCountries(CountriesActionTypeEnum.REFRESH, null);
                 this.onSetStateActionUpdate({
                     countriesList: this.countriesList,
                     settingsList: this.settingsList
@@ -700,13 +703,12 @@ class EngineService {
     }
 
     runCountryActionUpdate(data) {
-        // ToDo: Convert the action into an enum.
         const { action, value, countryId } = data;
         if (!action || !value || !countryId) {
             return;
         }
         switch (action) {
-            case 'select-time': {
+            case CountryActionNameEnum.SELECT_TIME: {
                 this.updateCountrySpecificField({
                     countryId: countryId,
                     fieldName: 'updatesHoursCount',
@@ -735,13 +737,12 @@ class EngineService {
     }
 
     runGlobalStatisticsActionUpdate(data) {
-        // ToDo: Convert the action into an enum.
         const { action, value } = data;
         if (!action || !value) {
             return;
         }
         switch (action) {
-            case 'select-time': {
+            case CountryActionNameEnum.SELECT_TIME: {
                 const updatedStatisticsUpdatesSettingsList = {
                     statisticsUpdatesHoursCount: value
                 };
@@ -752,7 +753,7 @@ class EngineService {
                 this.onSetStateStatisticsUpdatesSettingsList(updatedStatisticsUpdatesSettingsList);
                 break;
             }
-            case 'select-country': {
+            case CountryActionNameEnum.SELECT_COUNTRY: {
                 const updatedStatisticsUpdatesSettingsList = {
                     statisticsUpdatesCountryId: parseInt(value)
                 };

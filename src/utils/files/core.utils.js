@@ -1,3 +1,5 @@
+import logUtils from './logUtils';
+
 class CoreUtils {
 
     constructor() { }
@@ -6,7 +8,7 @@ class CoreUtils {
         if (!millisecondsCount) {
             return;
         }
-        return new Promise(resolve => setTimeout(resolve, millisecondsCount)).catch(e => console.log(e));
+        return new Promise(resolve => setTimeout(resolve, millisecondsCount)).catch(e => logUtils.log(e));
     }
 
     updateObject(oldObject, updatedProperties) {

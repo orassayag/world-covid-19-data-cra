@@ -5,13 +5,14 @@ import {
 	SummaryDataItemModel, SummaryTimeItemModel, UpdateSourceDataModel, UpdateSourceDataItemModel
 } from '../../core/models';
 import {
-	CountrySortType, CountriesActionType, SourceNumberType, SourceUpdateType, UpdateCountryType
+	CountrySortTypeEnum, CountriesActionTypeEnum, SourceNumberTypeEnum, SourceUpdateTypeEnum,
+	UpdateCountryTypeEnum
 } from '../../core/enums';
 import apiService from './api.service';
 import countryCommonLogicService from './countryCommonLogic.service';
 import localService from './local.service';
 import sortService from './sort.service';
-import { coreUtils, logicUtils, textUtils, timeUtils, validationUtils } from '../../utils';
+import { coreUtils, logicUtils, logUtils, textUtils, timeUtils, validationUtils } from '../../utils';
 
 class CountryService {
 
@@ -20,6 +21,14 @@ class CountryService {
 		this.pastDummySortValue = dateNow.setDate(dateNow.getDate() - 1);
 		this.isCountriesLog = settings.IS_COUNTRIES_LOG;
 		this.countriesKeysList = [];
+		// ===DOM KEY=== //
+		this.htmlDocTypeDOM = 'text/html';
+		this.rowKeyDOM = 'tr';
+		this.centerDOM = 'center';
+		this.gooCountryRow = '0R';
+		this.wodCountryRow = '449840684R';
+		this.wikContainerDOM = 'thetable';
+		this.pop2ContainerDOM = 'wikitable';
 	}
 
 	initiateCountriesList() {
@@ -29,7 +38,7 @@ class CountryService {
 				isActive: [true],
 				isContainData: [true]
 			},
-			sortType: sortService.sortsList[CountrySortType.LAST_UPDATE_TIME], // Don't change this, it's initial value.
+			sortType: sortService.sortsList[CountrySortTypeEnum.LAST_UPDATE_TIME], // Don't change this, it's initial value.
 			forceSortDirection: null,
 			isReturnArray: false
 		});
@@ -143,9 +152,9 @@ class CountryService {
 			return [0, null];
 		}
 		else if (oldNumber > newNumber) {
-			return [oldNumber - newNumber, SourceUpdateType.SUB];
+			return [oldNumber - newNumber, SourceUpdateTypeEnum.SUB];
 		} else {
-			return [newNumber - oldNumber, SourceUpdateType.ADD];
+			return [newNumber - oldNumber, SourceUpdateTypeEnum.ADD];
 		}
 	}
 
@@ -154,7 +163,7 @@ class CountryService {
 		let fetchDataResults = null;
 		if (this.isCountriesLog) {
 			const dateNow = timeUtils.getCurrentDate();
-			console.log(`${source.lowerName} | ${timeUtils.getTimeDisplay(dateNow)}`);
+			logUtils.log(`${source.lowerName} | ${timeUtils.getTimeDisplay(dateNow)}`);
 		}
 		if (!source.isActive) {
 			fetchDataResults = new FetchDataResultsModel(source);
@@ -269,23 +278,23 @@ class CountryService {
 	createSummaryData() {
 		return new SummaryDataModel({
 			cases: new SummaryDataItemModel({
-				type: SourceNumberType.CASE,
+				type: SourceNumberTypeEnum.CASE,
 				iconName: 'virus'
 			}),
 			deaths: new SummaryDataItemModel({
-				type: SourceNumberType.DEATH,
+				type: SourceNumberTypeEnum.DEATH,
 				iconName: 'skull-crossbones'
 			}),
 			recovers: new SummaryDataItemModel({
-				type: SourceNumberType.RECOVER,
+				type: SourceNumberTypeEnum.RECOVER,
 				iconName: 'heart'
 			}),
 			updates: new SummaryDataItemModel({
-				type: SourceNumberType.UPDATE,
+				type: SourceNumberTypeEnum.UPDATE,
 				iconName: 'sync-alt'
 			}),
 			lastUpdateTime: new SummaryTimeItemModel({
-				type: SourceNumberType.LAST_UPDATE,
+				type: SourceNumberTypeEnum.LAST_UPDATE,
 				iconName: 'clock'
 			})
 		});
@@ -552,8 +561,8 @@ class CountryService {
 		const { countriesActionType, fetchDataResults, settingsList, countriesKeysList, sourcesList, sourcesKeysList } = data;
 		let { countriesList } = data;
 		let worldPopulationCount = null;
-		const isRefreshList = countriesActionType === CountriesActionType.FINALIZE || CountriesActionType.UPDATE;
-		if (countriesActionType === CountriesActionType.FINALIZE) {
+		const isRefreshList = countriesActionType === CountriesActionTypeEnum.FINALIZE || CountriesActionTypeEnum.UPDATE;
+		if (countriesActionType === CountriesActionTypeEnum.FINALIZE) {
 			worldPopulationCount = countriesList[countriesData.worldCountryId].dynamicPopulationCount;
 			countriesList[countriesData.worldCountryId].populationPercentageDisplay = '100';
 		}
@@ -562,25 +571,25 @@ class CountryService {
 			const countryId = countriesKeysList[i];
 			let country = countriesList[countryId];
 			switch (countriesActionType) {
-				case CountriesActionType.FINALIZE: {
+				case CountriesActionTypeEnum.FINALIZE: {
 					country = this.finalizeCountryData(country, sourcesList, sourcesKeysList, worldPopulationCount);
 					country = this.updateCountryData(country, fetchDataResults, sourcesKeysList, settingsList, dateNow);
 					break;
 				}
-				case CountriesActionType.CLEANUP: {
+				case CountriesActionTypeEnum.CLEANUP: {
 					country = this.cleanupCountryData(country, sourcesKeysList);
 					break;
 				}
-				case CountriesActionType.UPDATE: {
+				case CountriesActionTypeEnum.UPDATE: {
 					country = this.updateCountryData(country, fetchDataResults, sourcesKeysList, settingsList, dateNow);
 					break;
 				}
-				case CountriesActionType.INACTIVE: {
+				case CountriesActionTypeEnum.INACTIVE: {
 					country = this.cleanupCountryData(country, sourcesKeysList);
 					country = this.updateCountryData(country, fetchDataResults, sourcesKeysList, settingsList, dateNow);
 					break;
 				}
-				case CountriesActionType.REFRESH: {
+				case CountriesActionTypeEnum.REFRESH: {
 					country = this.cleanupCountryData(country, sourcesKeysList);
 					country = this.updateCountryData(country, fetchDataResults, sourcesKeysList, settingsList, dateNow);
 					break;
@@ -677,7 +686,7 @@ class CountryService {
 		country.sortValue = sortValue;
 		country.leadingIconName = iconName;
 		if (source && updateCountryType && country.updateSourceData) {
-			const isRelevantUpdate = source.lowerName === leadingSourceName && updateCountryType === UpdateCountryType.DATA;
+			const isRelevantUpdate = source.lowerName === leadingSourceName && updateCountryType === UpdateCountryTypeEnum.DATA;
 			if (isRelevantUpdate) {
 				const dataItem = country.updateSourceData.dataItems[index];
 				if (dataItem) {
@@ -702,8 +711,8 @@ class CountryService {
 		let { country } = data;
 		const sortTypeName = settingsList.sortType.sortTypeName;
 		switch (sortTypeName) {
-			case CountrySortType.CASE:
-			case CountrySortType.CASE_PER_MILLION: {
+			case CountrySortTypeEnum.CASE:
+			case CountrySortTypeEnum.CASE_PER_MILLION: {
 				country = this.setCovidLeadingData({
 					sortTypeName: sortTypeName,
 					country: country,
@@ -717,8 +726,8 @@ class CountryService {
 				country.innerLeadingClassName = sortTypeName;
 				break;
 			}
-			case CountrySortType.DEATH:
-			case CountrySortType.DEATH_PER_MILLION: {
+			case CountrySortTypeEnum.DEATH:
+			case CountrySortTypeEnum.DEATH_PER_MILLION: {
 				country = this.setCovidLeadingData({
 					sortTypeName: sortTypeName,
 					country: country,
@@ -732,8 +741,8 @@ class CountryService {
 				country.innerLeadingClassName = sortTypeName;
 				break;
 			}
-			case CountrySortType.RECOVER:
-			case CountrySortType.RECOVER_PER_MILLION: {
+			case CountrySortTypeEnum.RECOVER:
+			case CountrySortTypeEnum.RECOVER_PER_MILLION: {
 				country = this.setCovidLeadingData({
 					sortTypeName: sortTypeName,
 					country: country,
@@ -747,7 +756,7 @@ class CountryService {
 				country.innerLeadingClassName = sortTypeName;
 				break;
 			}
-			case CountrySortType.NAME: {
+			case CountrySortTypeEnum.NAME: {
 				country = this.setOtherLeadingData({
 					country: country,
 					isTakeFirst: false,
@@ -759,7 +768,7 @@ class CountryService {
 				});
 				break;
 			}
-			case CountrySortType.CODE: {
+			case CountrySortTypeEnum.CODE: {
 				country = this.setOtherLeadingData({
 					country: country,
 					isTakeFirst: false,
@@ -771,7 +780,7 @@ class CountryService {
 				});
 				break;
 			}
-			case CountrySortType.CONTINENT: {
+			case CountrySortTypeEnum.CONTINENT: {
 				country = this.setOtherLeadingData({
 					country: country,
 					isTakeFirst: true,
@@ -783,7 +792,7 @@ class CountryService {
 				});
 				break;
 			}
-			case CountrySortType.POPULATION: {
+			case CountrySortTypeEnum.POPULATION: {
 				country = this.setOtherLeadingData({
 					country: country,
 					isTakeFirst: false,
@@ -795,7 +804,7 @@ class CountryService {
 				});
 				break;
 			}
-			case CountrySortType.ADD_TIME: {
+			case CountrySortTypeEnum.ADD_TIME: {
 				country = this.setOtherLeadingData({
 					country: country,
 					isTakeFirst: false,
@@ -807,7 +816,7 @@ class CountryService {
 				});
 				break;
 			}
-			case CountrySortType.UPDATES_COUNT: {
+			case CountrySortTypeEnum.UPDATES_COUNT: {
 				country = this.setOtherLeadingData({
 					country: country,
 					isTakeFirst: false,
@@ -819,7 +828,7 @@ class CountryService {
 				});
 				break;
 			}
-			case CountrySortType.LAST_UPDATE_TIME: {
+			case CountrySortTypeEnum.LAST_UPDATE_TIME: {
 				country = this.setOtherLeadingData({
 					country: country,
 					isTakeFirst: false,
@@ -858,21 +867,21 @@ class CountryService {
 		let currentValue = value;
 		let currentValueDisplay = valueDisplay;
 		switch (type) {
-			case SourceNumberType.CASE:
-			case SourceNumberType.DEATH:
-			case SourceNumberType.RECOVER: {
+			case SourceNumberTypeEnum.CASE:
+			case SourceNumberTypeEnum.DEATH:
+			case SourceNumberTypeEnum.RECOVER: {
 				if (!textUtils.isInvalidNumber(newValue)) {
 					currentValue += newValue;
 					currentValueDisplay = textUtils.getStringCommaFromNumber(currentValue);
 				}
 				break;
 			}
-			case SourceNumberType.UPDATE: {
+			case SourceNumberTypeEnum.UPDATE: {
 				currentValue = currentValue > 0 ? currentValue + 1 : 1;
 				currentValueDisplay = textUtils.getStringCommaFromNumber(currentValue);
 				break;
 			}
-			case SourceNumberType.LAST_UPDATE: {
+			case SourceNumberTypeEnum.LAST_UPDATE: {
 				currentValue = newValue;
 				currentValueDisplay = newValueDisplay;
 				return new SummaryTimeItemModel({
@@ -939,19 +948,19 @@ class CountryService {
 				country.updateSourceData = new UpdateSourceDataModel({
 					sourceName: lowerName,
 					cases: new UpdateSourceDataItemModel({
-						type: SourceNumberType.CASE,
+						type: SourceNumberTypeEnum.CASE,
 						iconName: 'cases',
 						updateType: casesUpdateType,
 						valuesPair: isCases ? [casesDiff, textUtils.getStringCommaFromNumber(casesDiff)] : null
 					}),
 					deaths: new UpdateSourceDataItemModel({
-						type: SourceNumberType.DEATH,
+						type: SourceNumberTypeEnum.DEATH,
 						iconName: 'deaths',
 						updateType: deathsUpdateType,
 						valuesPair: isDeaths ? [deathsDiff, textUtils.getStringCommaFromNumber(deathsDiff)] : null
 					}),
 					recovers: new UpdateSourceDataItemModel({
-						type: SourceNumberType.RECOVER,
+						type: SourceNumberTypeEnum.RECOVER,
 						iconName: 'recovers',
 						updateType: recoversUpdateType,
 						valuesPair: isRecovers ? [recoversDiff, textUtils.getStringCommaFromNumber(recoversDiff)] : null
@@ -974,8 +983,8 @@ class CountryService {
 					recoversDiff: recoversDiff
 				});
 				if (this.isCountriesLog) {
-					console.log(`${lowerName} | ${country.displayName}`);
-					console.log(country.updateSourceData);
+					logUtils.log(`${lowerName} | ${country.displayName}`);
+					logUtils.log(country.updateSourceData);
 				}
 			}
 		}
@@ -995,11 +1004,11 @@ class CountryService {
 		const { fetchDataResults, countriesList } = data;
 		const { source, resultData } = fetchDataResults;
 		const parser = new DOMParser();
-		const parsedHtml = parser.parseFromString(resultData, 'text/html');
-		const elements = parsedHtml.getElementsByTagName('tr');
+		const parsedHtml = parser.parseFromString(resultData, this.htmlDocTypeDOM);
+		const elements = parsedHtml.getElementsByTagName(this.rowKeyDOM);
 		let index = 0;
 		// World.
-		const worldElement = parsedHtml.getElementsByClassName('center')[0];
+		const worldElement = parsedHtml.getElementsByClassName(this.centerDOM)[0];
 		const worldPopulation = worldElement.children[0].textContent.split(':')[1].trim();
 		const worldPopulationPair = [textUtils.getNumberFromStringComma(worldPopulation), worldPopulation];
 		const world = countriesList[countriesData.worldCountryId];
@@ -1046,7 +1055,7 @@ class CountryService {
 			index++;
 		}
 		fetchDataResults.resultData = countriesList;
-		fetchDataResults.updateCountryType = UpdateCountryType.POPULATION;
+		fetchDataResults.updateCountryType = UpdateCountryTypeEnum.POPULATION;
 		fetchDataResults.isValidRowsCount = source.excpectedRowsCount === index;
 		return fetchDataResults;
 	}
@@ -1055,9 +1064,9 @@ class CountryService {
 		const { fetchDataResults, countriesList } = data;
 		const { source, resultData } = fetchDataResults;
 		const parser = new DOMParser();
-		const parsedHtml = parser.parseFromString(resultData.parse.text, 'text/html');
-		const mainElement = parsedHtml.getElementsByClassName('wikitable');
-		const elements = mainElement[0].getElementsByTagName('tr');
+		const parsedHtml = parser.parseFromString(resultData.parse.text, this.htmlDocTypeDOM);
+		const mainElement = parsedHtml.getElementsByClassName(this.pop2ContainerDOM);
+		const elements = mainElement[0].getElementsByTagName(this.rowKeyDOM);
 		const world = countriesList[countriesData.worldCountryId];
 		// Countries + World.
 		let index = 0;
@@ -1094,7 +1103,7 @@ class CountryService {
 			countriesList[countryId] = country;
 		}
 		fetchDataResults.resultData = countriesList;
-		fetchDataResults.updateCountryType = UpdateCountryType.POPULATION;
+		fetchDataResults.updateCountryType = UpdateCountryTypeEnum.POPULATION;
 		fetchDataResults.isValidRowsCount = source.excpectedRowsCount === index;
 		return fetchDataResults;
 	}
@@ -1133,7 +1142,7 @@ class CountryService {
 			});
 			countriesList[countryId] = country;
 			if (!updateCountryType) {
-				updateCountryType = country.updateSourceData !== null ? UpdateCountryType.DATA : null;
+				updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 			}
 			const sourceData = country.sourcesData[source.lowerName];
 			totalCasesCount += textUtils.getNumberIfEmpty(sourceData.dataItems[0].count);
@@ -1151,7 +1160,7 @@ class CountryService {
 			recoversPair: pairs[2]
 		});
 		if (!updateCountryType) {
-			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryType.DATA : null;
+			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 		}
 		fetchDataResults.resultData = countriesList;
 		fetchDataResults.updateCountryType = updateCountryType;
@@ -1201,7 +1210,7 @@ class CountryService {
 				});
 				countriesList[countryId] = country;
 				if (!updateCountryType) {
-					updateCountryType = country.updateSourceData !== null ? UpdateCountryType.DATA : null;
+					updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 				}
 				const sourceData = country.sourcesData[source.lowerName];
 				totalCasesCount += textUtils.getNumberIfEmpty(sourceData.dataItems[0].count);
@@ -1219,7 +1228,7 @@ class CountryService {
 			recoversPair: otherPairs[2]
 		});
 		if (!updateCountryType) {
-			updateCountryType = countriesList[countriesData.otherCountryId].updateSourceData !== null ? UpdateCountryType.DATA : null;
+			updateCountryType = countriesList[countriesData.otherCountryId].updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 		}
 		// World.
 		index++;
@@ -1232,7 +1241,7 @@ class CountryService {
 			recoversPair: worldPairs[2]
 		});
 		if (!updateCountryType) {
-			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryType.DATA : null;
+			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 		}
 		fetchDataResults.resultData = countriesList;
 		fetchDataResults.updateCountryType = updateCountryType;
@@ -1275,7 +1284,7 @@ class CountryService {
 			});
 			countriesList[countryId] = country;
 			if (!updateCountryType) {
-				updateCountryType = country.updateSourceData !== null ? UpdateCountryType.DATA : null;
+				updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 			}
 		}
 		// World.
@@ -1289,7 +1298,7 @@ class CountryService {
 			recoversPair: pairs[2]
 		});
 		if (!updateCountryType) {
-			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryType.DATA : null;
+			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 		}
 		fetchDataResults.resultData = countriesList;
 		fetchDataResults.updateCountryType = updateCountryType;
@@ -1336,7 +1345,7 @@ class CountryService {
 				});
 				countriesList[countryId] = country;
 				if (!updateCountryType) {
-					updateCountryType = country.updateSourceData !== null ? UpdateCountryType.DATA : null;
+					updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 				}
 			}
 		}
@@ -1350,7 +1359,7 @@ class CountryService {
 			recoversPair: pairs[2]
 		});
 		if (!updateCountryType) {
-			updateCountryType = countriesList[countriesData.otherCountryId].updateSourceData !== null ? UpdateCountryType.DATA : null;
+			updateCountryType = countriesList[countriesData.otherCountryId].updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 		}
 		fetchDataResults.resultData = countriesList;
 		fetchDataResults.updateCountryType = updateCountryType;
@@ -1389,7 +1398,7 @@ class CountryService {
 			});
 			countriesList[countryId] = country;
 			if (!updateCountryType) {
-				updateCountryType = country.updateSourceData !== null ? UpdateCountryType.DATA : null;
+				updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 			}
 		}
 		fetchDataResults.resultData = countriesList;
@@ -1403,14 +1412,14 @@ class CountryService {
 		const { source, resultData } = fetchDataResults;
 		let updateCountryType = null;
 		const parser = new DOMParser();
-		const parsedHtml = parser.parseFromString(resultData, 'text/html');
+		const parsedHtml = parser.parseFromString(resultData, this.htmlDocTypeDOM);
 		let totalCasesCount = 0;
 		let totalDeathsCount = 0;
 		let totalRecoversCount = 0;
 		// Countries.
 		let index = 0;
 		for (let i = 0; i < 1000; i++) {
-			const element = parsedHtml.getElementById(`0R${i + 1}`);
+			const element = parsedHtml.getElementById(`${this.gooCountryRow}${i + 1}`);
 			const countryName = this.getCountryName(element, 2);
 			if (!countryName || countryName === 'Noname1') {
 				break;
@@ -1433,7 +1442,7 @@ class CountryService {
 			});
 			countriesList[countryId] = country;
 			if (!updateCountryType) {
-				updateCountryType = country.updateSourceData !== null ? UpdateCountryType.DATA : null;
+				updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 			}
 			const sourceData = country.sourcesData[source.lowerName];
 			totalCasesCount += textUtils.getNumberIfEmpty(sourceData.dataItems[0].count) ? sourceData.dataItems[0].count : 0;
@@ -1451,7 +1460,7 @@ class CountryService {
 			recoversPair: pairs[2]
 		});
 		if (!updateCountryType) {
-			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryType.DATA : null;
+			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 		}
 		fetchDataResults.resultData = countriesList;
 		fetchDataResults.updateCountryType = updateCountryType;
@@ -1464,9 +1473,9 @@ class CountryService {
 		const { source, resultData } = fetchDataResults;
 		let updateCountryType = null;
 		const parser = new DOMParser();
-		const parsedHtml = parser.parseFromString(resultData.parse.text, 'text/html');
-		const mainElement = parsedHtml.getElementById('thetable');
-		const rows = mainElement.getElementsByTagName('tr');
+		const parsedHtml = parser.parseFromString(resultData.parse.text, this.htmlDocTypeDOM);
+		const mainElement = parsedHtml.getElementById(this.wikContainerDOM);
+		const rows = mainElement.getElementsByTagName(this.rowKeyDOM);
 		let totalOtherCasesCount = 0;
 		let totalOtherDeathsCount = 0;
 		let totalOtherRecoversCount = 0;
@@ -1507,7 +1516,7 @@ class CountryService {
 				});
 				countriesList[countryId] = country;
 				if (!updateCountryType) {
-					updateCountryType = country.updateSourceData !== null ? UpdateCountryType.DATA : null;
+					updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 				}
 			}
 		}
@@ -1521,7 +1530,7 @@ class CountryService {
 			recoversPair: pairs[2]
 		});
 		if (!updateCountryType) {
-			updateCountryType = countriesList[countriesData.otherCountryId].updateSourceData !== null ? UpdateCountryType.DATA : null;
+			updateCountryType = countriesList[countriesData.otherCountryId].updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 		}
 		fetchDataResults.resultData = countriesList;
 		fetchDataResults.updateCountryType = updateCountryType;
@@ -1534,14 +1543,14 @@ class CountryService {
 		const { source, resultData } = fetchDataResults;
 		let updateCountryType = null;
 		const parser = new DOMParser();
-		const parsedHtml = parser.parseFromString(resultData, 'text/html');
+		const parsedHtml = parser.parseFromString(resultData, this.htmlDocTypeDOM);
 		let totalCasesCount = 0;
 		let totalDeathsCount = 0;
 		let totalRecoversCount = 0;
 		// Countries.
 		let index = 0;
 		for (let i = 1; i < 1000; i++) {
-			const element = parsedHtml.getElementById(`449840684R${i + 1}`);
+			const element = parsedHtml.getElementById(`${this.wodCountryRow}${i + 1}`);
 			const countryName = this.getCountryName(element, 28);
 			if (!countryName) {
 				break;
@@ -1564,7 +1573,7 @@ class CountryService {
 			});
 			countriesList[countryId] = country;
 			if (!updateCountryType) {
-				updateCountryType = country.updateSourceData !== null ? UpdateCountryType.DATA : null;
+				updateCountryType = country.updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 			}
 			const sourceData = country.sourcesData[source.lowerName];
 			totalCasesCount += textUtils.getNumberIfEmpty(sourceData.dataItems[0].count) ? sourceData.dataItems[0].count : 0;
@@ -1582,7 +1591,7 @@ class CountryService {
 			recoversPair: pairs[2]
 		});
 		if (!updateCountryType) {
-			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryType.DATA : null;
+			updateCountryType = countriesList[countriesData.worldCountryId].updateSourceData !== null ? UpdateCountryTypeEnum.DATA : null;
 		}
 		fetchDataResults.resultData = countriesList;
 		fetchDataResults.updateCountryType = updateCountryType;

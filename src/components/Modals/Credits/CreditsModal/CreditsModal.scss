@@ -28,7 +28,8 @@
                         width: 90%;
                     }
 
-                    .note {
+                    .note,
+                    .creator {
                         display: inline-block;
                         margin-top: 2em;
                         font-size: 11px;
@@ -42,6 +43,28 @@
                             color: #00b9ff;
                         }
                     }
+
+                    .creator {
+                        width: 100%;
+                        text-align: center;
+                        display: block;
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 319px) and (max-width: 800px) {
+    .main {
+        .modal {
+            .modal-content {
+                &.credits {
+                    width: 90%;
+                    height: auto;
+                    display: flex;
+                    padding: 10px;
                 }
             }
         }

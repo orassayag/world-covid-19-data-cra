@@ -1,10 +1,10 @@
-import { ColorType, CountrySortType, SortDirection, ViewType } from '../../core/enums';
+import { ColorTypeEnum, CountrySortTypeEnum, SortDirectionEnum, ViewTypeEnum } from '../../core/enums';
 
 class EnumService {
 
     constructor() {
-        this.viewIconAttributeNames = [Object.values(ViewType), Object.values(ColorType), Object.values(SortDirection)];
-        this.countrySortTypeValues = Object.values(CountrySortType);
+        this.viewIconAttributeNames = [Object.values(ViewTypeEnum), Object.values(ColorTypeEnum), Object.values(SortDirectionEnum)];
+        this.countrySortTypeValues = Object.values(CountrySortTypeEnum);
     }
 }
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Icons.scss';
-import { Icon } from '../../components';
+import { Footer, Icon } from '../../components';
 import { quoteService } from '../../services';
 import { validationUtils } from '../../utils';
 
@@ -45,6 +45,7 @@ const Icons = () => {
   return (
     <div className="container-icons">
       {iconsDOM}
+      <Footer />
     </div>
   );
 };

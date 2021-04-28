@@ -1,6 +1,7 @@
 # World Covid 19 Data
 
 Built in May 2020. The client application's role is to contain the UI and display it to the user. World-covid-19-data is an application to display data of cases, deaths, and recovers for each country and are known in the world, from the 8 different APIs. The client built in React, and always updated with the latest version of create-react-app (currently 4.0.3) (https://github.com/facebook/create-react-app).
+Please note: The project is not finished yet and has been prospered until further notification.
 
 ## Getting Started with Create React App
 

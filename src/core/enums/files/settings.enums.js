@@ -1,18 +1,18 @@
 import { textUtils } from '../../../utils';
 
-const ColorType = textUtils.createEnum([
+const ColorTypeEnum = textUtils.createEnum([
 	['NIGHT', 'night'],
 	['DAY', 'day']
 ]);
 
-const ComponentMode = textUtils.createEnum([
+const ComponentModeEnum = textUtils.createEnum([
 	['APP', 'app'],
 	['ICONS', 'icons'],
 	['IMAGES', 'images'],
 	['TEST', 'test']
 ]);
 
-const CountriesActionType = textUtils.createEnum([
+const CountriesActionTypeEnum = textUtils.createEnum([
 	['FINALIZE', 'finalize'],
 	['CLEANUP', 'cleanup'],
 	['UPDATE', 'update'],
@@ -20,7 +20,7 @@ const CountriesActionType = textUtils.createEnum([
 	['REFRESH', 'refresh']
 ]);
 
-const CountrySortType = textUtils.createEnum([
+const CountrySortTypeEnum = textUtils.createEnum([
 	['CASE', 'case'],
 	['CASE_PER_MILLION', 'casePerMillion'],
 	['DEATH', 'death'],
@@ -36,47 +36,47 @@ const CountrySortType = textUtils.createEnum([
 	['LAST_UPDATE_TIME', 'lastUpdateTime']
 ]);
 
-const CreditSortType = textUtils.createEnum([
+const CreditSortTypeEnum = textUtils.createEnum([
 	['ORDER', 'order']
 ]);
 
-const DataMode = textUtils.createEnum([
+const DataModeEnum = textUtils.createEnum([
 	['LIVE', 'live'],
 	['LOCAL', 'local'],
 	['RECOVER', 'recover']
 ]);
 
-const EnvironmentMode = textUtils.createEnum([
+const EnvironmentModeEnum = textUtils.createEnum([
 	['DEVELOPMENT', 'development'],
 	['PRODUCTION', 'production']
 ]);
 
-const SortDirection = textUtils.createEnum([
+const SortDirectionEnum = textUtils.createEnum([
 	['ASCENDING', 'ascending'],
 	['DESCENDING', 'descending']
 ]);
 
-const SourceSortType = textUtils.createEnum([
+const SourceSortTypeEnum = textUtils.createEnum([
 	['ORDER', 'order'],
 	['NAME', 'name']
 ]);
 
-const StatisticsUpdatesSortType = textUtils.createEnum([
+const StatisticsUpdatesSortTypeEnum = textUtils.createEnum([
 	['LAST_UPDATE_TIME', 'lastUpdateTime']
 ]);
 
-const UpdateCountryType = textUtils.createEnum([
+const UpdateCountryTypeEnum = textUtils.createEnum([
 	['DATA', 'data'],
 	['POPULATION', 'population']
 ]);
 
-const ViewType = textUtils.createEnum([
+const ViewTypeEnum = textUtils.createEnum([
 	['VERTICAL', 'vertical'],
 	['HORIZONTAL', 'horizontal']
 ]);
 
 export {
-	ColorType, ComponentMode, CountriesActionType, CountrySortType, CreditSortType,
-	DataMode, EnvironmentMode, SortDirection, SourceSortType, StatisticsUpdatesSortType,
-	UpdateCountryType, ViewType
+	ColorTypeEnum, ComponentModeEnum, CountriesActionTypeEnum, CountrySortTypeEnum, CreditSortTypeEnum,
+	DataModeEnum, EnvironmentModeEnum, SortDirectionEnum, SourceSortTypeEnum, StatisticsUpdatesSortTypeEnum,
+	UpdateCountryTypeEnum, ViewTypeEnum
 };

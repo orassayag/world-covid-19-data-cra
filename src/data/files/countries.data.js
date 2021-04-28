@@ -13397,9 +13397,18 @@ class CountriesData {
 	setStaticIds() {
 		const countriesValuesList = Object.values(this.countriesList);
 		this.countriesKeysList = Object.keys(this.countriesList);
-		// ToDo: Convert to 1 loop.
-		this.worldCountryId = countriesValuesList.find(c => c.lowerName === 'world').id;
-		this.otherCountryId = countriesValuesList.find(c => c.lowerName === 'other').id;
+		for (let i = 0; i < countriesValuesList.length; i++) {
+			const country = countriesValuesList[i];
+			if (country.lowerName === 'world') {
+				this.worldCountryId = country.id;
+			}
+			if (country.lowerName === 'other') {
+				this.otherCountryId = country.id;
+			}
+			if (this.worldCountryId && this.otherCountryId) {
+				break;
+			}
+		}
 	}
 }
 

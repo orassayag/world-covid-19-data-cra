@@ -2,11 +2,11 @@ import { memo } from 'react';
 import './MasterHeader.scss';
 import MasterBinaryClock from '../MasterBinaryClock/MasterBinaryClock';
 import MasterHeaderIcon from '../MasterHeaderIcon/MasterHeaderIcon';
-import { DataMode } from '../../../../core/enums';
+import { DataModeEnum } from '../../../../core/enums';
 
 const MasterHeader = memo((props) => {
     const { isLiveMode, isRecoverMode, currentTime, leadingSource, lastUpdateSourceName, isLastUpdateChanges, totalVisibleCountriesCount } = props;
-    const dataModDisplay = isRecoverMode ? DataMode.RECOVER : (isLiveMode ? DataMode.LIVE : DataMode.LOCAL);
+    const dataModDisplay = isRecoverMode ? DataModeEnum.RECOVER : (isLiveMode ? DataModeEnum.LIVE : DataModeEnum.LOCAL);
     const iconNames = ['map-marker-alt', 'database', 'server'];
     const iconTooltips = ['Active countries count', 'Active sources count', 'Leading source name'];
     const values = [totalVisibleCountriesCount, 8, leadingSource.upperName];
