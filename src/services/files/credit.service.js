@@ -47,7 +47,7 @@ class CreditService {
     getFooterCreatorCredits() {
         const created = 'Created by';
         const creator = 'Or Assayag';
-        const years = `2018 - ${timeUtils.getYear(timeUtils.getCurrentDate(), true)}`;
+        const years = `2020 - ${timeUtils.getYear(timeUtils.getCurrentDate(), true)}`;
         const tooltip = `${created} ${creator}, ${years}`;
         return {
             created: created,

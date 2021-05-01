@@ -1,6 +1,5 @@
 Future tasks:
 =============
--Clear all the empty CSS styles.
 
 Close todo tasks:
 =================

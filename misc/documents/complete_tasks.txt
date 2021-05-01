@@ -1,5 +1,9 @@
 Completed + canceled tasks:
 ===========================
+-Clear all the empty CSS styles. *
+-Change the start year on footer credits to '2020' from '2018. *
+-Format all documents. *
+-Verify all works well. *
 -Update packages + Recreate package-lock.json. *
 -Do the few first tasks in the 'future_tasks.txt' file: *
 -Add 'Created by Or Assayag (Link to linkedin), 2018 - 2021' (current year) in the bottom of the page, and in the credits modal. *

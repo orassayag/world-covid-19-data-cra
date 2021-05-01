@@ -1,4 +1,3 @@
-import './StatisticsModal.scss';
 import StatisticsExitButton from '../StatisticsExitButton/StatisticsExitButton';
 import StatisticsOkButton from '../StatisticsOkButton/StatisticsOkButton';
 import StatisticsSummary from '../StatisticsSummary/StatisticsSummary';

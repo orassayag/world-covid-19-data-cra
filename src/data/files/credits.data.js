@@ -12,11 +12,11 @@ class SourcesData {
             new CreditModel({
                 id: 1,
                 name: 'OrEmail',
-                title: 'Creator - Or Assayag ®',
+                title: 'Creator - Or Assayag',
                 link: 'mailto:orassayag@gmail.com',
                 iconName: 'user-circle',
                 iconType: null,
-                tooltip: 'Creator - Or Assayag ®',
+                tooltip: 'Creator - Or Assayag',
                 iconTooltip: 'Contact',
                 isMaster: false,
                 order: 1
