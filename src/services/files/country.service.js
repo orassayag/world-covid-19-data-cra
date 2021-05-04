@@ -1009,7 +1009,7 @@ class CountryService {
 		let index = 0;
 		// World.
 		const worldElement = parsedHtml.getElementsByClassName(this.centerDOM)[0];
-		const worldPopulation = worldElement.children[0].textContent.split(':')[1].trim();
+		const worldPopulation = worldElement.children[0].textContent.split(' ')[3].trim();
 		const worldPopulationPair = [textUtils.getNumberFromStringComma(worldPopulation), worldPopulation];
 		const world = countriesList[countriesData.worldCountryId];
 		world.dynamicPopulationCount = worldPopulationPair[0];
