@@ -1,5 +1,9 @@
 Completed + canceled tasks:
 ===========================
+-Fix crash site when pop1 changes the title of the site. *
+-Fix UI bug with country box leading box. *
+-Need to fix the country modal UI bug - Canceled. *
+-Fix bug with France on 'goo' source - Canceled. *
 -Clear all the empty CSS styles. *
 -Change the start year on footer credits to '2020' from '2018. *
 -Format all documents. *

@@ -11,10 +11,6 @@ Each time you change the logic / update NPM package version, do the following st
 
 ToDo tasks:
 ===========
--Fix crash site when pop1 change the title of the site. *
--Fix UI bug with counry box leading box. *
--Need to fix country modal UI bug.
--Fix bug with France on 'goo' source.
 
 Completed + canceled tasks:
 ===========================
