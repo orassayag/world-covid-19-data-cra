@@ -11,13 +11,6 @@ class CoreUtils {
         return new Promise(resolve => setTimeout(resolve, millisecondsCount)).catch(e => logUtils.log(e));
     }
 
-    updateObject(oldObject, updatedProperties) {
-        return {
-            ...oldObject,
-            ...updatedProperties
-        };
-    }
-
     getValue(e) {
         return e.target.value || e.currentTarget.value;
     }

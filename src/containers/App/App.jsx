@@ -2,7 +2,7 @@ import { useRef, useEffect, useCallback, createRef } from 'react';
 import { useDispatch, useSelector, batch } from 'react-redux';
 import './App.scss';
 import { CountryBox, Error, Footer, MasterBox, ModalContainer, ScreenLoader } from '../../components';
-import { dataActions, settingsActions, statisticsActions, statisticsUpdatesActions } from '../../store/actions/actions';
+import { dataSlices, settingsSlices, statisticsSlices, statisticsUpdatesSlices } from '../../store/slices';
 import { ModalNameEnum } from '../../core/enums';
 import { engineService } from '../../services';
 import { coreUtils, validationUtils } from '../../utils';
@@ -12,77 +12,79 @@ const App = (props) => {
   // Refs.
   const elRefs = useRef([]);
   // State variables.
-  const settingsList = useSelector((state) => state.settings.settingsList);
-  const loadingList = useSelector((state) => state.settings.loadingList);
-  const sourcesList = useSelector((state) => state.data.sourcesList);
-  const countriesList = useSelector((state) => state.data.countriesList);
+  const { settingsList, loadingList } = useSelector(state => state.settings);
+  const { sourcesList, countriesList } = useSelector(state => state.data);
   const { isActive, isRefreshMode, viewType, isDisplayError, activeModalName,
     activeModalValue, isReplaceModalMode, isActionLoader } = settingsList;
   const { loadingPercentage, isScreenLoaderComplete } = loadingList;
+  const dataActions = dataSlices.dataSlice.actions;
+  const settingsActions = settingsSlices.settingsSlice.actions;
+  const statisticsActions = statisticsSlices.statisticsSlice.actions;
+  const statisticsUpdatesActions = statisticsUpdatesSlices.statisticsUpdatesSlice.actions;
   // Functions to update the state.
-  const onSetStateCurrentTime = (data) => dispatch(statisticsActions.setStateCurrentTime(data));
-  const onSetStateSettingsList = (listName, listValues) => dispatch(settingsActions.setStateSettingsList(listName, listValues));
-  const onSetStateStatisticsField = (fieldName, fieldValue) => dispatch(statisticsActions.setStateStatisticsField(fieldName, fieldValue));
-  const onSetStateStatisticsList = (statisticsList) => dispatch(statisticsActions.setStateStatisticsList(statisticsList));
-  const onSetStateStatisticsUpdatesSettingsList = (statisticsUpdatesSettingsList) => dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesSettingsList(statisticsUpdatesSettingsList));
-  const onSetStateDataCollection = (collectionName, collectionValue) => dispatch(dataActions.setStateDataCollection(collectionName, collectionValue));
+  const onSetStateCurrentTime = (data) => dispatch(statisticsActions.setStateCurrentTime({ data }));
+  const onSetStateSettingsList = (listName, listValues) => dispatch(settingsActions.setStateSettingsList({ listName, listValues }));
+  const onSetStateStatisticsField = (fieldName, fieldValue) => dispatch(statisticsActions.setStateStatisticsField({ fieldName, fieldValue }));
+  const onSetStateStatisticsList = (statisticsList) => dispatch(statisticsActions.setStateStatisticsList({ statisticsList }));
+  const onSetStateStatisticsUpdatesSettingsList = (statisticsUpdatesSettingsList) => dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesSettingsList({ statisticsUpdatesSettingsList }));
+  const onSetStateDataCollection = (collectionName, collectionValue) => dispatch(dataActions.setStateDataCollection({ collectionName, collectionValue }));
   const onSetStateInitiateSettings = (data) => {
     const { settingsList, loadingList } = data;
     batch(() => {
-      dispatch(settingsActions.setStateSettingsList('settingsList', settingsList));
-      dispatch(settingsActions.setStateSettingsList('loadingList', loadingList));
+      dispatch(settingsActions.setStateSettingsList({ listName: 'settingsList', listValues: settingsList }));
+      dispatch(settingsActions.setStateSettingsList({ listName: 'loadingList', listValues: loadingList }));
     });
   };
   const onSetStateInitiateSources = (data) => {
     const { sourcesList, countriesList, countriesNameIdList, statisticsList, settingsList } = data;
     batch(() => {
-      dispatch(dataActions.setStateDataCollection('sourcesList', sourcesList));
-      dispatch(dataActions.setStateDataCollection('countriesList', countriesList));
-      dispatch(dataActions.setStateDataCollection('countriesNameIdList', countriesNameIdList));
-      dispatch(settingsActions.setStateSettingsList('settingsList', settingsList));
-      dispatch(statisticsActions.setStateStatisticsList(statisticsList));
+      dispatch(dataActions.setStateDataCollection({ collectionName: 'sourcesList', collectionValue: sourcesList }));
+      dispatch(dataActions.setStateDataCollection({ collectionName: 'countriesList', collectionValue: countriesList }));
+      dispatch(dataActions.setStateDataCollection({ collectionName: 'countriesNameIdList', collectionValue: countriesNameIdList }));
+      dispatch(settingsActions.setStateSettingsList({ listName: 'settingsList', listValues: settingsList }));
+      dispatch(statisticsActions.setStateStatisticsList({ statisticsList }));
     });
   };
   const onSetStateUpdateRound = (data) => {
     const { countriesList, statisticsList, updateStatisticsUpdatesListResults } = data;
     const { statisticsUpdatesList, statisticsUpdatesSettingsList } = updateStatisticsUpdatesListResults;
     batch(() => {
-      dispatch(dataActions.setStateDataCollection('countriesList', countriesList));
-      dispatch(statisticsActions.setStateStatisticsList(statisticsList));
+      dispatch(dataActions.setStateDataCollection({ collectionName: 'countriesList', collectionValue: countriesList }));
+      dispatch(statisticsActions.setStateStatisticsList({ statisticsList }));
       if (validationUtils.isExists(statisticsUpdatesList)) {
-        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesList(statisticsUpdatesList));
-        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesSettingsList(statisticsUpdatesSettingsList));
+        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesList({ statisticsUpdatesList }));
+        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesSettingsList({ statisticsUpdatesSettingsList }));
       }
     });
   };
   const onSetStateActionUpdate = (data) => {
     const { countriesList, settingsList } = data;
     batch(() => {
-      dispatch(dataActions.setStateDataCollection('countriesList', countriesList));
-      dispatch(settingsActions.setStateSettingsList('settingsList', settingsList));
+      dispatch(dataActions.setStateDataCollection({ collectionName: 'countriesList', collectionValue: countriesList }));
+      dispatch(settingsActions.setStateSettingsList({ listName: 'settingsList', listValues: settingsList }));
     });
   };
   const onSetStateActionRefresh = (data) => {
     const { countriesList, settingsList, statisticsList, updateStatisticsUpdatesListResults } = data;
     const { statisticsUpdatesList, statisticsUpdatesSettingsList } = updateStatisticsUpdatesListResults;
     batch(() => {
-      dispatch(dataActions.setStateDataCollection('countriesList', countriesList));
-      dispatch(settingsActions.setStateSettingsList('settingsList', settingsList));
-      dispatch(statisticsActions.setStateStatisticsList(statisticsList));
+      dispatch(dataActions.setStateDataCollection({ collectionName: 'countriesList', collectionValue: countriesList }));
+      dispatch(settingsActions.setStateSettingsList({ listName: 'settingsList', listValues: settingsList }));
+      dispatch(statisticsActions.setStateStatisticsList({ statisticsList }));
       if (validationUtils.isExists(statisticsUpdatesList)) {
-        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesList(statisticsUpdatesList));
-        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesSettingsList(statisticsUpdatesSettingsList));
+        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesList({ statisticsUpdatesList }));
+        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesSettingsList({ statisticsUpdatesSettingsList }));
       }
     });
   };
   const onSetStateUpdateCountryVisibility = (data) => {
     const { countriesList, countriesNameIdList, statisticsList, statisticsUpdatesList } = data;
     batch(() => {
-      dispatch(dataActions.setStateDataCollection('countriesList', countriesList));
-      dispatch(dataActions.setStateDataCollection('countriesNameIdList', countriesNameIdList));
-      dispatch(statisticsActions.setStateStatisticsList(statisticsList));
+      dispatch(dataActions.setStateDataCollection({ collectionName: 'countriesList', collectionValue: countriesList }));
+      dispatch(dataActions.setStateDataCollection({ collectionName: 'countriesNameIdList', collectionValue: countriesNameIdList }));
+      dispatch(statisticsActions.setStateStatisticsList({ statisticsList }));
       if (validationUtils.isExists(statisticsUpdatesList)) {
-        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesList(statisticsUpdatesList));
+        dispatch(statisticsUpdatesActions.setStateStatisticsUpdatesList({ statisticsUpdatesList }));
       }
     });
   };

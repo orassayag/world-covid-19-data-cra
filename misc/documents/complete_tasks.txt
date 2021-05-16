@@ -1,5 +1,17 @@
 Completed + canceled tasks:
 ===========================
+-Do backup. *
+-Upgrade to Redux Toolkit: *
+-Remove 'redux' and 'redux-thunk' packages. *
+-Add the logic of Redux Toolkit (according to starter kits project). *
+-Update the 'external_packages.txt' file. *
+-Update packages + Recreate package-lock.json. *
+-Remove code comments to a backup TXT file. *
+-Format all documents. *
+-Verify all works well. *
+-Move all complete tasks from here to complete_tasks.txt. *
+-Upload to GitHub. *
+-Backup to iOmega. *
 -Fix crash site when pop1 changes the title of the site. *
 -Fix UI bug with country box leading box. *
 -Need to fix the country modal UI bug - Canceled. *
