@@ -12,7 +12,7 @@ settings.ENVIRONMENT_MODE = process.env.NODE_ENV;
 let app = null;
 if (COMPONENT_MODE === ComponentModeEnum.APP) {
     const mode = textUtils.getParameterByName('mode', window.location.href);
-    const App = lazy(() => import('../containers/App/App'));
+    const App = lazy(() => import('../pages/App/App'));
     const component = (<App mode={mode} />);
     app = (
         <HelmetProvider>
