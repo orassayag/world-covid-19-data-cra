@@ -49,7 +49,7 @@ class SourcesData {
                 id: 4,
                 name: 'LinkedIn',
                 title: 'LinkedIn',
-                link: 'https://il.linkedin.com/in/orassayag',
+                link: 'https://linkedin.com/in/orassayag',
                 iconName: 'linkedin',
                 iconType: 'b',
                 tooltip: 'Contact LinkedIn',

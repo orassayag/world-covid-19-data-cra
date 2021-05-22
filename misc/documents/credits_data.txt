@@ -1,9 +1,9 @@
 name					| title									 | tooltip								  | iconName        | iconTooltip   | order  | isMaster  | link
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-OrEmail 				| Creator - Or Assayag ® 				 | Creator - Or Assayag ® 				  | envelope       | Contact	   | 1      | true  	| mailto:orassayag@gmail.com
+OrEmail 				| Creator - Or Assayag 				 	 | Creator - Or Assayag				  	  | envelope       | Contact	   | 1      | true  	| mailto:orassayag@gmail.com
 Source					| Source Code							 | GitHub Source Code					  | github	       | Source		   | 2		| true		| https://github.com
 StackOverFlow           | StackOverFlow                          | Contact StackOverFlow                  | stack-overflow | StackOverFlow | 3      | true      | https://stackoverflow.com/users/4442606/or-assayag?tab=profile
-LinkedIn				| LinkedIn								 | Contact LinkedIn						  | linkedin	   | Social		   | 4		| true		| https://il.linkedin.com/in/orassayag
+LinkedIn				| LinkedIn								 | Contact LinkedIn						  | linkedin	   | Social		   | 4		| true		| https://linkedin.com/in/orassayag
 VSCode 					| Visual Studio Code					 | Visual Studio Code					  | - 		       | -		       | 5		| false 	| https://code.visualstudio.com
 Notepad++ 				| Notepad++								 | Notepad++ 							  | -		       | -		       | 6		| false     | https://notepad-plus-plus.org
 Heroku 					| Heroku								 | Heroku								  | -		       | -		       | 7		| false		| https://www.heroku.com

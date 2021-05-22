@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -12,7 +12,7 @@ settings.ENVIRONMENT_MODE = process.env.NODE_ENV;
 let app = null;
 if (COMPONENT_MODE === ComponentModeEnum.APP) {
     const mode = textUtils.getParameterByName('mode', window.location.href);
-    const App = React.lazy(() => import('../containers/App/App'));
+    const App = lazy(() => import('../containers/App/App'));
     const component = (<App mode={mode} />);
     app = (
         <HelmetProvider>
@@ -31,7 +31,7 @@ if (COMPONENT_MODE === ComponentModeEnum.APP) {
 }
 else {
     const componentName = textUtils.upperCaseFirstLetter(COMPONENT_MODE);
-    const Component = React.lazy(() => import(`../containers/${componentName}/${componentName}`));
+    const Component = lazy(() => import(`../pages/${componentName}/${componentName}`));
     app = (
         <Suspense fallback={null}>
             <Component />
