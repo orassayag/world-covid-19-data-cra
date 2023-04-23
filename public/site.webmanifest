@@ -1,6 +1,6 @@
 {
-    "name": "world-covid-19-data",
-    "short_name": "world-covid-19-data",
+    "name": "world-covid-19-data-cra",
+    "short_name": "world-covid-19-data-cra",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

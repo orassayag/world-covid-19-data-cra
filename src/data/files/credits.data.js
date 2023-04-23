@@ -25,7 +25,7 @@ class SourcesData {
                 id: 2,
                 name: 'Source',
                 title: 'Source Code',
-                link: 'https://github.com/orassayag/world-covid',
+                link: 'https://github.com/orassayag/world-covid-19-data-cra',
                 iconName: 'github',
                 iconType: 'b',
                 tooltip: 'GitHub Source Code',
